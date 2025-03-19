@@ -2,1200 +2,1023 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>vCard - Personal Portfolio</title>
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon" />
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Inline CSS for Accordion Skills Section (Black & Gold Theme) and Project Tooltip -->
+  <style>
+    /* Accordion container */
+    .accordion {
+      max-width: 800px;
+      margin: 1rem auto;
+    }
+    /* Accordion Header */
+    .accordion-header {
+      background: #000;
+      color: #d4af37;
+      padding: 1rem;
+      width: 100%;
+      text-align: left;
+      font-size: 1.1rem;
+      border: 1px solid #d4af37;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      margin-bottom: 0.5rem;
+    }
+    .accordion-header.active {
+      background: #d4af37;
+      color: #000;
+    }
+    /* Accordion Content */
+    .accordion-content {
+      padding: 1rem;
+      background: #111;
+      border: 1px solid #d4af37;
+      border-radius: 4px;
+      display: none;
+      margin-bottom: 1rem;
+    }
+    .accordion-content.active {
+      display: block;
+    }
+    /* Grid layout for skills cards */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .skills-item {
+      background: #111;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      padding: 15px;
+      transition: box-shadow 0.3s ease;
+      color: #d4af37;
+    }
+    .skills-item:hover {
+      box-shadow: 0 4px 8px rgba(212, 175, 55, 0.5);
+    }
+    .title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .skill-progress-bg {
+      background: #333;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+    .skill-progress-fill {
+      background: #d4af37;
+      height: 8px;
+      border-radius: 4px;
+    }
+    .skill-description {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    /* --- New CSS for Project Tooltip --- */
+    .project-item {
+      position: relative;
+    }
+    .project-tooltip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--white-2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      border-radius: inherit;
+      z-index: 2;
+    }
+    .project-item:hover .project-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* --- New CSS for Github Page Card --- */
+    .github-card {
+      background: var(--eerie-black-2);
+      padding: 30px;
+      border: 1px solid var(--jet);
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: var(--shadow-2);
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .btn-github {
+      background: var(--border-gradient-onyx);
+      color: var(--orange-yellow-crayola);
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: var(--fs-4);
+      font-weight: var(--fw-500);
+      transition: background var(--transition-1);
+      display: inline-block;
+      margin-top: 15px;
+    }
+    .btn-github:hover {
+      background: var(--bg-gradient-yellow-1);
+    }
+  </style>
 </head>
 
 <body>
-
-  <!--
-    - #MAIN
-  -->
-
+  <!-- #MAIN -->
   <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
+    <!-- #SIDEBAR -->
     <aside class="sidebar" data-sidebar>
-
       <div class="sidebar-info">
-
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80" />
         </figure>
-
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Richard hanrick</h1>
-
-          <p class="title">Web developer</p>
+          <h1 class="name" title="Richard hanrick">Syed Usman Bukhari</h1>
+          <p class="title">Software Engineer</p>
         </div>
-
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
-
           <ion-icon name="chevron-down"></ion-icon>
         </button>
-
       </div>
-
       <div class="sidebar-info_more">
-
         <div class="separator"></div>
-
         <ul class="contacts-list">
-
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
-              <a href="mailto:richard@example.com" class="contact-link">richard@example.com</a>
+              <a href="mailto:richard@example.com" class="contact-link">usmanbukhari541@gmail.com</a>
             </div>
-
           </li>
-
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-
-              <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
+              <a href="tel:+12133522795" class="contact-link">+44 7462 660889</a>
             </div>
-
           </li>
-
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="calendar-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 23, 1982</time>
+              <time datetime="1982-06-23">July 13, 1998</time>
             </div>
-
           </li>
-
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
-              <address>Sacramento, California, USA</address>
+              <address>Coventry, West Midlands, UK</address>
             </div>
-
           </li>
-
         </ul>
-
         <div class="separator"></div>
-
         <ul class="social-list">
-
           <li class="social-item">
             <a href="#" class="social-link">
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
             <a href="#" class="social-link">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
             <a href="#" class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
-
         </ul>
-
       </div>
-
     </aside>
 
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
+    <!-- #main-content -->
     <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
+      <!-- #NAVBAR -->
       <nav class="navbar">
-
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link>About</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
-
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" data-nav-link>Github</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
-
         </ul>
-
       </nav>
 
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
+      <!-- #ABOUT -->
+      <article class="about active" data-page="about">
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
-
         <section class="about-text">
           <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
+            I'm a results-driven Full Stack Software Engineer with extensive experience designing and building robust, scalable, and secure web applications. My expertise spans backend development, API design, cloud architecture, and DevOps practices, enhanced by my proficiency in integrating cutting-edge AI technologies into solutions.
           </p>
-
           <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
+            I specialize in optimizing system efficiency, from migrating legacy applications to modern microservices architectures, automating deployments with Kubernetes and Terraform, and seamlessly embedding AI-driven features to enhance user experiences and system intelligence. My passion lies in developing smart, adaptive, and intuitive web applications that leverage AI to solve complex problems and deliver exceptional value.
           </p>
         </section>
 
-
-        <!--
-          - service
-        -->
-
+        <!-- Service -->
         <section class="service">
-
           <h3 class="h3 service-title">What i'm doing</h3>
-
           <ul class="service-list">
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <img src="./assets/images/icon-design.svg" alt="design icon" width="40" />
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
-
+                <h4 class="h4 service-item-title">Full Stack Web Development</h4>
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                  Crafting responsive, scalable, and secure web applications using modern technologies.
                 </p>
               </div>
-
             </li>
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40" />
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
-
+                <h4 class="h4 service-item-title">API Design and Integration</h4>
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  Building robust APIs and integrating them seamlessly for efficient data exchange.
                 </p>
               </div>
-
             </li>
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40" />
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
-
+                <h4 class="h4 service-item-title">Mobile Apps</h4>
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
+                  Developing high-performance mobile applications for both iOS and Android.
                 </p>
               </div>
-
             </li>
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40" />
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
-
+                <h4 class="h4 service-item-title">AI Integration</h4>
                 <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  Leveraging advanced AI solutions to automate processes and enhance user experiences.
                 </p>
               </div>
-
             </li>
-
           </ul>
-
         </section>
 
-
-        <!--
-          - testimonials
-        -->
-
+        <!-- Certifications (formerly Testimonials) -->
         <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
+          <h3 class="h3 testimonials-title">Certifications</h3>
           <ul class="testimonials-list has-scrollbar">
-
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/my-avatar.png" alt="AWS Solutions Architect" width="60" data-testimonials-avatar />
                 </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>AWS Solutions Architect</h4>
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Completed the AWS Solutions Architect course with extensive training in designing scalable, secure cloud architectures.
                   </p>
                 </div>
-
               </div>
             </li>
-
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/my-avatar.png" alt="AWS Cloud Practitioner" width="60" data-testimonials-avatar />
                 </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>AWS Cloud Practitioner</h4>
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Earned the AWS Cloud Practitioner certification, demonstrating a solid understanding of core AWS services and cloud fundamentals.
                   </p>
                 </div>
-
               </div>
             </li>
-
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/my-avatar.png" alt="Shopify Course – SuperHi" width="60" data-testimonials-avatar />
                 </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Shopify Course – SuperHi</h4>
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Completed the Shopify Course at SuperHi, acquiring expertise in building engaging and robust e-commerce platforms.
                   </p>
                 </div>
-
               </div>
             </li>
-
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/my-avatar.png" alt="Data Engineering Program – AI Core" width="60" data-testimonials-avatar />
                 </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Data Engineering Program – AI Core</h4>
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Graduated from the Data Engineering Program at AI Core, specializing in efficient data pipeline design and analytics.
                   </p>
                 </div>
-
               </div>
             </li>
-
           </ul>
-
         </section>
 
-
-        <!--
-          - testimonials modal
-        -->
-
+        <!-- Certification Details Modal (formerly Testimonials Modal) -->
         <div class="modal-container" data-modal-container>
-
           <div class="overlay" data-overlay></div>
-
           <section class="testimonials-modal">
-
             <button class="modal-close-btn" data-modal-close-btn>
               <ion-icon name="close-outline"></ion-icon>
             </button>
-
             <div class="modal-img-wrapper">
               <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+                <img src="./assets/images/my-avatar.png" alt="AWS Solutions Architect" width="80" data-modal-img />
               </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+              <img src="./assets/images/icon-quote.svg" alt="quote icon" />
             </div>
-
             <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
+              <h4 class="h3 modal-title" data-modal-title>AWS Solutions Architect</h4>
+              <time datetime="2024-01-15">15 Jan, 2024</time>
               <div data-modal-text>
                 <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  Completed the AWS Solutions Architect certification with comprehensive training in designing secure, scalable cloud solutions.
                 </p>
               </div>
-
             </div>
-
           </section>
-
         </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
       </article>
 
+      <!-- #GITHUB -->
+      <article class="github" data-page="github">
+        <header>
+          <h2 class="h2 article-title">Github</h2>
+        </header>
+        <section class="github-content">
+          <div class="github-card">
+            <h3>My GitHub</h3>
+            <p>Explore my code repositories and projects on GitHub.</p>
+            <a href="https://github.com/UsmanBuk" target="_blank" class="btn-github">
+              Visit My GitHub
+            </a>
+          </div>
+        </section>
+      </article>
 
-
-
-
-      <!--
-        - #RESUME
-      -->
-
+      <!-- #RESUME -->
       <article class="resume" data-page="resume">
-
         <header>
           <h2 class="h2 article-title">Resume</h2>
         </header>
-
+        <!-- Education Timeline -->
         <section class="timeline">
-
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Education</h3>
           </div>
-
           <ol class="timeline-list">
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University school of the arts</h4>
-
-              <span>2007 — 2008</span>
-
+              <h4 class="h4 timeline-item-title">BSc Engineering Mathematics – University of Bristol</h4>
+              <span>September 2016 - July 2019</span>
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Completed a rigorous program combining advanced mathematical theories and practical problem-solving, laying a strong foundation for analytical and technical excellence.
               </p>
-
             </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
-
-              <span>2006 — 2007</span>
-
-              <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
-
-              <span>2002 — 2004</span>
-
-              <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
-            </li>
-
           </ol>
-
         </section>
-
+        <!-- Experience Timeline -->
         <section class="timeline">
-
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Experience</h3>
           </div>
-
           <ol class="timeline-list">
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Creative director</h4>
-
-              <span>2015 — Present</span>
-
+              <h4 class="h4 timeline-item-title">Full Stack & DevOps Engineer – TSG</h4>
+              <span>Feb 2024 – Present</span>
               <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
+                Architecting and implementing backend solutions and APIs, managing cloud infrastructure, automating deployments with Kubernetes and Terraform, and ensuring robust, secure, and scalable systems. Spearheaded the transition to a microservices architecture, reducing downtime by 40% and doubling traffic handling capacity.
               </p>
-
             </li>
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Art director</h4>
-
-              <span>2013 — 2015</span>
-
+              <h4 class="h4 timeline-item-title">Full Stack Engineer – Citadel Health</h4>
+              <span>Jan 2022 – Feb 2024</span>
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Engineered and maintained backend services and APIs for healthcare platforms, deployed secure cloud solutions, and optimized API performance, cutting response times by 30% while enhancing overall system efficiency.
               </p>
-
             </li>
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2010 — 2013</span>
-
+              <h4 class="h4 timeline-item-title">Software/Data Engineer – Chalkys.com</h4>
+              <span>Jan 2019 – Jan 2022</span>
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Designed e-commerce applications, integrated third-party payment solutions, and automated inventory management. Developed a dynamic pricing algorithm that boosted sales by 20% and improved website performance by reducing load times by 40%.
               </p>
-
             </li>
-
           </ol>
-
         </section>
-
+        <!-- My Skills (Accordion Style) -->
         <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
-                <data value="80">80%</data>
+          <h3 class="h3 skills-title">My Skills</h3>
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-header">Programming Languages</button>
+              <div class="accordion-content">
+                <ul class="skills-list content-card">
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Python</h5>
+                      <data value="90">90%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 90%;"></div>
+                    </div>
+                    <p class="skill-description">Data processing, web development, and automation scripting.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">JavaScript</h5>
+                      <data value="85">85%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p class="skill-description">Dynamic UI development and SPA creation.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">TypeScript</h5>
+                      <data value="80">80%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <p class="skill-description">Strongly-typed JavaScript for scalable applications.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">SQL</h5>
+                      <data value="85">85%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p class="skill-description">Efficient querying and database optimization.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Liquid</h5>
+                      <data value="70">70%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 70%;"></div>
+                    </div>
+                    <p class="skill-description">Shopify templating language for e-commerce.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">C#</h5>
+                      <data value="80">80%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <p class="skill-description">Desktop and web applications using .NET.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">HTML/CSS</h5>
+                      <data value="95">95%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 95%;"></div>
+                    </div>
+                    <p class="skill-description">Responsive, semantic, and accessible web layouts.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Golang</h5>
+                      <data value="75">75%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <p class="skill-description">Efficient, concurrent systems programming.</p>
+                  </li>
+                </ul>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">Software Tools / Frameworks</button>
+              <div class="accordion-content">
+                <ul class="skills-list content-card">
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Node.js/Express</h5>
+                      <data value="85">85%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p class="skill-description">Building scalable APIs and server-side applications.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Django</h5>
+                      <data value="80">80%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <p class="skill-description">Robust web applications with Python’s Django framework.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Flask</h5>
+                      <data value="75">75%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <p class="skill-description">Lightweight APIs and web apps with Flask.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">React</h5>
+                      <data value="85">85%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p class="skill-description">Dynamic and responsive front-end development.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Angular</h5>
+                      <data value="70">70%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 70%;"></div>
+                    </div>
+                    <p class="skill-description">Structured, scalable single-page applications.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Git / GitHub</h5>
+                      <data value="90">90%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 90%;"></div>
+                    </div>
+                    <p class="skill-description">Version control and collaborative development.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Docker/Containers</h5>
+                      <data value="85">85%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p class="skill-description">Containerizing applications for consistent deployments.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Jira</h5>
+                      <data value="70">70%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 70%;"></div>
+                    </div>
+                    <p class="skill-description">Agile project and task management.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Redis</h5>
+                      <data value="75">75%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <p class="skill-description">High-performance caching and data storage.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Ansible</h5>
+                      <data value="70">70%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 70%;"></div>
+                    </div>
+                    <p class="skill-description">Automated configuration management.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Jenkins</h5>
+                      <data value="70">70%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 70%;"></div>
+                    </div>
+                    <p class="skill-description">CI/CD pipelines and automation.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">CI/CD Pipeline</h5>
+                      <data value="80">80%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <p class="skill-description">Efficient continuous integration and deployment workflows.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Linux (Ubuntu)</h5>
+                      <data value="90">90%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 90%;"></div>
+                    </div>
+                    <p class="skill-description">Expertise in managing and developing on Ubuntu.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Azure</h5>
+                      <data value="75">75%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <p class="skill-description">Deploying and managing applications on Microsoft Azure.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">GCP</h5>
+                      <data value="70">70%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 70%;"></div>
+                    </div>
+                    <p class="skill-description">Leveraging Google Cloud Platform for scalable solutions.</p>
+                  </li>
+                </ul>
               </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
+            </div>
+          </div>
         </section>
-
       </article>
 
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
+      <!-- #PORTFOLIO -->
       <article class="portfolio" data-page="portfolio">
-
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
         </header>
-
         <section class="projects">
-
+          <!-- Updated Filter List -->
           <ul class="filter-list">
-
             <li class="filter-item">
               <button class="active" data-filter-btn>All</button>
             </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
             <li class="filter-item">
               <button data-filter-btn>Applications</button>
             </li>
-
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn>Web Development</button>
             </li>
-
+            <li class="filter-item">
+              <button data-filter-btn>Cloud & Devops</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Ai and Machine Learning</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Mobile Applications</button>
+            </li>
           </ul>
-
           <div class="filter-select-box">
-
             <button class="filter-select" data-select>
-
               <div class="select-value" data-selecct-value>Select category</div>
-
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
               </div>
-
             </button>
-
             <ul class="select-list">
-
               <li class="select-item">
                 <button data-select-item>All</button>
               </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
               <li class="select-item">
                 <button data-select-item>Applications</button>
               </li>
-
               <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item>Web Development</button>
               </li>
-
+              <li class="select-item">
+                <button data-select-item>Cloud & Devops</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Ai and Machine Learning</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Mobile Applications</button>
+              </li>
             </ul>
-
           </div>
-
           <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
+            <!-- Applications -->
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="https://huggingface.co/spaces/UsmanBukhari/CSVFile" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="./assets/images/gradio.png" alt="Python Gradio App" loading="lazy" />
+                  <div class="project-tooltip">
+                    A Python Gradio app for processing and visualizing CSV files using pandas to match Sage Intacct with JP Morgan.
+                  </div>
                 </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
+                <h3 class="project-title">Python Gradio App</h3>
+                <p class="project-category">Applications</p>
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <li class="project-item active" data-filter-item data-category="applications">
               <a href="#">
-
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                  <img src="./assets/images/project-4.png" alt="Brawlhalla" loading="lazy" />
+                  <div class="project-tooltip">
+                    A dynamic application providing Brawlhalla gameplay insights.
                   </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
                 </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
                 <h3 class="project-title">Brawlhalla</h3>
-
                 <p class="project-category">Applications</p>
-
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
+            <!-- Web Development -->
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="https://chalkys.com" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                  <img src="./assets/images/ChalkysNew.png" alt="Chalkys" loading="lazy" />
+                  <div class="project-tooltip">
+                    A modern ecommerce project for Chalkys handling 500,000 products with a focus on performance and scalability.
+                  </div>
                 </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
+                <h3 class="project-title">Chalkys</h3>
+                <p class="project-category">Web Development</p>
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
+            <li class="project-item active" data-filter-item data-category="web development">
               <a href="#">
-
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                  <img src="./assets/images/Dayta.png" alt="Dayta/TSG" loading="lazy" />
+                  <div class="project-tooltip">
+                    A comprehensive web development solution for Dayta/TSG.
+                  </div>
                 </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
+                <h3 class="project-title">Dayta/TSG</h3>
+                <p class="project-category">Web Development</p>
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <li class="project-item active" data-filter-item data-category="web development">
               <a href="#">
-
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                  <img src="./assets/images/project-7.png" alt="Summary" loading="lazy" />
+                  <div class="project-tooltip">
+                    A project summary showcasing web development expertise.
+                  </div>
                 </figure>
-
                 <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
+                <p class="project-category">Web Development</p>
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
+            <!-- Cloud & Devops -->
+            <li class="project-item active" data-filter-item data-category="cloud & devops">
               <a href="#">
-
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                  <img src="./assets/images/project-1.jpg" alt="Finance" loading="lazy" />
+                  <div class="project-tooltip">
+                    A cloud & devops solution tailored for finance applications.
+                  </div>
                 </figure>
-
+                <h3 class="project-title">Finance</h3>
+                <p class="project-category">Cloud & Devops</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="cloud & devops">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-8.jpg" alt="Task Manager" loading="lazy" />
+                  <div class="project-tooltip">
+                    A robust task manager built with cloud-native technologies.
+                  </div>
+                </figure>
                 <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
+                <p class="project-category">Cloud & Devops</p>
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <!-- Ai and Machine Learning -->
+            <li class="project-item active" data-filter-item data-category="ai and machine learning">
               <a href="#">
-
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                  <img src="./assets/images/AiCOnsulting.png" alt="AI/ML Platform" loading="lazy" />
+                  <div class="project-tooltip">
+                    An advanced Ai Consulting website built
+                  </div>
                 </figure>
-
+                <h3 class="project-title">AI/ML Platform</h3>
+                <p class="project-category">Ai and Machine Learning</p>
+              </a>
+            </li>
+            <!-- Mobile Applications -->
+            <li class="project-item active" data-filter-item data-category="mobile applications">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-6.png" alt="MetaSpark" loading="lazy" />
+                  <div class="project-tooltip">
+                    A mobile app designed to spark innovation on the go.
+                  </div>
+                </figure>
+                <h3 class="project-title">MetaSpark</h3>
+                <p class="project-category">Mobile Applications</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="mobile applications">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-9.png" alt="Arrival" loading="lazy" />
+                  <div class="project-tooltip">
+                    A mobile application for efficient arrival tracking.
+                  </div>
+                </figure>
                 <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
+                <p class="project-category">Mobile Applications</p>
               </a>
             </li>
-
           </ul>
-
         </section>
-
       </article>
 
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
+      <!-- #CONTACT -->
       <article class="contact" data-page="contact">
-
         <header>
           <h2 class="h2 article-title">Contact</h2>
         </header>
-
         <section class="mapbox" data-mapbox>
           <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.768876235105!2d-1.5148906841666382!3d52.40863597973759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48772320d2b3ab1b%3A0x23456789abcdef!2sCoventry%2C%20UK!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </figure>
         </section>
-
         <section class="contact-form">
-
           <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
+          <!-- Form fields matching EmailJS template placeholders -->
+          <form id="contact-form" class="form" data-form>
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input />
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input />
             </div>
-
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" type="submit">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
-
           </form>
-
         </section>
-
       </article>
-
     </div>
-
   </main>
 
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
+  <!-- custom js link -->
   <script src="./assets/js/script.js"></script>
 
-  <!--
-    - ionicon link
-  -->
+  <!-- Accordion Script for My Skills Section -->
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+        }
+      });
+    });
+  </script>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // Initialize EmailJS with your Public Key (replace with your actual public key)
+      emailjs.init("RqEGCYEXwOFGFvqu3");
+    })();
+  </script>
+
+  <!-- Contact Form Submission via EmailJS -->
+  <script>
+    const SERVICE_ID = "service_6wy1ubo";
+    const TEMPLATE_ID = "template_hsm76dc";
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, "#contact-form")
+        .then(function() {
+          alert("Message sent successfully!");
+          document.getElementById("contact-form").reset();
+        }, function(error) {
+          alert("Failed to send message. Please try again.");
+          console.error("EmailJS Error:", error);
+        });
+    });
+  </script>
+
+  <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>
