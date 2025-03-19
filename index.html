@@ -93,7 +93,6 @@
       font-size: 0.85rem;
       color: #aaa;
     }
-
     /* --- New CSS for Project Tooltip --- */
     .project-item {
       position: relative;
@@ -121,7 +120,6 @@
       opacity: 1;
       visibility: visible;
     }
-
     /* --- New CSS for Github Page Card --- */
     .github-card {
       background: var(--eerie-black-2);
@@ -454,23 +452,39 @@
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Full Stack & DevOps Engineer – TSG</h4>
               <span>Feb 2024 – Present</span>
-              <p class="timeline-text">
-                Architecting and implementing backend solutions and APIs, managing cloud infrastructure, automating deployments with Kubernetes and Terraform, and ensuring robust, secure, and scalable systems. Spearheaded the transition to a microservices architecture, reducing downtime by 40% and doubling traffic handling capacity.
-              </p>
+              <ul class="timeline-text">
+                <li>Designed and implemented robust backend systems and RESTful APIs to power modern web applications.</li>
+                <li>Managed and optimized cloud infrastructure to ensure high availability and peak performance.</li>
+                <li>Automated deployment workflows using Kubernetes and Terraform, reducing manual overhead.</li>
+                <li>Integrated CI/CD pipelines to streamline continuous delivery and accelerate time-to-market.</li>
+                <li>Developed a Node.js/Express integration connecting Sage Intacct with IMP, a budgeting software tool, for seamless financial data exchange.</li>
+                <li>Led the transition to a microservices architecture, reducing downtime by 40% and doubling system capacity.</li>
+              </ul>
             </li>
+            
+            
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Full Stack Engineer – Citadel Health</h4>
               <span>Jan 2022 – Feb 2024</span>
-              <p class="timeline-text">
-                Engineered and maintained backend services and APIs for healthcare platforms, deployed secure cloud solutions, and optimized API performance, cutting response times by 30% while enhancing overall system efficiency.
-              </p>
+              <ul class="timeline-text">
+                <li>
+                  Laboratory Information Management System (LIMS): Developed a comprehensive LIMS leveraging Python, integrating custom APIs designed in Django for efficient laboratory data management.
+                </li>
+                <li>
+                  Enhanced the user interface with a React-based front-end and utilized Python’s data handling capabilities (using libraries such as Pandas and NumPy) to process and manage complex laboratory data sets.
+                </li>
+              </ul>
             </li>
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Software/Data Engineer – Chalkys.com</h4>
               <span>Jan 2019 – Jan 2022</span>
-              <p class="timeline-text">
-                Designed e-commerce applications, integrated third-party payment solutions, and automated inventory management. Developed a dynamic pricing algorithm that boosted sales by 20% and improved website performance by reducing load times by 40%.
-              </p>
+              <ul class="timeline-text">
+                <li>Developed and maintained Chalkys.com, a Shopify-based e-commerce platform, improving functionality and user experience.</li>
+                <li>Integrated OpenAI API to generate AI-powered product descriptions, enhancing content quality and efficiency.</li>
+                <li>Implemented Google Search API and Discogs API to automate data scraping and fill in missing product information, ensuring accurate and comprehensive listings.</li>
+                <li>Designed machine learning models to extract, verify, and format critical data like tracklists, reducing manual workload and improving accuracy.</li>
+                <li>Designed and implemented ETL pipelines using AWS services and Python, optimizing data workflows and enhancing backend processes for increased operational efficiency.</li>
+              </ul>
             </li>
           </ol>
         </section>
@@ -478,6 +492,7 @@
         <section class="skill">
           <h3 class="h3 skills-title">My Skills</h3>
           <div class="accordion">
+            <!-- Programming Languages -->
             <div class="accordion-item">
               <button class="accordion-header">Programming Languages</button>
               <div class="accordion-content">
@@ -565,6 +580,7 @@
                 </ul>
               </div>
             </div>
+            <!-- Software Tools / Frameworks -->
             <div class="accordion-item">
               <button class="accordion-header">Software Tools / Frameworks</button>
               <div class="accordion-content">
@@ -659,65 +675,103 @@
                     </div>
                     <p class="skill-description">High-performance caching and data storage.</p>
                   </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Low Code / Other Tools -->
+            <div class="accordion-item">
+              <button class="accordion-header">Low Code / Other Tools</button>
+              <div class="accordion-content">
+                <ul class="skills-list content-card">
                   <li class="skills-item">
                     <div class="title-wrapper">
-                      <h5 class="h5">Ansible</h5>
+                      <h5 class="h5">Cursor</h5>
                       <data value="70">70%</data>
                     </div>
                     <div class="skill-progress-bg">
                       <div class="skill-progress-fill" style="width: 70%;"></div>
                     </div>
-                    <p class="skill-description">Automated configuration management.</p>
+                    <p class="skill-description">Low-code tool for rapid application development.</p>
                   </li>
                   <li class="skills-item">
                     <div class="title-wrapper">
-                      <h5 class="h5">Jenkins</h5>
+                      <h5 class="h5">VSCode</h5>
+                      <data value="95">95%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 95%;"></div>
+                    </div>
+                    <p class="skill-description">Feature-rich code editor with extensive extensions.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Codev</h5>
                       <data value="70">70%</data>
                     </div>
                     <div class="skill-progress-bg">
                       <div class="skill-progress-fill" style="width: 70%;"></div>
                     </div>
-                    <p class="skill-description">CI/CD pipelines and automation.</p>
+                    <p class="skill-description">Collaborative development and code review tool.</p>
                   </li>
                   <li class="skills-item">
                     <div class="title-wrapper">
-                      <h5 class="h5">CI/CD Pipeline</h5>
+                      <h5 class="h5">OutSystems</h5>
+                      <data value="60">60%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 60%;"></div>
+                    </div>
+                    <p class="skill-description">Enterprise low-code platform for rapid digital transformation.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">ChatGPT</h5>
+                      <data value="85">85%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p class="skill-description">AI conversational tool for creative and technical tasks.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">Midjourney</h5>
                       <data value="80">80%</data>
                     </div>
                     <div class="skill-progress-bg">
                       <div class="skill-progress-fill" style="width: 80%;"></div>
                     </div>
-                    <p class="skill-description">Efficient continuous integration and deployment workflows.</p>
+                    <p class="skill-description">AI-powered tool for generating creative visuals.</p>
                   </li>
                   <li class="skills-item">
                     <div class="title-wrapper">
-                      <h5 class="h5">Linux (Ubuntu)</h5>
-                      <data value="90">90%</data>
-                    </div>
-                    <div class="skill-progress-bg">
-                      <div class="skill-progress-fill" style="width: 90%;"></div>
-                    </div>
-                    <p class="skill-description">Expertise in managing and developing on Ubuntu.</p>
-                  </li>
-                  <li class="skills-item">
-                    <div class="title-wrapper">
-                      <h5 class="h5">Azure</h5>
+                      <h5 class="h5">DALL·E</h5>
                       <data value="75">75%</data>
                     </div>
                     <div class="skill-progress-bg">
                       <div class="skill-progress-fill" style="width: 75%;"></div>
                     </div>
-                    <p class="skill-description">Deploying and managing applications on Microsoft Azure.</p>
+                    <p class="skill-description">Generative AI for creating images from text descriptions.</p>
                   </li>
                   <li class="skills-item">
                     <div class="title-wrapper">
-                      <h5 class="h5">GCP</h5>
+                      <h5 class="h5">Stable Diffusion</h5>
+                      <data value="80">80%</data>
+                    </div>
+                    <div class="skill-progress-bg">
+                      <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <p class="skill-description">AI tool for high-quality image synthesis and editing.</p>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <h5 class="h5">LangChain</h5>
                       <data value="70">70%</data>
                     </div>
                     <div class="skill-progress-bg">
                       <div class="skill-progress-fill" style="width: 70%;"></div>
                     </div>
-                    <p class="skill-description">Leveraging Google Cloud Platform for scalable solutions.</p>
+                    <p class="skill-description">Framework for building applications with language models.</p>
                   </li>
                 </ul>
               </div>
@@ -804,12 +858,12 @@
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-                  <img src="./assets/images/project-4.png" alt="Brawlhalla" loading="lazy" />
+                  <img src="./assets/images/myatol.png" alt="myAtol" loading="lazy" />
                   <div class="project-tooltip">
-                    A dynamic application providing Brawlhalla gameplay insights.
+                    Myatol – a PHP Laravel-based business application that enables customers to securely manage their operations with the same reliability and assurance that ATOL provides in the travel industry.
                   </div>
                 </figure>
-                <h3 class="project-title">Brawlhalla</h3>
+                <h3 class="project-title">myAtol</h3>
                 <p class="project-category">Applications</p>
               </a>
             </li>
@@ -899,7 +953,7 @@
                   </div>
                   <img src="./assets/images/AiCOnsulting.png" alt="AI/ML Platform" loading="lazy" />
                   <div class="project-tooltip">
-                    An advanced Ai Consulting website built
+                    An advanced Ai Consulting website built.
                   </div>
                 </figure>
                 <h3 class="project-title">AI/ML Platform</h3>
@@ -992,7 +1046,7 @@
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {
-      // Initialize EmailJS with your Public Key (replace with your actual public key)
+      // Initialize EmailJS with your Public Key
       emailjs.init("RqEGCYEXwOFGFvqu3");
     })();
   </script>
@@ -1013,6 +1067,31 @@
           alert("Failed to send message. Please try again.");
           console.error("EmailJS Error:", error);
         });
+    });
+  </script>
+
+  <!-- Navigation Active Link Fix -->
+  <script>
+    const navLinks = document.querySelectorAll("[data-nav-link]");
+    const pages = document.querySelectorAll("[data-page]");
+    
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        // Remove active class from all nav links and pages
+        navLinks.forEach(l => l.classList.remove("active"));
+        pages.forEach(p => p.classList.remove("active"));
+        
+        // Add active class to clicked nav link
+        link.classList.add("active");
+        
+        // Get the page name from the button text (converted to lowercase)
+        const pageName = link.textContent.trim().toLowerCase();
+        const page = document.querySelector(`[data-page="${pageName}"]`);
+        if (page) {
+          page.classList.add("active");
+        }
+        window.scrollTo(0, 0);
+      });
     });
   </script>
 
