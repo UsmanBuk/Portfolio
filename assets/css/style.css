@@ -1883,3 +1883,61 @@ textarea.form-input::-webkit-resizer { display: none; }
   
 
 }
+
+/* ─── Courses Page Enhancements ─── */
+.courses-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding-bottom: 2rem;
+}
+
+/* Underline the title with a gold bar */
+[data-page="courses"] .article-title {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+}
+[data-page="courses"] .article-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 4px;
+  background: #d4af37;
+  border-radius: 2px;
+}
+
+/* Make the list into a responsive grid */
+.courses-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem 2rem;
+}
+
+/* Style each item as a card with gold left border */
+.course-item {
+  background: #111;
+  border-radius: 6px;
+  border-left: 4px solid #d4af37;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  line-height: 1.6;
+  transition: background 0.3s ease, transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Lift & highlight on hover */
+.course-item:hover {
+  background: #1a1a1a;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Tidy up the last item’s margin if you ever revert to vertical list */
+.course-item:last-child {
+  margin-bottom: 0;
+}
