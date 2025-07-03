@@ -1,0 +1,357 @@
+{
+  "personalInfo": {
+    "name": "Syed Usman Bukhari",
+    "title": "Full Stack & DevOps Engineer",
+    "location": "Coventry, West Midlands, UK",
+    "email": "usmanbukhari541@gmail.com",
+    "phone": "+44 7462 660889",
+    "portfolio": "usmanbukhari.co.uk",
+    "github": "https://github.com/UsmanBuk",
+    "birthday": "July 13, 1998",
+    "professionalSummary": "Highly skilled and results-driven Full Stack & DevOps Engineer with extensive hands-on coding experience across multiple programming languages, frameworks, and cloud platforms. Proficient in designing, developing, and optimizing high-performance backend systems, APIs, and cloud infrastructure. Demonstrated expertise in automating deployments, architecting scalable solutions, and implementing advanced CI/CD pipelines for robust and efficient software delivery. Proven track record in enhancing system performance, leading successful migrations to modern cloud environments, and enforcing stringent security standards. Passionate about writing clean, efficient, and maintainable code to deliver scalable, reliable, and seamless user experiences."
+  },
+  "experience": [
+    {
+      "title": "Full Stack & DevOps Engineer",
+      "company": "TSG/Dayta (Sage Partner)",
+      "period": "Feb 2024 – Present",
+      "responsibilities": [
+        "Designed, implemented, and optimized end-to-end CI/CD pipelines using AWS CodeBuild, CodePipeline, and API Gateway, achieving streamlined deployments and significantly enhancing software delivery efficiency",
+        "Managed Infrastructure-as-Code (IaC) using Terraform for scalable, automated, and repeatable cloud resource provisioning on AWS, ensuring consistent environments and infrastructure stability",
+        "Architected and maintained serverless applications leveraging AWS Lambda and Step Functions to orchestrate sophisticated, event-driven workflows, improving automation and reliability",
+        "Built robust monitoring and logging solutions to proactively identify and resolve performance bottlenecks and operational issues, improving application uptime and user experience",
+        "Integrated security best practices across development and deployment processes by enforcing Test-Driven Development (TDD), continuous security practices, authentication mechanisms, encryption standards, and comprehensive API security",
+        "Developed and deployed robust backend applications utilizing Node.js and TypeScript, integrating seamlessly with third-party financial budgeting software IMP, ensuring real-time data synchronization and enhanced financial reporting capabilities",
+        "Built and deployed scalable two-way integration applications using Docker containers orchestrated on AWS Elastic Kubernetes Service (EKS), significantly enhancing application scalability and fault tolerance",
+        "Managed continuous integration and deployment processes via GitHub Actions and Jenkins, ensuring robust automation and streamlined continuous delivery with minimal manual intervention",
+        "Developed internal productivity and client-support tools using Python with Flask and React on AWS Amplify, significantly enhancing productivity, workflow automation, and consultant efficiency",
+        "Collaborate cross-functionally in Agile teams to continuously improve infrastructure resilience, scalability, performance, and system interoperability. Successfully handled the complete migration of infrastructure from AWS to Azure, ensuring minimal downtime and seamless transition for all services"
+      ],
+      "keyAchievements": [
+        "Successfully automated deployment workflows using Kubernetes & Terraform, reducing downtime by 40%",
+        "Optimized backend architecture to efficiently handle double the traffic load, ensuring zero performance degradation under peak usage scenarios",
+        "Implemented robust monitoring and alerting solutions, reducing issue detection time by 50% and enhancing overall system reliability",
+        "Integrated seamless third-party software solutions (IMP) resulting in real-time financial data synchronization, significantly improving decision-making speed and accuracy",
+        "Enhanced security practices by enforcing comprehensive API security standards, resulting in zero security breaches and full compliance with industry regulations"
+      ]
+    },
+    {
+      "title": "Full Stack Engineer",
+      "company": "Citadel Health",
+      "period": "Jan 2022 – Feb 2024",
+      "responsibilities": [
+        "Designed and developed intuitive, responsive frontend interfaces for Laboratory Information Management Systems (LIMS) using React, significantly enhancing user experience and streamlining laboratory workflows",
+        "Developed robust RESTful APIs using Django REST Framework (DRF) and OpenAPI, supporting high-volume and mission-critical LIMS operations",
+        "Engineered cloud-native applications leveraging AWS infrastructure (EC2, S3, RDS, Lambda, API Gateway, IAM) to achieve scalable and resilient LIMS deployments",
+        "Expertly utilized Rhapsody Integration Engine for seamless integration of HL7 and FHIR APIs, ensuring robust interoperability with Electronic Health Records (EHRs) and hospital systems",
+        "Actively participated in client demonstrations and provided on-call support, facilitating client onboarding and enhancing customer satisfaction",
+        "Refactored legacy monolithic applications into modern microservices architectures, significantly improving system scalability, modularity, and maintainability",
+        "Created detailed API documentation using Swagger and OpenAPI, improving developer efficiency and team collaboration",
+        "Implemented advanced CI/CD pipelines using GitHub Actions and Jenkins, accelerating deployment cycles and ensuring code quality and stability"
+      ],
+      "keyAchievements": [
+        "Led the development of a secure and efficient LIMS, achieving a 35% reduction in sample processing time",
+        "Optimized API performance, decreasing response times by 30%",
+        "Enhanced system performance by implementing Redis caching and AWS CloudFront, significantly reducing database load",
+        "Achieved 20% cost savings on AWS infrastructure through strategic resource optimization and the adoption of Docker and Kubernetes for containerization",
+        "Developed real-time system monitoring dashboards using Prometheus and Grafana, greatly enhancing visibility into system performance and reliability"
+      ]
+    },
+    {
+      "title": "AI/Data Engineer",
+      "company": "Chalkys.com (Shopify)",
+      "period": "Jan 2019 – Jan 2022",
+      "responsibilities": [
+        "Developed a robust Django-based API supporting comprehensive e-commerce operations, including product catalog management, order processing, and seamless customer interactions",
+        "Leveraged AWS SageMaker to build and deploy sophisticated machine learning models, enabling dynamic user recommendations such as 'Recently Viewed', 'You May Also Like', and 'People Usually Buy With', resulting in a 25% increase in upsell conversions",
+        "Implemented advanced image recognition systems using AWS SageMaker, automatically generating descriptive alt-text and accurate product tagging, significantly enhancing SEO",
+        "Designed and automated robust ETL pipelines capable of efficiently processing terabytes of product data from FTP sources, performing competitor price analysis, and extensive product data scraping",
+        "Utilized OpenAI's API to intelligently fill in missing product data points, such as detailed descriptions, ensuring comprehensive product metadata coverage and improving customer engagement",
+        "Integrated secure third-party payment solutions, including PayPal, ensuring smooth and secure transaction processing",
+        "Optimized PostgreSQL and MySQL database performance, substantially improving query execution times and overall system responsiveness",
+        "Fully redesigned and rebuilt Shopify stores using the latest Dawn theme, delivering substantial frontend performance improvements and a superior user experience"
+      ],
+      "keyAchievements": [
+        "Increased upsell conversions by 25% through AI-driven recommendation systems",
+        "Enhanced SEO visibility significantly through automated image recognition and alt-text generation",
+        "Streamlined data processing and analysis by successfully handling and extracting insights from terabytes of FTP-sourced product data",
+        "Improved database query speeds and overall system responsiveness through optimized PostgreSQL and MySQL implementations",
+        "Achieved substantial improvements in frontend performance and user engagement by revamping Shopify storefronts"
+      ]
+    }
+  ],
+  "freelance": [
+    {
+      "title": "Freelance API Engineer",
+      "company": "Anglestack",
+      "period": "Jan 2024 - July 2024",
+      "responsibilities": [
+        "Developed scalable, serverless APIs adhering to RESTful architecture using AWS API Gateway, Lambda, and DynamoDB, providing efficient and reliable access to critical building data for construction companies",
+        "Implemented secure authentication and robust role-based access control utilizing AWS Cognito, ensuring protected and precise API access management",
+        "Constructed responsive frontend applications with React and Next.js, integrating seamlessly with AWS Amplify to streamline deployment processes and enhance scalability",
+        "Managed version control and continuous integration/continuous deployment (CI/CD) pipelines using Bitbucket, promoting efficient collaboration, rapid iteration, and reliable deployments"
+      ],
+      "keyAchievements": [
+        "Delivered fully serverless, REST-compliant APIs, significantly reducing infrastructure costs and simplifying maintenance",
+        "Enhanced security, compliance, and scalability through strategic implementation of AWS Cognito, API Gateway, and Lambda services",
+        "Streamlined development workflows and deployment efficiency through effective management of CI/CD processes using Bitbucket"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSc Engineering Mathematics",
+      "institution": "University of Bristol",
+      "period": "September 2016 - July 2019",
+      "description": "Rigorous program combining advanced mathematical theories and practical problem-solving"
+    }
+  ],
+  "professionalTraining": [
+    {
+      "certification": "AWS Solutions Architect Certification",
+      "provider": "eCareers",
+      "description": "Comprehensive training in designing scalable, secure cloud architectures"
+    },
+    {
+      "certification": "AWS Cloud Practitioner Certification",
+      "provider": "AWS",
+      "description": "Foundational understanding of AWS cloud services and best practices"
+    },
+    {
+      "certification": "Data Engineering Program",
+      "provider": "AI Core",
+      "description": "Specialized training in data pipeline design, analytics, and modern data engineering practices"
+    },
+    {
+      "certification": "Shopify Course",
+      "provider": "SuperHi",
+      "description": "Expertise in building engaging and robust e-commerce platforms using Shopify"
+    },
+    {
+      "certification": "Databricks Certified Data Engineer Associate Exam",
+      "provider": "Databricks",
+      "description": "Advanced data engineering and analytics platform certification"
+    },
+    {
+      "certification": "Advanced Data Engineering and Cloud Computing Courses",
+      "provider": "Coursera",
+      "description": "Comprehensive cloud computing and advanced data engineering methodologies"
+    },
+    {
+      "certification": "Python and Cloud Infrastructure Courses",
+      "provider": "Udemy",
+      "description": "Specialized training in Python development and cloud infrastructure management"
+    }
+  ],
+  "projects": {
+    "chalkys": {
+      "name": "Chalkys",
+      "url": "https://chalkys.com",
+      "description": "Modern e-commerce platform handling 500,000 products with focus on performance and scalability",
+      "technologies": ["Shopify", "Python", "OpenAI API", "Google Search API", "Discogs API", "ETL Pipelines", "AWS", "Machine Learning"],
+      "achievements": ["Handles 500k products", "AI-powered product descriptions", "Automated data scraping", "ML for data extraction"]
+    },
+    "aiSentiment": {
+      "name": "AI Sentiment Analysis",
+      "url": "https://github.com/UsmanBuk/ai-sentiment-analyze",
+      "description": "AI-powered sentiment analysis tool using IBM Watson's BERT-based NLP service",
+      "technologies": ["Python", "IBM Watson", "BERT", "NLP", "REST API", "Multi-language support"],
+      "achievements": ["Multi-language support", "Real-time analysis", "High accuracy sentiment detection", "JSON-formatted responses"]
+    },
+    "umrahTaxi": {
+      "name": "Umrah Taxi Booking",
+      "url": "https://umrahtaxi.app",
+      "description": "Web application for Umrah pilgrims' taxi booking with integrated payment processing",
+      "technologies": ["co.dev", "Stripe", "Email integration", "Low-code platform"],
+      "achievements": ["Seamless booking experience", "Secure payments", "Automated notifications", "Specialized for Umrah pilgrims"]
+    },
+    "umrahOnline": {
+      "name": "Umrah Online",
+      "url": "https://umrah.online",
+      "description": "Comparison website to verify umrah agencies across the world",
+      "technologies": ["Lovable", "Supabase", "Database management", "Comparison engine"],
+      "achievements": ["Global agency verification", "Real-time comparisons", "User reviews system", "Worldwide coverage"]
+    },
+    "myatol": {
+      "name": "myAtol",
+      "url": "https://myatol.co.uk",
+      "description": "PHP Laravel-based business application with ATOL-level reliability for travel industry",
+      "technologies": ["PHP", "Laravel", "MySQL", "Business Operations"],
+      "achievements": ["Secure operations management", "ATOL-level reliability", "Travel industry focused"]
+    },
+    "gradioApp": {
+      "name": "Python Gradio App",
+      "url": "https://huggingface.co/spaces/UsmanBukhari/CSVFile",
+      "description": "Python Gradio app for processing and visualizing CSV files using pandas",
+      "technologies": ["Python", "Gradio", "Pandas", "Data Processing", "Hugging Face"],
+      "achievements": ["CSV file processing", "Data visualization", "Sage Intacct integration", "JP Morgan matching"]
+    },
+    "httpServer": {
+      "name": "Custom HTTP Server",
+      "url": "https://github.com/UsmanBukari/UsmanBukari-codecrafters-http-server-python",
+      "description": "Hand-crafted HTTP/1.1 server in Python built from ground up",
+      "technologies": ["Python", "HTTP/1.1", "Systems Programming", "Networking"],
+      "achievements": ["Built from scratch", "HTTP/1.1 compliance", "Educational project", "Low-level networking"]
+    },
+    "ramOptimiser": {
+      "name": "RAM Optimiser",
+      "url": "https://github.com/UsmanBuk/RamOptimise",
+      "description": "Tool to optimize RAM usage by identifying and cleaning up unused memory segments",
+      "technologies": ["Systems Programming", "Memory Management", "Performance Optimization"],
+      "achievements": ["Memory optimization", "Unused segment cleanup", "Performance improvement"]
+    }
+  },
+  "technicalSkills": {
+    "coreCompetencies": [
+      "Backend Development",
+      "API Design & Microservices",
+      "Cloud Architecture (AWS, Azure, GCP)",
+      "DevOps & CI/CD Pipelines",
+      "Infrastructure as Code (Terraform, Ansible)",
+      "System Scalability & Security",
+      "ETL Pipelines & Data Processing",
+      "Performance Optimization & Caching",
+      "TDD & Continuous Security",
+      "Containerization (Docker, Kubernetes, Helm)",
+      "Agile & Scrum Methodologies"
+    ],
+    "programmingLanguages": {
+      "python": {
+        "frameworks": ["Django", "Flask", "FastAPI"],
+        "proficiency": "Expert",
+        "applications": ["Backend APIs", "Data Processing", "Machine Learning", "ETL Pipelines"]
+      },
+      "javascript": {
+        "frameworks": ["Node.js", "Express.js", "Nest.js"],
+        "proficiency": "Expert",
+        "applications": ["Full Stack Development", "API Development", "Frontend Integration"]
+      },
+      "typescript": {
+        "proficiency": "Advanced",
+        "applications": ["Type-safe development", "Large-scale applications", "API development"]
+      },
+      "csharp": {
+        "frameworks": [".NET Core"],
+        "proficiency": "Advanced",
+        "applications": ["Enterprise applications", "Backend services"]
+      },
+      "other": ["SQL", "HTML/CSS", "Liquid (Shopify)", "Bash", "PowerShell"]
+    },
+    "cloudPlatforms": {
+      "aws": {
+        "services": ["API Gateway", "Lambda", "Step Functions", "ECS", "EKS", "EC2", "S3", "RDS", "DynamoDB", "CloudFront", "IAM", "Cognito", "CodeBuild", "CodePipeline", "CodeDeploy", "CloudFormation", "SageMaker", "Amplify"],
+        "specializations": ["Serverless Architecture", "Container Orchestration", "Infrastructure as Code", "CI/CD Implementation", "Security & Compliance"]
+      },
+      "azure": {
+        "services": ["Azure DevOps", "Infrastructure Migration"],
+        "experience": "Cloud migration and multi-cloud architecture"
+      },
+      "gcp": {
+        "experience": "Cross-platform cloud solutions"
+      }
+    },
+    "databases": {
+      "relational": ["PostgreSQL", "MySQL"],
+      "nosql": ["DynamoDB", "MongoDB"],
+      "caching": ["Redis", "Memcached"],
+      "specializations": ["Performance optimization", "Query optimization", "Database design", "Data modeling"]
+    },
+    "apiTechnologies": ["GraphQL", "REST", "OpenAPI", "Swagger", "JWT", "OAuth2", "RBAC", "API Rate Limiting"],
+    "devopsTools": {
+      "containerization": ["Docker", "Kubernetes", "Helm"],
+      "cicd": ["GitHub Actions", "Jenkins", "GitLab CI", "Azure DevOps"],
+      "iac": ["Terraform", "Ansible"],
+      "monitoring": ["Prometheus", "Grafana", "CloudWatch"],
+      "versionControl": ["Git", "GitHub", "BitBucket"],
+      "projectManagement": ["Jira", "Trello"]
+    },
+    "security": ["JWT", "OAuth2", "RBAC", "API Security", "Encryption Standards", "TDD", "Continuous Security"],
+    "specialPlatforms": {
+      "shopify": ["Liquid templating", "Shopify APIs", "E-commerce optimization", "Theme development"],
+      "rhapsodyIntegration": ["HL7", "FHIR APIs", "Healthcare system integration"],
+      "aiml": ["AWS SageMaker", "Machine Learning models", "Image recognition", "Recommendation systems"]
+    },
+    "aiTools": ["OpenAI API", "IBM Watson", "AWS SageMaker", "ChatGPT", "Midjourney", "DALL-E", "Stable Diffusion", "LangChain", "Gradio"]
+  },
+  "certifications": [
+    {
+      "name": "AWS Solutions Architect",
+      "description": "Extensive training in designing scalable, secure cloud architectures"
+    },
+    {
+      "name": "AWS Cloud Practitioner",
+      "description": "Solid understanding of core AWS services and cloud fundamentals"
+    },
+    {
+      "name": "Shopify Course – SuperHi",
+      "description": "Expertise in building engaging and robust e-commerce platforms"
+    },
+    {
+      "name": "Data Engineering Program – AI Core",
+      "description": "Specializing in efficient data pipeline design and analytics"
+    }
+  ],
+  "courses": [
+    "IBM Full Stack Software Developer Professional (Coursera)",
+    "Master JavaScript from Scratch (with jQuery and React JS) – Ryan Dhungel (Udemy)",
+    "Master Python by Building 100 Projects in 100 Days – Dr Angela Yu (Udemy)",
+    "Databricks Certified Data Engineer Associate (Udemy)",
+    "Python for Data Science, AI & Development – IBM",
+    "Generative AI: Introduction and Applications – IBM"
+  ],
+  "services": [
+    {
+      "title": "Full Stack Web Development",
+      "description": "Crafting responsive, scalable, and secure web applications using modern technologies"
+    },
+    {
+      "title": "API Design and Integration",
+      "description": "Building robust APIs and integrating them seamlessly for efficient data exchange"
+    },
+    {
+      "title": "Mobile Apps",
+      "description": "Developing high-performance mobile applications for both iOS and Android"
+    },
+    {
+      "title": "AI Integration",
+      "description": "Leveraging advanced AI solutions to automate processes and enhance user experiences"
+    }
+  ],
+  "keyAchievements": [
+    "Successfully automated deployment workflows using Kubernetes & Terraform, reducing downtime by 40%",
+    "Optimized backend architecture to efficiently handle double the traffic load with zero performance degradation",
+    "Implemented robust monitoring and alerting solutions, reducing issue detection time by 50%",
+    "Enhanced security practices resulting in zero security breaches and full compliance with industry regulations",
+    "Led development of secure LIMS achieving 35% reduction in sample processing time",
+    "Optimized API performance, decreasing response times by 30%",
+    "Achieved 20% cost savings on AWS infrastructure through strategic resource optimization",
+    "Increased upsell conversions by 25% through AI-driven recommendation systems",
+    "Enhanced SEO visibility significantly through automated image recognition and alt-text generation",
+    "Successfully handled complete infrastructure migration from AWS to Azure with minimal downtime",
+    "Built and deployed scalable applications using Docker and Kubernetes on AWS EKS",
+    "Implemented real-time financial data synchronization improving decision-making speed and accuracy",
+    "Processed terabytes of product data from FTP sources with automated ETL pipelines",
+    "Delivered fully serverless, REST-compliant APIs reducing infrastructure costs significantly"
+  ],
+  "quantifiedResults": {
+    "performanceImprovements": {
+      "downtimeReduction": "40%",
+      "trafficHandlingIncrease": "100% (double capacity)",
+      "issueDetectionImprovement": "50% faster",
+      "sampleProcessingImprovement": "35% reduction in time",
+      "apiResponseTimeImprovement": "30% faster",
+      "infrastructureCostSavings": "20%",
+      "upsellConversionIncrease": "25%"
+    },
+    "securityAndCompliance": {
+      "securityBreaches": "Zero incidents",
+      "complianceStatus": "Full industry regulation compliance",
+      "apiSecurityStandards": "Comprehensive implementation"
+    },
+    "scalabilityMetrics": {
+      "productHandling": "500,000+ products on e-commerce platform",
+      "dataProcessing": "Terabytes of FTP-sourced data",
+      "realTimeIntegration": "Financial data synchronization with IMP software"
+    }
+  }
+} 
