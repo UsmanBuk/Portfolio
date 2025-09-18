@@ -6,7 +6,7 @@ Personal portfolio website showcasing the professional experience and projects o
 
 ## 👨‍💻 Current Roles (2025)
 
-### **Contractor AI Developer - NHS** (March 2025 - Present)
+### **AI Developer & Data Architecture Specialist - NHS - South Yorkshire ICB** (March 2025 - Present)
 - Building healthcare data pipelines with **Azure Functions** and **Crawl4AI**
 - Implementing **RAG (Retrieval-Augmented Generation)** with **Azure AI Search**
 - Developing AI chatbots for healthcare service discovery using **LangChain**
@@ -236,3 +236,4 @@ This portfolio is personal intellectual property. The code structure and design 
 **Status**: ✅ Production Ready
 
 *Showcasing modern web development with AI integration and professional experience in healthcare and travel industry applications.*
+
