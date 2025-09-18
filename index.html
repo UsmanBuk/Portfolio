@@ -335,6 +335,12 @@
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-spinner"></div>
+    <p>Loading Portfolio...</p>
+  </div>
+
   <!-- #MAIN -->
   <main>
     <!-- #SIDEBAR -->
@@ -1585,8 +1591,8 @@ data-category="systems programming"
   <script>
 class PortfolioChatbot {
   constructor() {
-    // OpenAI API key - Note: In production, this should be handled server-side for security
-    this.apiKey = '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';
+    // API key removed for security - chatbot will use mock responses
+    this.apiKey = null;
     this.isOpen = false;
     this.contextData = null;
     this.context = '';
@@ -1842,6 +1848,16 @@ INSTRUCTIONS:
 // Initialize chatbot when page loads
 document.addEventListener('DOMContentLoaded', () => {
   new PortfolioChatbot();
+  
+  // Hide loading screen after content loads
+  const loadingScreen = document.getElementById('loading-screen');
+  setTimeout(() => {
+    loadingScreen.classList.add('hidden');
+    // Remove from DOM after animation
+    setTimeout(() => {
+      loadingScreen.remove();
+    }, 500);
+  }, 800);
 });
   </script>
 
