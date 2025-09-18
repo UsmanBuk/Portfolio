@@ -548,6 +548,85 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
+/* Enhanced About Me styling */
+.intro-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.intro-paragraph {
+  font-size: var(--fs-5);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.intro-paragraph strong {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
+}
+
+.specialization-section {
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 3px solid var(--orange-yellow-crayola);
+}
+
+.passion-section {
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 15px;
+}
+
+.passion-statement {
+  font-size: var(--fs-5);
+  font-style: italic;
+  color: var(--white-2);
+  margin-bottom: 0;
+}
+
+.passion-statement em {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-400);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  background: rgba(255, 187, 84, 0.1);
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+}
+
+.highlight-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  filter: drop-shadow(0 2px 4px rgba(255, 187, 84, 0.3));
+}
+
+.highlight-text {
+  font-size: var(--fs-7);
+  font-weight: var(--fw-400);
+  color: var(--light-gray-70);
+}
+
 
 
 /**
@@ -1680,7 +1759,17 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin-left: auto;
   }
-  
+
+  /* Enhanced About Me - responsive styles */
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .intro-section {
+    padding: 25px;
+  }
+
 }
 
 
@@ -1948,6 +2037,20 @@ textarea.form-input::-webkit-resizer { display: none; }
   height: 4px;
   background: #d4af37;
   border-radius: 2px;
+  /* Enhanced About Me - large screen styles */
+  .highlights-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .intro-section {
+    padding: 30px;
+  }
+
+  .passion-section {
+    padding: 20px;
+  }
+
 }
 
 /* Make the list into a responsive grid */
