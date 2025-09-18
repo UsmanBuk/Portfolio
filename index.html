@@ -666,8 +666,23 @@
           </div>
           <ol class="timeline-list">
             <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Contractor AI Developer – NHS</h4>
+              <span>March 2025 – Present</span>
+              <ul class="timeline-text">
+                <li>Built a generic web scraper using Crawl4AI to extract healthcare service data from 30+ regional websites, supporting unemployment and healthcare access initiatives in South Yorkshire.</li>
+                <li>Engineered a daily data pipeline running on Azure Functions with queue and timer triggers, automating ingestion, transformation, and enrichment of scraped data.</li>
+                <li>Standardised outputs into AI-ready JSON schemas, enabling seamless integration with NHS systems and downstream applications.</li>
+                <li>Integrated the pipeline with Azure AI Search using vector embeddings for semantic retrieval, improving discoverability and relevance of healthcare services across diverse datasets.</li>
+                <li>Deployed a Microsoft open-source chatbot framework, connected to the indexed data, allowing citizens to query healthcare/unemployment services via natural-language search.</li>
+                <li>Applied LLM-oriented enrichment techniques (auto-tagging, summarisation, service clustering, and missing metadata generation) to improve data quality and categorisation.</li>
+                <li>Leveraged LangChain orchestration to combine retrieval-augmented generation (RAG) with Azure AI Search, ensuring consistent, context-aware chatbot responses aligned to NHS data sources.</li>
+                <li>Experimented with generative AI for synthetic data generation to test pipeline robustness and fill gaps in underrepresented service categories.</li>
+                <li>Collaborated with NHS stakeholders to ensure the solution aligned with regional healthcare accessibility and unemployment support goals.</li>
+              </ul>
+            </li>
+            <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Full Stack & DevOps Engineer – TSG</h4>
-              <span>Feb 2024 – Present</span>
+              <span>Feb 2024 – March 2025</span>
               <ul class="timeline-text">
                 <li>Designed and implemented robust backend systems and RESTful APIs to power modern web applications.</li>
                 <li>Managed and optimized cloud infrastructure to ensure high availability and peak performance.</li>
@@ -710,6 +725,18 @@
             <h3 class="h3">Contract / Freelance Work</h3>
           </div>
           <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Full Stack & DevOps Engineer – TIC.UK</h4>
+              <span>July 2024 – Present</span>
+              <ul class="timeline-text">
+                <li>Manage PHP/Laravel based ATOL application and a custom CRM application for travel industry operations.</li>
+                <li>Built out automation workflows to streamline business processes and improve operational efficiency.</li>
+                <li>Migrated infrastructure from AWS to Digital Ocean, optimizing costs and performance.</li>
+                <li>Built a comprehensive CI/CD pipeline using GitHub Actions for automated testing and deployment.</li>
+                <li>Managed and enhanced company WordPress website, improving user experience and functionality.</li>
+                <li>Used low-code tools like Lovable to build out custom applications for travel agencies, accelerating development timelines.</li>
+              </ul>
+            </li>
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">API Engineer – Anglestack</h4>
               <span>Jan 2024 – July 2024</span>
@@ -1763,11 +1790,11 @@ INSTRUCTIONS:
     const lowerMessage = message.toLowerCase();
     
     if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
-      return "Usman has 5+ years of experience as a Full Stack Engineer. He's currently at TSG doing DevOps and backend work, previously built a LIMS system at Citadel Health, and created the Chalkys e-commerce platform handling 500k products. He's skilled in Python, JavaScript, AWS, and AI integration!";
+      return "Usman has 5+ years of experience as a Full Stack Engineer. He's currently working as a Contractor AI Developer at NHS building healthcare data pipelines and AI chatbots, plus freelancing as Full Stack & DevOps Engineer at TIC.UK managing Laravel/PHP applications and CI/CD pipelines. Previously at TSG, Citadel Health (LIMS), and created the Chalkys e-commerce platform. Expert in Python, JavaScript, PHP, AWS, Azure, and AI integration!";
     }
     
-    if (lowerMessage.includes('skills') || lowerMessage.includes('technology')) {
-      return "Usman's tech stack includes Python, JavaScript, TypeScript, Node.js, React, AWS services (Lambda, API Gateway, DynamoDB), Docker, Kubernetes, and AI tools like OpenAI API and IBM Watson. He's also experienced with Shopify, Laravel, and low-code platforms.";
+    if (lowerMessage.includes('skills') || lowerMessage.includes('technology') || lowerMessage.includes('php') || lowerMessage.includes('laravel')) {
+      return "Usman's tech stack includes Python, JavaScript, TypeScript, PHP/Laravel, Node.js, React, cloud services (AWS, Azure, Digital Ocean), Docker, Kubernetes, GitHub Actions for CI/CD, and AI tools like LangChain and Azure AI Search. He's also experienced with WordPress, Shopify, and low-code platforms like Lovable.";
     }
     
     if (lowerMessage.includes('projects') || lowerMessage.includes('portfolio')) {
@@ -1778,12 +1805,12 @@ INSTRUCTIONS:
       return "You can contact Usman at usmanbukhari541@gmail.com or +44 7462 660889. He's based in Coventry, UK and available for full-stack development, DevOps, and AI integration projects. Use the contact form on this site to get in touch!";
     }
     
-    if (lowerMessage.includes('aws') || lowerMessage.includes('cloud')) {
-      return "Usman is skilled in AWS services including Lambda, API Gateway, DynamoDB, EC2, ECS, Fargate, Cognito, and CodePipeline. He's led cloud migrations and microservices architectures, reducing downtime by 40% in his current role.";
+    if (lowerMessage.includes('aws') || lowerMessage.includes('cloud') || lowerMessage.includes('azure') || lowerMessage.includes('digital ocean')) {
+      return "Usman has extensive multi-cloud experience! Currently using Azure Functions and Azure AI Search for NHS healthcare pipelines, plus managing Digital Ocean infrastructure for TIC.UK travel applications. He's migrated from AWS to Digital Ocean, optimizing costs and performance. Expert with AWS services (Lambda, API Gateway, DynamoDB, EC2), CI/CD pipelines, and cloud migrations.";
     }
     
     if (lowerMessage.includes('ai') || lowerMessage.includes('machine learning')) {
-      return "Usman has hands-on AI experience with OpenAI API integration, IBM Watson's NLP services, and AI-powered features. He's built sentiment analysis tools and integrated AI into e-commerce platforms for automated content generation.";
+      return "Usman has extensive AI experience! Currently at NHS building healthcare chatbots with RAG, Azure AI Search, and LangChain. He's created web scrapers with Crawl4AI, built data pipelines with Azure Functions, and implemented vector embeddings for semantic search. Also has experience with OpenAI API, IBM Watson's NLP services, and AI-powered e-commerce features.";
     }
     
     return "I'd be happy to tell you more about Usman's experience, skills, projects, or how to contact him. Try asking about his AWS expertise, AI projects, or recent work at TSG!";
