@@ -526,58 +526,1691 @@
       from { width: 0; }
     }
 
-    /* --- Project Tooltip (keeping existing styles) --- */
+    /* --- Enhanced Project Styles --- */
     .project-item {
       position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border: 2px solid transparent;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
+
+    .project-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold), var(--orange-yellow-crayola));
+      border-radius: inherit;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .project-item:hover::before {
+      opacity: 1;
+    }
+
+    .project-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(255, 183, 3, 0.2);
+    }
+
+    .project-img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .project-img img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-item:hover .project-img img {
+      transform: scale(1.1);
+    }
+
+    .project-item-icon-box {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 183, 3, 0.3);
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange-yellow-crayola);
+      font-size: 20px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+    }
+
+    .project-item:hover .project-item-icon-box {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .project-tooltip {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+      backdrop-filter: blur(10px);
       color: var(--white-2);
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.3s ease;
-      border-radius: inherit;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 12px;
       z-index: 2;
+      font-size: 14px;
+      line-height: 1.6;
     }
+
     .project-item:hover .project-tooltip {
       opacity: 1;
       visibility: visible;
     }
-    /* --- New CSS for Github Page Card --- */
-    .github-card {
-      background: var(--eerie-black-2);
-      padding: 30px;
-      border: 1px solid var(--jet);
-      border-radius: 14px;
-      text-align: center;
-      box-shadow: var(--shadow-2);
-      max-width: 600px;
-      margin: 2rem auto;
+
+    .project-title {
+      color: var(--white-2);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
     }
-    .btn-github {
-      background: var(--border-gradient-onyx);
+
+    .project-item:hover .project-title {
       color: var(--orange-yellow-crayola);
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: var(--fs-4);
-      font-weight: var(--fw-500);
-      transition: background var(--transition-1);
-      display: inline-block;
-      margin-top: 15px;
     }
-    .btn-github:hover {
-      background: var(--bg-gradient-yellow-1);
+
+    .project-category {
+      color: var(--light-gray);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .project-category::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--orange-yellow-crayola);
+      transition: width 0.4s ease;
+    }
+
+    .project-item:hover .project-category::before {
+      width: 100%;
+    }
+
+    /* --- Project Content Styling --- */
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0 15px 0;
+    }
+
+    .tech-badge {
+      background: rgba(255, 183, 3, 0.1);
+      color: var(--orange-yellow-crayola);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 183, 3, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .project-item:hover .tech-badge {
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      transform: translateY(-1px);
+    }
+
+    /* --- Portfolio Search Functionality --- */
+    .portfolio-search {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 15px 50px 15px 50px;
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border: 2px solid var(--jet);
+      border-radius: 25px;
+      color: var(--white-2);
+      font-size: 14px;
+      font-family: var(--ff-poppins);
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--orange-yellow-crayola);
+      box-shadow: 0 0 20px rgba(255, 183, 3, 0.2);
+    }
+
+    .search-input::placeholder {
+      color: var(--light-gray);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--light-gray);
+      font-size: 18px;
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+
+    .search-input:focus + .search-icon {
+      color: var(--orange-yellow-crayola);
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--light-gray);
+      font-size: 18px;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-clear:hover {
+      color: var(--orange-yellow-crayola);
+      background: rgba(255, 183, 3, 0.1);
+    }
+
+    /* --- Enhanced Filter System --- */
+    .filter-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+      padding: 0;
+      list-style: none;
+      justify-content: center;
+    }
+
+    .filter-item {
+      position: relative;
+    }
+
+    .filter-btn {
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border: 2px solid var(--jet);
+      color: var(--light-gray);
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .filter-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 183, 3, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .filter-btn:hover::before {
+      left: 100%;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--orange-yellow-crayola);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 183, 3, 0.2);
+      color: var(--white-2);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      border-color: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 183, 3, 0.3);
+    }
+
+    .filter-icon {
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .filter-btn:hover .filter-icon,
+    .filter-btn.active .filter-icon {
+      transform: scale(1.2);
+    }
+
+    .filter-text {
+      font-family: var(--ff-poppins);
+      letter-spacing: 0.5px;
+    }
+
+    /* --- Enhanced Project Grid --- */
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .project-list .project-item {
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+      animation: projectFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .project-list .project-item:nth-child(1) { animation-delay: 0.1s; }
+    .project-list .project-item:nth-child(2) { animation-delay: 0.2s; }
+    .project-list .project-item:nth-child(3) { animation-delay: 0.3s; }
+    .project-list .project-item:nth-child(4) { animation-delay: 0.4s; }
+    .project-list .project-item:nth-child(5) { animation-delay: 0.5s; }
+    .project-list .project-item:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes projectFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* --- Portfolio Header Enhancement --- */
+    .portfolio .article-title {
+      position: relative;
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .portfolio .article-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      border-radius: 2px;
+    }
+
+    /* --- Project Statistics --- */
+    .portfolio-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border-radius: 16px;
+      border: 1px solid var(--jet);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 15px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--orange-yellow-crayola);
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* --- Responsive Enhancements --- */
+    @media (max-width: 768px) {
+      .filter-list {
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+
+      .filter-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+
+      .filter-text {
+        display: none;
+      }
+
+      .filter-icon {
+        font-size: 18px;
+      }
+
+      .project-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .portfolio .article-title {
+        font-size: 2rem;
+      }
+
+      .portfolio-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .filter-list {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+
+      .filter-btn {
+        flex-shrink: 0;
+        padding: 8px 12px;
+      }
+    }
+
+    /* --- Advanced Animations & Micro-interactions --- */
+    .portfolio {
+      animation: portfolioFadeIn 0.8s ease-out;
+    }
+
+    @keyframes portfolioFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating animation for project items */
+    .project-item {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .project-item:nth-child(2n) {
+      animation-delay: -2s;
+    }
+
+    .project-item:nth-child(3n) {
+      animation-delay: -4s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Hover pause float animation */
+    .project-item:hover {
+      animation-play-state: paused;
+    }
+
+    /* Glowing border animation */
+    .project-item::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--orange-yellow-crayola), var(--vegas-gold), var(--orange-yellow-crayola));
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      animation: borderGlow 2s linear infinite;
+    }
+
+    .project-item:hover::after {
+      opacity: 0.7;
+    }
+
+    @keyframes borderGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Parallax effect for project images */
+    .project-img {
+      perspective: 1000px;
+    }
+
+    .project-img img {
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-item:hover .project-img img {
+      transform: scale(1.05) rotateX(2deg) rotateY(2deg);
+    }
+
+    /* Enhanced tech badges with pulse effect */
+    .tech-badge {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-badge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .project-item:hover .tech-badge::before {
+      left: 100%;
+    }
+
+    /* Pulse animation for statistics */
+    .stat-number {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* Enhanced filter button interactions */
+    .filter-btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    .filter-btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(255, 183, 3, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+
+    .filter-btn:hover::after,
+    .filter-btn.active::after {
+      width: 120%;
+      height: 120%;
+    }
+
+    /* Smooth scrolling enhancement */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Loading state for projects */
+    .project-item.loading {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .project-item.loading::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      border: 3px solid transparent;
+      border-top: 3px solid var(--orange-yellow-crayola);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 1s linear infinite;
+      z-index: 10;
+    }
+
+    /* Enhanced tooltip animations */
+    .project-tooltip {
+      transform: scale(0.8);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .project-item:hover .project-tooltip {
+      transform: scale(1);
+    }
+
+    /* Stagger animation for project grid */
+    .project-list {
+      opacity: 0;
+      animation: gridFadeIn 0.8s ease-out 0.3s forwards;
+    }
+
+    @keyframes gridFadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Enhanced responsive animations */
+    @media (max-width: 768px) {
+      .project-item {
+        animation: none; /* Disable float animation on mobile for better performance */
+      }
+      
+      .project-item::after {
+        display: none; /* Disable glow effect on mobile */
+      }
+
+      .portfolio-search {
+        margin-bottom: 25px;
+      }
+
+      .search-input {
+        padding: 12px 45px 12px 45px;
+        font-size: 13px;
+      }
+
+      .search-icon {
+        left: 15px;
+        font-size: 16px;
+      }
+
+      .search-clear {
+        right: 12px;
+        font-size: 16px;
+      }
+    }
+
+    /* --- Portfolio Background Enhancement --- */
+    .portfolio {
+      position: relative;
+    }
+
+    .portfolio::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 183, 3, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 183, 3, 0.02) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* --- Scroll to top button --- */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      border: none;
+      border-radius: 50%;
+      color: var(--smoky-black);
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(255, 183, 3, 0.3);
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 183, 3, 0.4);
+    }
+
+    /* --- Enhanced Courses Section UI --- */
+    .courses {
+      animation: coursesPageFadeIn 0.8s ease-out;
+    }
+
+    @keyframes coursesPageFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Courses Header Enhancement */
+    .courses .article-title {
+      position: relative;
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .courses .article-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      border-radius: 2px;
+    }
+
+    /* Courses Statistics */
+    .courses-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border-radius: 16px;
+      border: 1px solid var(--jet);
+    }
+
+    .courses-stats .stat-item {
+      text-align: center;
+      padding: 15px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .courses-stats .stat-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .courses-stats .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--orange-yellow-crayola);
+      margin-bottom: 5px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .courses-stats .stat-label {
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Course Filter Tabs */
+    .course-filters {
+      margin-bottom: 40px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+    }
+
+    .course-filter-btn {
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border: 2px solid var(--jet);
+      color: var(--light-gray);
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .course-filter-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 183, 3, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .course-filter-btn:hover::before {
+      left: 100%;
+    }
+
+    .course-filter-btn:hover {
+      border-color: var(--orange-yellow-crayola);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 183, 3, 0.2);
+      color: var(--white-2);
+    }
+
+    .course-filter-btn.active {
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      border-color: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 183, 3, 0.3);
+    }
+
+    .course-filter-btn .filter-icon {
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .course-filter-btn:hover .filter-icon,
+    .course-filter-btn.active .filter-icon {
+      transform: scale(1.2);
+    }
+
+    /* Courses Grid */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    /* Course Card */
+    .course-card {
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border: 2px solid transparent;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+      animation: courseCardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+         .course-card:nth-child(1) { animation-delay: 0.1s; }
+     .course-card:nth-child(2) { animation-delay: 0.2s; }
+     .course-card:nth-child(3) { animation-delay: 0.3s; }
+     .course-card:nth-child(4) { animation-delay: 0.4s; }
+     .course-card:nth-child(5) { animation-delay: 0.5s; }
+     .course-card:nth-child(6) { animation-delay: 0.6s; }
+     .course-card:nth-child(7) { animation-delay: 0.7s; }
+     .course-card:nth-child(8) { animation-delay: 0.8s; }
+
+    @keyframes courseCardFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .course-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold), var(--orange-yellow-crayola));
+      border-radius: inherit;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .course-card:hover::before {
+      opacity: 1;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(255, 183, 3, 0.2);
+    }
+
+    /* Course Header */
+    .course-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 25px 20px 25px;
+      border-bottom: 1px solid var(--jet);
+    }
+
+    .course-provider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .provider-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .provider-name {
+      color: var(--light-gray);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Course Badges */
+    .course-badge {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .course-badge.professional {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+    }
+
+    .course-badge.advanced {
+      background: linear-gradient(135deg, #FF9800, #F57C00);
+      color: white;
+    }
+
+    .course-badge.intensive {
+      background: linear-gradient(135deg, #E91E63, #C2185B);
+      color: white;
+    }
+
+    .course-badge.certification {
+      background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+      color: white;
+    }
+
+    .course-badge.specialization {
+      background: linear-gradient(135deg, #2196F3, #1976D2);
+      color: white;
+    }
+
+    .course-badge.cutting-edge {
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      color: var(--smoky-black);
+    }
+
+    /* Course Content */
+    .course-content {
+      padding: 25px;
+    }
+
+    .course-title {
+      color: var(--white-2);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      transition: color 0.3s ease;
+    }
+
+    .course-card:hover .course-title {
+      color: var(--orange-yellow-crayola);
+    }
+
+    .course-description {
+      color: var(--light-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    /* Course Skills */
+    .course-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .skill-tag {
+      background: rgba(255, 183, 3, 0.1);
+      color: var(--orange-yellow-crayola);
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 183, 3, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .course-card:hover .skill-tag {
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      transform: translateY(-1px);
+    }
+
+    /* Course Footer */
+    .course-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 25px 25px 25px;
+      border-top: 1px solid var(--jet);
+      background: rgba(255, 183, 3, 0.05);
+    }
+
+    .course-duration,
+    .course-instructor,
+    .course-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--light-gray);
+      font-size: 0.9rem;
+    }
+
+    .course-status.completed {
+      color: #4CAF50;
+      font-weight: 600;
+    }
+
+    .course-footer ion-icon {
+      font-size: 16px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .course-card {
+        margin: 0 10px;
+      }
+
+      .courses-stats {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px;
+      }
+
+      .filter-tabs {
+        gap: 8px;
+      }
+
+      .course-filter-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+
+      .course-filter-btn .filter-text {
+        display: none;
+      }
+
+      .course-filter-btn .filter-icon {
+        font-size: 18px;
+      }
+
+      .course-header {
+        padding: 20px 20px 15px 20px;
+      }
+
+      .course-content {
+        padding: 20px;
+      }
+
+      .course-footer {
+        padding: 15px 20px 20px 20px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .courses-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+
+      .course-filter-btn {
+        flex-shrink: 0;
+        padding: 8px 12px;
+      }
+
+      .courses .article-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* --- Enhanced GitHub Section UI --- */
+    .github {
+      animation: githubPageFadeIn 0.8s ease-out;
+    }
+
+    @keyframes githubPageFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* GitHub Header Enhancement */
+    .github .article-title {
+      position: relative;
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .github .article-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      border-radius: 2px;
+    }
+
+    /* GitHub Statistics */
+    .github-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border-radius: 16px;
+      border: 1px solid var(--jet);
+    }
+
+    .github-stats .stat-item {
+      text-align: center;
+      padding: 15px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .github-stats .stat-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .github-stats .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--orange-yellow-crayola);
+      margin-bottom: 5px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .github-stats .stat-label {
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* GitHub Profile Card */
+    .github-profile {
+      margin-bottom: 50px;
+    }
+
+    .profile-card {
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border: 2px solid var(--jet);
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      border-radius: inherit;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .profile-card:hover::before {
+      opacity: 1;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(255, 183, 3, 0.2);
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .profile-avatar {
+      position: relative;
+    }
+
+    .avatar-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--orange-yellow-crayola);
+      object-fit: cover;
+    }
+
+    .status-indicator {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--eerie-black-2);
+    }
+
+    .status-indicator.online {
+      background: #4CAF50;
+      animation: pulse 2s infinite;
+    }
+
+    .profile-info {
+      flex: 1;
+    }
+
+    .profile-name {
+      color: var(--white-2);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .profile-username {
+      color: var(--orange-yellow-crayola);
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .profile-bio {
+      color: var(--light-gray);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .profile-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 25px;
+      padding: 20px 0;
+      border-top: 1px solid var(--jet);
+      border-bottom: 1px solid var(--jet);
+    }
+
+    .profile-stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      display: block;
+      color: var(--white-2);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .stat-name {
+      color: var(--light-gray);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .profile-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .btn-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-github.primary {
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      color: var(--smoky-black);
+    }
+
+    .btn-github.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 183, 3, 0.4);
+    }
+
+    .btn-github.secondary {
+      background: transparent;
+      color: var(--orange-yellow-crayola);
+      border-color: var(--orange-yellow-crayola);
+    }
+
+    .btn-github.secondary:hover {
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      transform: translateY(-2px);
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      color: var(--white-2);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-title ion-icon {
+      color: var(--orange-yellow-crayola);
+      font-size: 1.5rem;
+    }
+
+    .section-description {
+      color: var(--light-gray);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Featured Repositories */
+    .featured-repos {
+      margin-bottom: 50px;
+    }
+
+    .repos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+    }
+
+    .repo-card {
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border: 2px solid var(--jet);
+      border-radius: 16px;
+      padding: 25px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .repo-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      border-radius: inherit;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .repo-card:hover::before {
+      opacity: 1;
+    }
+
+    .repo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(255, 183, 3, 0.2);
+    }
+
+    .repo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .repo-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white-2);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .repo-name ion-icon {
+      color: var(--orange-yellow-crayola);
+      font-size: 1.2rem;
+    }
+
+    .repo-visibility {
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .repo-visibility:contains("Public") {
+      background: rgba(76, 175, 80, 0.2);
+      color: #4CAF50;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+    }
+
+    .repo-visibility:contains("Private") {
+      background: rgba(156, 39, 176, 0.2);
+      color: #9C27B0;
+      border: 1px solid rgba(156, 39, 176, 0.3);
+    }
+
+    .repo-description {
+      color: var(--light-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .repo-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .topic-tag {
+      background: rgba(255, 183, 3, 0.1);
+      color: var(--orange-yellow-crayola);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(255, 183, 3, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .repo-card:hover .topic-tag {
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      transform: translateY(-1px);
+    }
+
+    .repo-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--jet);
+      padding-top: 15px;
+    }
+
+    .repo-stats {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .repo-stat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--light-gray);
+      font-size: 0.9rem;
+    }
+
+    .language-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .language-indicator.python { background: #3776ab; }
+    .language-indicator.html { background: #e34c26; }
+    .language-indicator.liquid { background: #67b8de; }
+
+    .repo-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .repo-link:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+    }
+
+    .repo-link.disabled {
+      background: var(--jet);
+      color: var(--light-gray);
+      cursor: not-allowed;
+    }
+
+    .repo-link.disabled:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .repos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .profile-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn-github {
+        justify-content: center;
+      }
+
+      .repo-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .github-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+      }
+
+      .profile-stats {
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .github-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        padding: 20px;
+      }
+
+      .repo-card {
+        padding: 20px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .github .article-title {
+        font-size: 2rem;
+      }
     }
     
     /* --- Chatbot Styles --- */
@@ -1063,17 +2696,322 @@
       <!-- #GITHUB -->
       <article class="github" data-page="github">
         <header>
-          <h2 class="h2 article-title">Github</h2>
+          <h2 class="h2 article-title">GitHub Portfolio</h2>
         </header>
-        <section class="github-content">
-          <div class="github-card">
-            <h3>My GitHub</h3>
-            <p>Explore my code repositories and projects on GitHub.</p>
-            <a href="https://github.com/UsmanBuk" target="_blank" class="btn-github">
-              Visit My GitHub
-            </a>
+        
+        <!-- GitHub Statistics -->
+        <section class="github-stats">
+          <div class="stat-item">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">Public Repositories</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Commits This Year</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Languages Used</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Active Projects</span>
           </div>
         </section>
+
+        <!-- GitHub Profile Card -->
+        <section class="github-profile">
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="profile-avatar">
+                <img src="./assets/images/my-avatar.png" alt="Usman Bukhari" class="avatar-img">
+                <div class="status-indicator online"></div>
+              </div>
+              <div class="profile-info">
+                <h3 class="profile-name">Syed Usman Bukhari</h3>
+                <p class="profile-username">@UsmanBuk</p>
+                <p class="profile-bio">Full Stack Software Engineer | AI Enthusiast | Cloud Solutions Architect</p>
+              </div>
+            </div>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <span class="stat-value">25</span>
+                <span class="stat-name">Repositories</span>
+              </div>
+              <div class="profile-stat">
+                <span class="stat-value">12</span>
+                <span class="stat-name">Followers</span>
+              </div>
+              <div class="profile-stat">
+                <span class="stat-value">18</span>
+                <span class="stat-name">Following</span>
+              </div>
+            </div>
+            <div class="profile-actions">
+              <a href="https://github.com/UsmanBuk" target="_blank" class="btn-github primary">
+                <ion-icon name="logo-github"></ion-icon>
+                <span>View Profile</span>
+              </a>
+              <a href="https://github.com/UsmanBuk?tab=repositories" target="_blank" class="btn-github secondary">
+                <ion-icon name="folder-outline"></ion-icon>
+                <span>Browse Repos</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Repositories -->
+        <section class="featured-repos">
+          <div class="section-header">
+            <h3 class="section-title">
+              <ion-icon name="star-outline"></ion-icon>
+              Featured Repositories
+            </h3>
+            <p class="section-description">A showcase of my most notable open-source projects and contributions</p>
+          </div>
+          
+          <div class="repos-grid">
+            <!-- AI Sentiment Analysis Repo -->
+            <div class="repo-card">
+              <div class="repo-header">
+                <div class="repo-name">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <span>ai-sentiment-analyze</span>
+                </div>
+                <div class="repo-visibility">Public</div>
+              </div>
+              <p class="repo-description">
+                AI-powered sentiment analysis tool using IBM Watson's BERT-based NLP service to analyze emotional tone and sentiment from text input.
+              </p>
+              <div class="repo-topics">
+                <span class="topic-tag">python</span>
+                <span class="topic-tag">ai</span>
+                <span class="topic-tag">nlp</span>
+                <span class="topic-tag">ibm-watson</span>
+                <span class="topic-tag">sentiment-analysis</span>
+              </div>
+              <div class="repo-footer">
+                <div class="repo-stats">
+                  <div class="repo-stat">
+                    <div class="language-indicator python"></div>
+                    <span>Python</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="star-outline"></ion-icon>
+                    <span>3</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="git-branch-outline"></ion-icon>
+                    <span>1</span>
+                  </div>
+                </div>
+                <a href="https://github.com/UsmanBuk/ai-sentiment-analyze" target="_blank" class="repo-link">
+                  <ion-icon name="open-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <!-- HTTP Server Repo -->
+            <div class="repo-card">
+              <div class="repo-header">
+                <div class="repo-name">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <span>codecrafters-http-server-python</span>
+                </div>
+                <div class="repo-visibility">Public</div>
+              </div>
+              <p class="repo-description">
+                A hand-crafted HTTP/1.1 server implementation in Python, built from the ground up for CodeCrafters challenge.
+              </p>
+              <div class="repo-topics">
+                <span class="topic-tag">python</span>
+                <span class="topic-tag">http-server</span>
+                <span class="topic-tag">networking</span>
+                <span class="topic-tag">codecrafters</span>
+              </div>
+              <div class="repo-footer">
+                <div class="repo-stats">
+                  <div class="repo-stat">
+                    <div class="language-indicator python"></div>
+                    <span>Python</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="star-outline"></ion-icon>
+                    <span>2</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="git-branch-outline"></ion-icon>
+                    <span>1</span>
+                  </div>
+                </div>
+                <a href="https://github.com/UsmanBukari/UsmanBukari-codecrafters-http-server-python" target="_blank" class="repo-link">
+                  <ion-icon name="open-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <!-- RAM Optimiser Repo -->
+            <div class="repo-card">
+              <div class="repo-header">
+                <div class="repo-name">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <span>RamOptimise</span>
+                </div>
+                <div class="repo-visibility">Public</div>
+              </div>
+              <p class="repo-description">
+                A system optimization tool to improve RAM usage by identifying and cleaning up unused memory segments.
+              </p>
+              <div class="repo-topics">
+                <span class="topic-tag">python</span>
+                <span class="topic-tag">system-optimization</span>
+                <span class="topic-tag">memory-management</span>
+                <span class="topic-tag">performance</span>
+              </div>
+              <div class="repo-footer">
+                <div class="repo-stats">
+                  <div class="repo-stat">
+                    <div class="language-indicator python"></div>
+                    <span>Python</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="star-outline"></ion-icon>
+                    <span>1</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="git-branch-outline"></ion-icon>
+                    <span>1</span>
+                  </div>
+                </div>
+                <a href="https://github.com/UsmanBuk/RamOptimise" target="_blank" class="repo-link">
+                  <ion-icon name="open-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Website Repo -->
+            <div class="repo-card">
+              <div class="repo-header">
+                <div class="repo-name">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <span>portfolio-website</span>
+                </div>
+                <div class="repo-visibility">Public</div>
+              </div>
+              <p class="repo-description">
+                Modern responsive portfolio website built with HTML, CSS, and JavaScript featuring interactive UI components and AI chatbot integration.
+              </p>
+              <div class="repo-topics">
+                <span class="topic-tag">html</span>
+                <span class="topic-tag">css</span>
+                <span class="topic-tag">javascript</span>
+                <span class="topic-tag">portfolio</span>
+                <span class="topic-tag">responsive</span>
+              </div>
+              <div class="repo-footer">
+                <div class="repo-stats">
+                  <div class="repo-stat">
+                    <div class="language-indicator html"></div>
+                    <span>HTML</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="star-outline"></ion-icon>
+                    <span>4</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="git-branch-outline"></ion-icon>
+                    <span>2</span>
+                  </div>
+                </div>
+                <a href="https://github.com/UsmanBuk/PortfolioWebsite" target="_blank" class="repo-link">
+                  <ion-icon name="open-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <!-- Chalkys Project Repo -->
+            <div class="repo-card">
+              <div class="repo-header">
+                <div class="repo-name">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <span>chalkys-ecommerce</span>
+                </div>
+                <div class="repo-visibility">Private</div>
+              </div>
+              <p class="repo-description">
+                Large-scale e-commerce platform handling 500K+ products with AI-powered features, built on Shopify with custom Python integrations.
+              </p>
+              <div class="repo-topics">
+                <span class="topic-tag">shopify</span>
+                <span class="topic-tag">python</span>
+                <span class="topic-tag">ecommerce</span>
+                <span class="topic-tag">ai</span>
+                <span class="topic-tag">liquid</span>
+              </div>
+              <div class="repo-footer">
+                <div class="repo-stats">
+                  <div class="repo-stat">
+                    <div class="language-indicator liquid"></div>
+                    <span>Liquid</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="star-outline"></ion-icon>
+                    <span>8</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="git-branch-outline"></ion-icon>
+                    <span>5</span>
+                  </div>
+                </div>
+                <a href="https://chalkys.com" target="_blank" class="repo-link">
+                  <ion-icon name="open-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+
+            <!-- NHS Healthcare Project -->
+            <div class="repo-card">
+              <div class="repo-header">
+                <div class="repo-name">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  <span>nhs-healthcare-chatbot</span>
+                </div>
+                <div class="repo-visibility">Private</div>
+              </div>
+              <p class="repo-description">
+                Healthcare data pipeline and AI chatbot system for NHS South Yorkshire, featuring web scraping, Azure AI Search, and RAG implementation.
+              </p>
+              <div class="repo-topics">
+                <span class="topic-tag">python</span>
+                <span class="topic-tag">azure</span>
+                <span class="topic-tag">ai</span>
+                <span class="topic-tag">healthcare</span>
+                <span class="topic-tag">chatbot</span>
+              </div>
+              <div class="repo-footer">
+                <div class="repo-stats">
+                  <div class="repo-stat">
+                    <div class="language-indicator python"></div>
+                    <span>Python</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="star-outline"></ion-icon>
+                    <span>12</span>
+                  </div>
+                  <div class="repo-stat">
+                    <ion-icon name="git-branch-outline"></ion-icon>
+                    <span>8</span>
+                  </div>
+                </div>
+                <a href="#" class="repo-link disabled">
+                  <ion-icon name="lock-closed-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
       </article>
 
       <!-- #RESUME -->
@@ -1674,24 +3612,73 @@
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
         </header>
+        
+        <!-- Portfolio Statistics -->
+        <section class="portfolio-stats">
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-number">40%</span>
+            <span class="stat-label">Performance Boost</span>
+          </div>
+        </section>
+
         <section class="projects">
-          <!-- Updated Filter List -->
+          <!-- Search Bar -->
+          <div class="portfolio-search">
+            <div class="search-wrapper">
+              <ion-icon name="search-outline" class="search-icon"></ion-icon>
+              <input type="text" class="search-input" placeholder="Search projects..." id="portfolio-search">
+              <button class="search-clear" id="search-clear" style="display: none;">
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <!-- Enhanced Filter List -->
           <ul class="filter-list">
-            
             <li class="filter-item">
-              <button data-filter-btn>Web Development</button>
+              <button class="filter-btn active" data-filter-btn>
+                <span class="filter-icon">🌟</span>
+                <span class="filter-text">All</span>
+              </button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Cloud & Devops</button>
+              <button class="filter-btn" data-filter-btn>
+                <span class="filter-icon">🌐</span>
+                <span class="filter-text">Web Development</span>
+              </button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Ai and Machine Learning</button>
+              <button class="filter-btn" data-filter-btn>
+                <span class="filter-icon">☁️</span>
+                <span class="filter-text">Cloud & DevOps</span>
+              </button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Mobile Applications</button>
+              <button class="filter-btn" data-filter-btn>
+                <span class="filter-icon">🤖</span>
+                <span class="filter-text">AI & Machine Learning</span>
+              </button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Systems Programming</button>
+              <button class="filter-btn" data-filter-btn>
+                <span class="filter-icon">📱</span>
+                <span class="filter-text">Mobile Applications</span>
+              </button>
+            </li>
+            <li class="filter-item">
+              <button class="filter-btn" data-filter-btn>
+                <span class="filter-icon">⚙️</span>
+                <span class="filter-text">Systems Programming</span>
+              </button>
             </li>
           </ul>
           <div class="filter-select-box">
@@ -1738,8 +3725,15 @@
                     A Python Gradio app for processing and visualizing CSV files using pandas to match Sage Intacct with JP Morgan.
                   </div>
                 </figure>
-                <h3 class="project-title">Python Gradio App</h3>
-                <p class="project-category">Web Development</p>
+                <div class="project-content">
+                  <h3 class="project-title">Python Gradio App</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Gradio</span>
+                    <span class="tech-badge">Pandas</span>
+                  </div>
+                  <p class="project-category">Web Development</p>
+                </div>
               </a>
             </li>
             <li class="project-item active" data-filter-item data-category="web development">
@@ -1753,8 +3747,16 @@
                     Myatol – a PHP Laravel-based business application that enables customers to securely manage their operations with the same reliability and assurance that ATOL provides in the travel industry.
                   </div>
                 </figure>
-                <h3 class="project-title">myAtol</h3>
-                <p class="project-category">Web Development</p>
+                <div class="project-content">
+                  <h3 class="project-title">myAtol</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">Laravel</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">Bootstrap</span>
+                  </div>
+                  <p class="project-category">Web Development</p>
+                </div>
               </a>
             </li>
             
@@ -1770,8 +3772,17 @@
                     A modern ecommerce project for Chalkys handling 500,000 products with a focus on performance and scalability.
                   </div>
                 </figure>
-                <h3 class="project-title">Chalkys</h3>
-                <p class="project-category">Web Development</p>
+                <div class="project-content">
+                  <h3 class="project-title">Chalkys</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Shopify</span>
+                    <span class="tech-badge">Liquid</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">OpenAI API</span>
+                    <span class="tech-badge">AWS</span>
+                  </div>
+                  <p class="project-category">Web Development</p>
+                </div>
               </a>
             </li>
             <li class="project-item active" data-filter-item data-category="web development">
@@ -1840,8 +3851,8 @@
             <!-- Cloud & Devops -->
             
            
-            <!-- Ai and Machine Learning -->
-            <li class="project-item active" data-filter-item data-category="ai and machine learning">
+            <!-- AI and Machine Learning -->
+            <li class="project-item active" data-filter-item data-category="ai & machine learning">
               <a href="https://github.com/UsmanBuk/ai-sentiment-analyze" target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -1852,8 +3863,16 @@
                     AI-powered sentiment analysis tool using IBM Watson's BERT-based NLP service to analyze emotional tone and sentiment from text input.
                   </div>
                 </figure>
-                <h3 class="project-title">AI Sentiment Analysis</h3>
-                <p class="project-category">AI and Machine Learning</p>
+                <div class="project-content">
+                  <h3 class="project-title">AI Sentiment Analysis</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">IBM Watson</span>
+                    <span class="tech-badge">BERT</span>
+                    <span class="tech-badge">NLP</span>
+                  </div>
+                  <p class="project-category">AI and Machine Learning</p>
+                </div>
               </a>
             </li>
             
@@ -1965,17 +3984,304 @@ data-category="systems programming"
       </article>
       <article class="courses" data-page="courses">
         <header>
-          <h2 class="h2 article-title">Courses</h2>
+          <h2 class="h2 article-title">Professional Development</h2>
         </header>
+        
+                 <!-- Courses Statistics -->
+         <section class="courses-stats">
+           <div class="stat-item">
+             <span class="stat-number">8+</span>
+             <span class="stat-label">Courses Completed</span>
+           </div>
+           <div class="stat-item">
+             <span class="stat-number">285+</span>
+             <span class="stat-label">Hours of Learning</span>
+           </div>
+           <div class="stat-item">
+             <span class="stat-number">4</span>
+             <span class="stat-label">Platforms</span>
+           </div>
+         </section>
+
+        <!-- Course Categories Filter -->
+        <section class="course-filters">
+          <div class="filter-tabs">
+            <button class="course-filter-btn active" data-course-filter="all">
+              <span class="filter-icon">📚</span>
+              <span class="filter-text">All Courses</span>
+            </button>
+            <button class="course-filter-btn" data-course-filter="development">
+              <span class="filter-icon">💻</span>
+              <span class="filter-text">Development</span>
+            </button>
+            <button class="course-filter-btn" data-course-filter="data-ai">
+              <span class="filter-icon">🤖</span>
+              <span class="filter-text">Data & AI</span>
+            </button>
+            <button class="course-filter-btn" data-course-filter="certification">
+              <span class="filter-icon">🏆</span>
+              <span class="filter-text">Certifications</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Enhanced Courses Grid -->
         <section class="courses-content">
-          <ul class="courses-list">
-            <li class="course-item">IBM Full Stack Software Developer Professional (Coursera)</li>
-            <li class="course-item">Master JavaScript from Scratch (with jQuery and React JS) – Ryan Dhungel (Udemy)</li>
-            <li class="course-item">Master Python by Building 100 Projects in 100 Days – Dr Angela Yu (Udemy)</li>
-            <li class="course-item">Databricks Certified Data Engineer Associate (Udemy)</li>
-            <li class="course-item">Python for Data Science, AI &amp; Development – IBM</li>
-            <li class="course-item">Generative AI: Introduction and Applications – IBM</li>
-          </ul>
+          <div class="courses-grid">
+            
+            <!-- IBM Full Stack Course -->
+            <div class="course-card" data-course-category="development certification">
+              <div class="course-header">
+                <div class="course-provider">
+                  <img src="./assets/images/logo-1-color.png" alt="IBM" class="provider-logo">
+                  <span class="provider-name">IBM via Coursera</span>
+                </div>
+                <div class="course-badge professional">Professional</div>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">IBM Full Stack Software Developer Professional</h3>
+                <p class="course-description">Comprehensive program covering full-stack development with modern technologies and industry best practices.</p>
+                <div class="course-skills">
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">Kubernetes</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-duration">
+                  <ion-icon name="time-outline"></ion-icon>
+                  <span>6 months</span>
+                </div>
+                <div class="course-status completed">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <span>Completed</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- JavaScript Master Course -->
+            <div class="course-card" data-course-category="development">
+              <div class="course-header">
+                <div class="course-provider">
+                  <img src="./assets/images/logo-2-color.png" alt="Udemy" class="provider-logo">
+                  <span class="provider-name">Udemy</span>
+                </div>
+                <div class="course-badge advanced">Advanced</div>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">Master JavaScript from Scratch</h3>
+                <p class="course-description">Complete JavaScript mastery including jQuery and React JS with hands-on projects and real-world applications.</p>
+                <div class="course-skills">
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">jQuery</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">DOM</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-duration">
+                  <ion-icon name="time-outline"></ion-icon>
+                  <span>40 hours</span>
+                </div>
+                <div class="course-instructor">
+                  <ion-icon name="person-outline"></ion-icon>
+                  <span>Ryan Dhungel</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Python Master Course -->
+            <div class="course-card" data-course-category="development">
+              <div class="course-header">
+                <div class="course-provider">
+                  <img src="./assets/images/logo-2-color.png" alt="Udemy" class="provider-logo">
+                  <span class="provider-name">Udemy</span>
+                </div>
+                <div class="course-badge intensive">Intensive</div>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">Master Python by Building 100 Projects in 100 Days</h3>
+                <p class="course-description">Intensive Python bootcamp with 100 hands-on projects covering web development, data science, and automation.</p>
+                <div class="course-skills">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Flask</span>
+                  <span class="skill-tag">Django</span>
+                  <span class="skill-tag">APIs</span>
+                  <span class="skill-tag">Automation</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-duration">
+                  <ion-icon name="time-outline"></ion-icon>
+                  <span>100 days</span>
+                </div>
+                <div class="course-instructor">
+                  <ion-icon name="person-outline"></ion-icon>
+                  <span>Dr Angela Yu</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Databricks Course -->
+            <div class="course-card" data-course-category="data-ai certification">
+              <div class="course-header">
+                <div class="course-provider">
+                  <img src="./assets/images/logo-3-color.png" alt="Databricks" class="provider-logo">
+                  <span class="provider-name">Databricks via Udemy</span>
+                </div>
+                <div class="course-badge certification">Certification</div>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">Databricks Certified Data Engineer Associate</h3>
+                <p class="course-description">Professional certification preparation covering data engineering fundamentals, ETL processes, and big data analytics.</p>
+                <div class="course-skills">
+                  <span class="skill-tag">Spark</span>
+                  <span class="skill-tag">SQL</span>
+                  <span class="skill-tag">ETL</span>
+                  <span class="skill-tag">Data Lakes</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-duration">
+                  <ion-icon name="time-outline"></ion-icon>
+                  <span>25 hours</span>
+                </div>
+                <div class="course-status completed">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <span>Certified</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Python for Data Science -->
+            <div class="course-card" data-course-category="data-ai">
+              <div class="course-header">
+                <div class="course-provider">
+                  <img src="./assets/images/logo-1-color.png" alt="IBM" class="provider-logo">
+                  <span class="provider-name">IBM</span>
+                </div>
+                <div class="course-badge specialization">Specialization</div>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">Python for Data Science, AI & Development</h3>
+                <p class="course-description">Comprehensive introduction to Python for data analysis, machine learning, and AI application development.</p>
+                <div class="course-skills">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Pandas</span>
+                  <span class="skill-tag">NumPy</span>
+                  <span class="skill-tag">Machine Learning</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-duration">
+                  <ion-icon name="time-outline"></ion-icon>
+                  <span>20 hours</span>
+                </div>
+                <div class="course-status completed">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <span>Completed</span>
+                </div>
+              </div>
+            </div>
+
+                         <!-- Generative AI Course -->
+             <div class="course-card" data-course-category="data-ai">
+               <div class="course-header">
+                 <div class="course-provider">
+                   <img src="./assets/images/logo-1-color.png" alt="IBM" class="provider-logo">
+                   <span class="provider-name">IBM</span>
+                 </div>
+                 <div class="course-badge cutting-edge">Cutting Edge</div>
+               </div>
+               <div class="course-content">
+                 <h3 class="course-title">Generative AI: Introduction and Applications</h3>
+                 <p class="course-description">Latest developments in generative AI, covering GPT models, prompt engineering, and practical AI applications.</p>
+                 <div class="course-skills">
+                   <span class="skill-tag">Generative AI</span>
+                   <span class="skill-tag">GPT</span>
+                   <span class="skill-tag">Prompt Engineering</span>
+                   <span class="skill-tag">LLMs</span>
+                 </div>
+               </div>
+               <div class="course-footer">
+                 <div class="course-duration">
+                   <ion-icon name="time-outline"></ion-icon>
+                   <span>15 hours</span>
+                 </div>
+                 <div class="course-status completed">
+                   <ion-icon name="checkmark-circle"></ion-icon>
+                   <span>Completed</span>
+                 </div>
+               </div>
+             </div>
+
+             <!-- AWS Solutions Architect Course -->
+             <div class="course-card" data-course-category="certification">
+               <div class="course-header">
+                 <div class="course-provider">
+                   <img src="./assets/images/logo-4-color.png" alt="AWS" class="provider-logo">
+                   <span class="provider-name">AWS</span>
+                 </div>
+                 <div class="course-badge certification">Certification</div>
+               </div>
+               <div class="course-content">
+                 <h3 class="course-title">AWS Solutions Architect Associate</h3>
+                 <p class="course-description">Comprehensive training in designing scalable, secure, and cost-effective cloud architectures on AWS platform.</p>
+                 <div class="course-skills">
+                   <span class="skill-tag">AWS</span>
+                   <span class="skill-tag">Cloud Architecture</span>
+                   <span class="skill-tag">EC2</span>
+                   <span class="skill-tag">S3</span>
+                   <span class="skill-tag">VPC</span>
+                 </div>
+               </div>
+               <div class="course-footer">
+                 <div class="course-duration">
+                   <ion-icon name="time-outline"></ion-icon>
+                   <span>65 hours</span>
+                 </div>
+                 <div class="course-status completed">
+                   <ion-icon name="checkmark-circle"></ion-icon>
+                   <span>Completed</span>
+                 </div>
+               </div>
+             </div>
+
+             <!-- AWS Cloud Practitioner Course -->
+             <div class="course-card" data-course-category="certification">
+               <div class="course-header">
+                 <div class="course-provider">
+                   <img src="./assets/images/logo-4-color.png" alt="AWS" class="provider-logo">
+                   <span class="provider-name">AWS</span>
+                 </div>
+                 <div class="course-badge certification">Certification</div>
+               </div>
+               <div class="course-content">
+                 <h3 class="course-title">AWS Cloud Practitioner</h3>
+                 <p class="course-description">Foundational understanding of AWS cloud services, security, pricing, and core architectural principles.</p>
+                 <div class="course-skills">
+                   <span class="skill-tag">AWS</span>
+                   <span class="skill-tag">Cloud Fundamentals</span>
+                   <span class="skill-tag">Security</span>
+                   <span class="skill-tag">Pricing</span>
+                   <span class="skill-tag">Best Practices</span>
+                 </div>
+               </div>
+               <div class="course-footer">
+                 <div class="course-duration">
+                   <ion-icon name="time-outline"></ion-icon>
+                   <span>20 hours</span>
+                 </div>
+                 <div class="course-status completed">
+                   <ion-icon name="checkmark-circle"></ion-icon>
+                   <span>Completed</span>
+                 </div>
+               </div>
+             </div>
+
+           </div>
         </section>
       </article>
       
@@ -2029,6 +4335,252 @@ data-category="systems programming"
     });
   </script>
 
+  <!-- Enhanced Portfolio Filter & Search System -->
+  <script>
+    // Portfolio filter and search functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn[data-filter-btn]');
+      const projectItems = document.querySelectorAll('.project-item[data-filter-item]');
+      const searchInput = document.getElementById('portfolio-search');
+      const searchClear = document.getElementById('search-clear');
+      
+      let currentFilter = 'all';
+      let currentSearch = '';
+      
+      // Filter functionality
+      function filterProjects() {
+        let visibleCount = 0;
+        
+        projectItems.forEach((item, index) => {
+          const category = item.getAttribute('data-category');
+          const title = item.querySelector('.project-title')?.textContent.toLowerCase() || '';
+          const techBadges = Array.from(item.querySelectorAll('.tech-badge')).map(badge => badge.textContent.toLowerCase()).join(' ');
+          const searchableText = (title + ' ' + techBadges).toLowerCase();
+          
+          const matchesFilter = currentFilter === 'all' || category === currentFilter;
+          const matchesSearch = currentSearch === '' || searchableText.includes(currentSearch.toLowerCase());
+          const shouldShow = matchesFilter && matchesSearch;
+          
+          // Add exit animation
+          item.style.transform = 'translateY(20px) scale(0.9)';
+          item.style.opacity = '0';
+          item.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          
+          setTimeout(() => {
+            if (shouldShow) {
+              item.style.display = 'block';
+              visibleCount++;
+              // Stagger entrance animation
+              setTimeout(() => {
+                item.style.transform = 'translateY(0) scale(1)';
+                item.style.opacity = '1';
+              }, visibleCount * 50);
+            } else {
+              item.style.display = 'none';
+            }
+          }, 150);
+        });
+        
+        // Show "no results" message if needed
+        setTimeout(() => {
+          showNoResults(visibleCount === 0);
+        }, 300);
+      }
+      
+      // Filter button functionality
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Get filter category
+          currentFilter = this.querySelector('.filter-text')?.textContent.toLowerCase() || this.textContent.toLowerCase();
+          
+          filterProjects();
+        });
+      });
+      
+      // Search functionality
+      searchInput.addEventListener('input', function() {
+        currentSearch = this.value.trim();
+        
+        // Show/hide clear button
+        if (currentSearch) {
+          searchClear.style.display = 'flex';
+        } else {
+          searchClear.style.display = 'none';
+        }
+        
+        filterProjects();
+      });
+      
+      // Clear search functionality
+      searchClear.addEventListener('click', function() {
+        searchInput.value = '';
+        currentSearch = '';
+        this.style.display = 'none';
+        searchInput.focus();
+        filterProjects();
+      });
+      
+      // No results message
+      function showNoResults(show) {
+        let noResultsMsg = document.querySelector('.no-results-message');
+        
+        if (show && !noResultsMsg) {
+          noResultsMsg = document.createElement('div');
+          noResultsMsg.className = 'no-results-message';
+          noResultsMsg.innerHTML = `
+            <div class="no-results-content">
+              <ion-icon name="search-outline" class="no-results-icon"></ion-icon>
+              <h3>No projects found</h3>
+              <p>Try adjusting your search or filter criteria</p>
+            </div>
+          `;
+          document.querySelector('.project-list').appendChild(noResultsMsg);
+          
+          // Add CSS for no results message
+          const style = document.createElement('style');
+          style.textContent = `
+            .no-results-message {
+              grid-column: 1 / -1;
+              text-align: center;
+              padding: 60px 20px;
+              color: var(--light-gray);
+            }
+            .no-results-content {
+              max-width: 300px;
+              margin: 0 auto;
+            }
+            .no-results-icon {
+              font-size: 4rem;
+              color: var(--jet);
+              margin-bottom: 20px;
+            }
+            .no-results-message h3 {
+              color: var(--white-2);
+              margin-bottom: 10px;
+              font-size: 1.5rem;
+            }
+            .no-results-message p {
+              font-size: 0.9rem;
+              opacity: 0.8;
+            }
+          `;
+          document.head.appendChild(style);
+        } else if (!show && noResultsMsg) {
+          noResultsMsg.remove();
+        }
+      }
+      
+             // Initialize with "All" filter active
+       const allButton = document.querySelector('.filter-btn[data-filter-btn]');
+       if (allButton && !document.querySelector('.filter-btn.active')) {
+         allButton.classList.add('active');
+       }
+       
+       // Add keyboard shortcuts
+       document.addEventListener('keydown', function(e) {
+         // Focus search on Ctrl/Cmd + K
+         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+           e.preventDefault();
+           if (searchInput) searchInput.focus();
+         }
+         
+         // Clear search on Escape
+         if (e.key === 'Escape' && searchInput && document.activeElement === searchInput) {
+           searchInput.value = '';
+           currentSearch = '';
+           searchClear.style.display = 'none';
+           searchInput.blur();
+           filterProjects();
+         }
+       });
+
+       // Initialize Course Filters
+       initializeCourseFilters();
+     });
+     
+     // Scroll to top functionality
+     const scrollToTopBtn = document.getElementById('scroll-to-top');
+     
+     window.addEventListener('scroll', function() {
+       if (window.pageYOffset > 300) {
+         scrollToTopBtn.classList.add('visible');
+       } else {
+         scrollToTopBtn.classList.remove('visible');
+       }
+     });
+     
+     scrollToTopBtn.addEventListener('click', function() {
+       window.scrollTo({
+         top: 0,
+         behavior: 'smooth'
+       });
+     });
+     
+     // Course Filter Functionality - Initialize after DOM is loaded
+     function initializeCourseFilters() {
+       const courseFilterButtons = document.querySelectorAll('.course-filter-btn[data-course-filter]');
+       const courseCards = document.querySelectorAll('.course-card[data-course-category]');
+       
+       // Check if elements exist
+       if (courseFilterButtons.length === 0 || courseCards.length === 0) {
+         return; // Exit if elements don't exist
+       }
+       
+       console.log('Course filters initialized:', courseFilterButtons.length, 'buttons,', courseCards.length, 'cards');
+       
+       courseFilterButtons.forEach(button => {
+         button.addEventListener('click', function() {
+           console.log('Filter clicked:', this.getAttribute('data-course-filter'));
+           
+           // Remove active class from all buttons
+           courseFilterButtons.forEach(btn => btn.classList.remove('active'));
+           
+           // Add active class to clicked button
+           this.classList.add('active');
+           
+           // Get filter category
+           const filterCategory = this.getAttribute('data-course-filter');
+           
+           // Filter course cards with animation
+           let visibleCount = 0;
+           courseCards.forEach((card, index) => {
+             const categories = card.getAttribute('data-course-category').split(' ');
+             const shouldShow = filterCategory === 'all' || categories.includes(filterCategory);
+             
+             console.log('Card categories:', categories, 'Should show:', shouldShow);
+             
+             // Add exit animation
+             card.style.transform = 'translateY(20px) scale(0.9)';
+             card.style.opacity = '0';
+             card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+             
+             setTimeout(() => {
+               if (shouldShow) {
+                 card.style.display = 'block';
+                 visibleCount++;
+                 // Stagger entrance animation
+                 setTimeout(() => {
+                   card.style.transform = 'translateY(0) scale(1)';
+                   card.style.opacity = '1';
+                 }, visibleCount * 100);
+               } else {
+                 card.style.display = 'none';
+               }
+             }, 150);
+           });
+         });
+       });
+     }
+     
+
+   </script>
+
   <!-- Navigation Active Link Fix -->
   <script>
     const navLinks = document.querySelectorAll("[data-nav-link]");
@@ -2053,6 +4605,11 @@ data-category="systems programming"
       });
     });
   </script>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scroll-to-top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </button>
 
   <!-- Chatbot Widget -->
   <div class="chatbot-container">

@@ -2082,7 +2082,348 @@ textarea.form-input::-webkit-resizer { display: none; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-/* Tidy up the last item’s margin if you ever revert to vertical list */
+/* Tidy up the last item's margin if you ever revert to vertical list */
 .course-item:last-child {
   margin-bottom: 0;
+}
+
+/* ─── ENHANCED PORTFOLIO SECTION ─── */
+
+/* Portfolio Header Enhancement */
+.portfolio header {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.portfolio .article-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.portfolio .article-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange-yellow-crayola), transparent);
+  border-radius: 2px;
+  animation: slideIn 0.6s ease;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+/* Enhanced Filter Buttons */
+.filter-list {
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-item button {
+  background: var(--eerie-black-2);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-item button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 180, 0, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.filter-item button:hover::before {
+  width: 100px;
+  height: 100px;
+}
+
+.filter-item button:hover {
+  transform: translateY(-2px);
+  border-color: var(--orange-yellow-crayola);
+  box-shadow: 0 4px 12px rgba(255, 180, 0, 0.15);
+}
+
+.filter-item button.active {
+  background: linear-gradient(135deg, var(--orange-yellow-crayola), #ffb400);
+  color: var(--smoky-black);
+  border-color: var(--orange-yellow-crayola);
+  box-shadow: 0 4px 15px rgba(255, 180, 0, 0.3);
+  font-weight: 600;
+}
+
+/* Enhanced Project Cards */
+.project-list {
+  gap: 25px;
+}
+
+.project-item {
+  position: relative;
+  background: var(--eerie-black-2);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.project-item > a {
+  display: block;
+  position: relative;
+}
+
+/* Enhanced Project Image Container */
+.project-img {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.project-item:hover .project-img img {
+  transform: scale(1.15);
+}
+
+/* Loading Animation for Images */
+.project-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.project-img img[loading="lazy"] {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Project Tooltip Enhancement */
+.project-tooltip {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.7)
+  );
+  color: var(--white-1);
+  padding: 20px;
+  font-size: var(--fs-7);
+  line-height: 1.6;
+  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.project-item:hover .project-tooltip {
+  bottom: 0;
+}
+
+/* Enhanced Icon Box */
+.project-item-icon-box {
+  --scale: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--orange-yellow-crayola), #ffb400);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  box-shadow: 0 8px 16px rgba(255, 180, 0, 0.3);
+}
+
+.project-item:hover .project-item-icon-box {
+  --scale: 1;
+  opacity: 1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.project-item-icon-box ion-icon {
+  color: var(--smoky-black);
+  font-size: 24px;
+}
+
+/* Project Title and Category Enhancement */
+.project-title,
+.project-category {
+  padding: 0 20px;
+  transition: color 0.3s ease;
+}
+
+.project-title {
+  margin-top: 15px;
+  font-size: var(--fs-4);
+  font-weight: 600;
+  color: var(--white-1);
+  margin-bottom: 8px;
+}
+
+.project-category {
+  padding-bottom: 15px;
+  font-size: var(--fs-7);
+  color: var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.project-item:hover .project-title {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Category-specific accent colors */
+.project-item[data-category="web development"] .project-category {
+  color: #4fc3f7;
+}
+
+.project-item[data-category="cloud & devops"] .project-category {
+  color: #66bb6a;
+}
+
+.project-item[data-category="ai and machine learning"] .project-category {
+  color: #ab47bc;
+}
+
+.project-item[data-category="mobile applications"] .project-category {
+  color: #ff7043;
+}
+
+.project-item[data-category="systems programming"] .project-category {
+  color: #ffd54f;
+}
+
+/* Grid Layout Enhancements */
+@media (min-width: 580px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+
+  .project-img {
+    height: 280px;
+  }
+}
+
+/* Smooth Scroll Animation for Projects */
+.project-item.active {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading State for Projects */
+.project-item.loading {
+  position: relative;
+  background: var(--eerie-black-2);
+}
+
+.project-item.loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg,
+    var(--eerie-black-2) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    var(--eerie-black-2) 100%
+  );
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
