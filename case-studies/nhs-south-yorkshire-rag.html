@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NHS South Yorkshire ICB Case Study | Senior AI Engineer</title>
+    <meta
+      name="description"
+      content="Production RAG system and agentic LLM orchestration for NHS South Yorkshire ICB: hybrid search, real-time grounding, data pipelines, measurable outcomes."
+    />
+
+    <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <div class="main-content">
+        <article class="case-study active">
+          <header class="case-study-header">
+            <p class="case-study-breadcrumbs">
+              <a href="../index.html" class="case-study-backlink" aria-label="Back to portfolio">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                Back to portfolio
+              </a>
+            </p>
+
+            <h2 class="h2 article-title">NHS South Yorkshire ICB</h2>
+            <p class="case-study-subtitle">Production RAG System &amp; Agentic LLM Orchestration (Greenfield)</p>
+
+            <div class="case-study-badges" aria-label="Key capabilities">
+              <span class="case-study-badge">Production RAG</span>
+              <span class="case-study-badge">Azure AI Agent</span>
+              <span class="case-study-badge">Hybrid Search</span>
+              <span class="case-study-badge">Bing Grounding</span>
+              <span class="case-study-badge">MCP Integration</span>
+              <span class="case-study-badge">Azure Functions</span>
+            </div>
+
+            <div class="case-study-callout">
+              <p class="case-study-callout-title">Role</p>
+              <p class="case-study-callout-text">
+                Gen AI Developer &amp; Data Architecture Specialist — designed, built, deployed, and operated an end-to-end
+                citizen-facing service discovery assistant with grounded, measurable performance.
+              </p>
+            </div>
+          </header>
+
+          <section class="case-study-section">
+            <h3 class="h3 case-study-section-title">Impact (measured)</h3>
+            <div class="case-study-metrics">
+              <div class="case-study-metric">
+                <div class="case-study-metric-label">Monthly active users</div>
+                <div class="case-study-metric-value">3,000+</div>
+              </div>
+              <div class="case-study-metric">
+                <div class="case-study-metric-label">Query success rate</div>
+                <div class="case-study-metric-value">94%</div>
+              </div>
+              <div class="case-study-metric">
+                <div class="case-study-metric-label">User satisfaction</div>
+                <div class="case-study-metric-value">4.8/5</div>
+              </div>
+              <div class="case-study-metric">
+                <div class="case-study-metric-label">Guideline alignment</div>
+                <div class="case-study-metric-value">90%</div>
+              </div>
+              <div class="case-study-metric">
+                <div class="case-study-metric-label">Uptime</div>
+                <div class="case-study-metric-value">99.7%</div>
+              </div>
+              <div class="case-study-metric">
+                <div class="case-study-metric-label">Daily records processed</div>
+                <div class="case-study-metric-value">15,000+</div>
+              </div>
+              <div class="case-study-metric">
+                <div class="case-study-metric-label">Pipeline latency</div>
+                <div class="case-study-metric-value">&lt;5s</div>
+              </div>
+              <div class="case-study-metric">
+                <div class="case-study-metric-label">Time-to-resolution</div>
+                <div class="case-study-metric-value">12m → &lt;30s</div>
+              </div>
+            </div>
+            <p class="case-study-footnote">
+              Notes: “0 reported hallucination incidents” refers to production telemetry and issue tracking during the measured period.
+            </p>
+          </section>
+
+          <section class="case-study-section">
+            <h3 class="h3 case-study-section-title">Problem</h3>
+            <ul class="case-study-list">
+              <li>Citizens needed fast, reliable discovery of local health services and commissioned care across fragmented sources.</li>
+              <li>Static datasets went stale; new guidance needed to be reflected quickly without manual re-index cycles.</li>
+              <li>Accuracy requirements were high (clinical guidance alignment) with strict constraints on hallucinations.</li>
+            </ul>
+          </section>
+
+          <section class="case-study-section">
+            <h3 class="h3 case-study-section-title">Solution</h3>
+            <p class="case-study-paragraph">
+              I engineered a production-grade Retrieval Augmented Generation (RAG) system using Azure AI Agent SDK with LangChain
+              custom retrieval chains, LlamaIndex input sanitization/enhancement, automated critique loops, and multi-source grounding
+              across Bing Search and a proprietary NHS knowledge base. The system combined hybrid retrieval (lexical + semantic + web)
+              with tool orchestration and validation steps to deliver grounded answers with measurable quality.
+            </p>
+          </section>
+
+          <section class="case-study-section">
+            <h3 class="h3 case-study-section-title">Architecture</h3>
+            <div class="case-study-diagram">
+              <img
+                src="../assets/images/nhs-rag-architecture.svg"
+                alt="Architecture diagram showing ingestion, enrichment, hybrid search indexing, multi-source retrieval with Bing grounding, LLM agent orchestration, delivery via web app and MCP server, and observability."
+                loading="lazy"
+              />
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h3 class="h3 case-study-section-title">Key engineering highlights</h3>
+            <ul class="case-study-list">
+              <li>
+                Built a production Azure AI Agent with real-time web grounding (Bing Search API), reducing outdated information issues by
+                95% and enabling responses to emerging guidance within 24 hours of publication.
+              </li>
+              <li>
+                Implemented Azure AI Search hybrid retrieval with 768-dimensional embeddings (OpenAI Ada-003), improving service discovery
+                accuracy by 85% and reducing query resolution time from ~12 minutes to under 30 seconds.
+              </li>
+              <li>
+                Developed agentic orchestration pipelines (tool use + validation) including automated enrichment (auto-tagging,
+                extractive/abstractive summarization, ML metadata augmentation) improving data completeness by 73% and search relevance by 61%.
+              </li>
+              <li>
+                Designed an event-driven Azure Functions pipeline with queue triggers and automatic failover achieving 99.7% uptime while
+                processing 15,000+ daily records with sub-5-second latency.
+              </li>
+              <li>
+                Architected fault-tolerant web scraping with Crawl4AI and custom middleware, extracting structured data from 50+ regional
+                websites supporting a 1.4M population across South Yorkshire.
+              </li>
+            </ul>
+          </section>
+
+          <section class="case-study-section">
+            <h3 class="h3 case-study-section-title">Integration: Patient-facing access via MCP</h3>
+            <p class="case-study-paragraph">
+              I developed a Model Context Protocol (MCP) server to expose the RAG chatbot directly inside the NHS South Yorkshire GP app,
+              allowing patients to query local services and real-time guidance without leaving the existing care interface—while preserving
+              the same grounded retrieval and validation pipeline.
+            </p>
+          </section>
+
+          <section class="case-study-section">
+            <h3 class="h3 case-study-section-title">Tech stack</h3>
+            <div class="case-study-stack">
+              <div class="case-study-stack-group">
+                <p class="case-study-stack-title">AI / Retrieval</p>
+                <p class="case-study-stack-items">
+                  Azure AI Agent SDK, Azure OpenAI (GPT-4o mini), LangChain, LlamaIndex, Azure AI Search, Bing Search API, Function Calling
+                </p>
+              </div>
+              <div class="case-study-stack-group">
+                <p class="case-study-stack-title">Application</p>
+                <p class="case-study-stack-items">Python, Quart (async Flask), React (Fluent UI), TypeScript, REST APIs</p>
+              </div>
+              <div class="case-study-stack-group">
+                <p class="case-study-stack-title">Data / Platform</p>
+                <p class="case-study-stack-items">
+                  Azure Functions, Azure Durable Functions, Cosmos DB (conversation history/memory), Azure CI/CD, event-driven microservices
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h3 class="h3 case-study-section-title">Want this outcome for your organisation?</h3>
+            <div class="case-study-cta-row">
+              <a class="case-study-cta primary" href="mailto:usmanbukhari541@gmail.com">
+                <ion-icon name="mail-outline"></ion-icon>
+                Contact me
+              </a>
+              <a class="case-study-cta secondary" href="../assets/documents/UsmanCV.pdf" target="_blank" rel="noopener">
+                <ion-icon name="download-outline"></ion-icon>
+                Download CV
+              </a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
+
+

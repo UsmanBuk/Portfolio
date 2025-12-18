@@ -2150,6 +2150,37 @@
       box-shadow: none;
     }
 
+    .repo-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .repo-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      color: var(--smoky-black);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .repo-cta ion-icon {
+      font-size: 1.1rem;
+    }
+
+    .repo-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 183, 3, 0.25);
+    }
+
 
 
     /* Responsive Design */
@@ -2987,9 +3018,19 @@
                     <span>8</span>
                   </div>
                 </div>
-                <a href="#" class="repo-link disabled">
-                  <ion-icon name="lock-closed-outline"></ion-icon>
-                </a>
+                <div class="repo-actions">
+                  <a
+                    href="./case-studies/nhs-south-yorkshire-rag.html"
+                    class="repo-cta"
+                    aria-label="Open NHS South Yorkshire ICB case study"
+                  >
+                    <ion-icon name="newspaper-outline"></ion-icon>
+                    <span>Case Study</span>
+                  </a>
+                  <a href="#" class="repo-link disabled" aria-label="Repository is private">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

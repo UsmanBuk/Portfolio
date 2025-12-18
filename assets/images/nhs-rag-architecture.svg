@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="NHS RAG system architecture diagram">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffdf6c"/>
+      <stop offset="1" stop-color="#b79a44"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141416"/>
+      <stop offset="1" stop-color="#0b0b0c"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffdf6c"/>
+    </marker>
+    <style>
+      .bg { fill: url(#panel); }
+      .title { font: 700 28px 'Poppins', Arial, sans-serif; fill: #ffffff; }
+      .subtitle { font: 500 14px 'Poppins', Arial, sans-serif; fill: rgba(255,255,255,0.8); }
+      .node { fill: rgba(255,255,255,0.04); stroke: url(#gold); stroke-width: 2; rx: 16; }
+      .nodeTitle { font: 700 14px 'Poppins', Arial, sans-serif; fill: #ffdf6c; }
+      .nodeBody { font: 400 12px 'Poppins', Arial, sans-serif; fill: rgba(255,255,255,0.86); }
+      .edge { stroke: rgba(255,223,108,0.9); stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .edgeDashed { stroke: rgba(255,223,108,0.6); stroke-width: 2; fill: none; stroke-dasharray: 6 6; marker-end: url(#arrow); }
+      .caption { font: 500 12px 'Poppins', Arial, sans-serif; fill: rgba(255,255,255,0.75); }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="700" rx="20"/>
+
+  <text class="title" x="40" y="56">NHS South Yorkshire ICB — Production RAG + Agentic Orchestration</text>
+  <text class="subtitle" x="40" y="82">Hybrid retrieval, real-time web grounding, data enrichment, MCP delivery, and observability</text>
+
+  <!-- Nodes -->
+  <rect class="node" x="40" y="130" width="250" height="150"/>
+  <text class="nodeTitle" x="60" y="160">Sources</text>
+  <text class="nodeBody" x="60" y="184">- 50+ regional websites</text>
+  <text class="nodeBody" x="60" y="204">- Proprietary NHS KB</text>
+  <text class="nodeBody" x="60" y="224">- Clinical guidance</text>
+  <text class="nodeBody" x="60" y="244">- Emerging web updates</text>
+
+  <rect class="node" x="330" y="130" width="250" height="150"/>
+  <text class="nodeTitle" x="350" y="160">Ingest &amp; Normalize</text>
+  <text class="nodeBody" x="350" y="184">- Crawl4AI + middleware</text>
+  <text class="nodeBody" x="350" y="204">- Azure Functions (events)</text>
+  <text class="nodeBody" x="350" y="224">- JSON schema validation</text>
+  <text class="nodeBody" x="350" y="244">- Dedup + quality checks</text>
+
+  <rect class="node" x="620" y="130" width="250" height="150"/>
+  <text class="nodeTitle" x="640" y="160">Enrichment</text>
+  <text class="nodeBody" x="640" y="184">- Auto-tagging</text>
+  <text class="nodeBody" x="640" y="204">- Summarization (ext/abs)</text>
+  <text class="nodeBody" x="640" y="224">- Metadata augmentation</text>
+  <text class="nodeBody" x="640" y="244">- Sanitization (LlamaIndex)</text>
+
+  <rect class="node" x="910" y="130" width="250" height="150"/>
+  <text class="nodeTitle" x="930" y="160">Index</text>
+  <text class="nodeBody" x="930" y="184">- Azure AI Search</text>
+  <text class="nodeBody" x="930" y="204">- Hybrid: lexical + vector</text>
+  <text class="nodeBody" x="930" y="224">- 768d embeddings</text>
+  <text class="nodeBody" x="930" y="244">- Freshness controls</text>
+
+  <rect class="node" x="190" y="360" width="300" height="170"/>
+  <text class="nodeTitle" x="210" y="392">Retrieval &amp; Grounding</text>
+  <text class="nodeBody" x="210" y="416">- Top-k hybrid retrieval</text>
+  <text class="nodeBody" x="210" y="436">- Multi-source grounding</text>
+  <text class="nodeBody" x="210" y="456">  Bing + proprietary data</text>
+  <text class="nodeBody" x="210" y="476">- Re-ranking + filters</text>
+  <text class="nodeBody" x="210" y="496">- Citation-ready context</text>
+
+  <rect class="node" x="520" y="360" width="320" height="170"/>
+  <text class="nodeTitle" x="540" y="392">LLM Agent Orchestration</text>
+  <text class="nodeBody" x="540" y="416">- Azure AI Agent SDK</text>
+  <text class="nodeBody" x="540" y="436">- Tool calling patterns</text>
+  <text class="nodeBody" x="540" y="456">- Automated critique loops</text>
+  <text class="nodeBody" x="540" y="476">- Reflexion-style self-correct</text>
+  <text class="nodeBody" x="540" y="496">- Grounded answers + citations</text>
+
+  <rect class="node" x="870" y="360" width="290" height="170"/>
+  <text class="nodeTitle" x="890" y="392">Delivery</text>
+  <text class="nodeBody" x="890" y="416">- React (Fluent UI) app</text>
+  <text class="nodeBody" x="890" y="436">- Quart API (async)</text>
+  <text class="nodeBody" x="890" y="456">- Cosmos DB memory</text>
+  <text class="nodeBody" x="890" y="476">- MCP server in NHS GP app</text>
+  <text class="nodeBody" x="890" y="496">- CI/CD to production</text>
+
+  <rect class="node" x="40" y="570" width="1120" height="90"/>
+  <text class="nodeTitle" x="60" y="602">Observability &amp; Quality</text>
+  <text class="nodeBody" x="60" y="626">Telemetry, evaluation harness (accuracy / guideline alignment), drift monitoring, reliability (retries/fallbacks), and uptime SLOs</text>
+  <text class="caption" x="60" y="652">Measured outcomes: 3,000+ MAU • 94% query success • 4.8/5 satisfaction • 99.7% uptime</text>
+
+  <!-- Edges -->
+  <path class="edge" d="M290 205 L330 205"/>
+  <path class="edge" d="M580 205 L620 205"/>
+  <path class="edge" d="M870 205 L910 205"/>
+
+  <path class="edge" d="M1035 280 L1035 320 L340 320 L340 360"/>
+  <path class="edge" d="M490 445 L520 445"/>
+  <path class="edge" d="M840 445 L870 445"/>
+  <path class="edge" d="M1015 530 L1015 570"/>
+
+  <!-- Critique loop -->
+  <path class="edgeDashed" d="M680 360 L680 335 L340 335 L340 360"/>
+</svg>
+
+
