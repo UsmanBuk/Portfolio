@@ -190,13 +190,7 @@
       "technologies": ["PHP", "Laravel", "MySQL", "Business Operations"],
       "achievements": ["Secure operations management", "ATOL-level reliability", "Travel industry focused"]
     },
-    "gradioApp": {
-      "name": "Python Gradio App",
-      "url": "https://huggingface.co/spaces/UsmanBukhari/CSVFile",
-      "description": "Python Gradio app for processing and visualizing CSV files using pandas",
-      "technologies": ["Python", "Gradio", "Pandas", "Data Processing", "Hugging Face"],
-      "achievements": ["CSV file processing", "Data visualization", "Sage Intacct integration", "JP Morgan matching"]
-    },
+    
     "httpServer": {
       "name": "Custom HTTP Server",
       "url": "https://github.com/UsmanBukari/UsmanBukari-codecrafters-http-server-python",
