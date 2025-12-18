@@ -82,6 +82,17 @@
   ],
   "freelance": [
     {
+      "title": "Full Stack Engineer",
+      "company": "Mozaic Consulting",
+      "client": "SBTi",
+      "period": "Nov 2025 - Present",
+      "responsibilities": [
+        "Extensively debugged and resolved complex issues across a React frontend and FastAPI backend application for SBTi, a company helping organizations achieve net zero emissions",
+        "Worked with BigQuery and PostgreSQL databases to investigate and fix data-related issues",
+        "Deployed and managed infrastructure on Google Cloud Platform (GCP)"
+      ]
+    },
+    {
       "title": "Freelance API Engineer",
       "company": "Anglestack",
       "period": "Jan 2024 - July 2024",
