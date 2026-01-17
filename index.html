@@ -2428,6 +2428,48 @@
         bottom: 15px;
       }
     }
+
+    /* Schedule Consultation CTA */
+    .schedule-cta {
+      margin-bottom: 30px;
+      padding: 25px;
+      background: linear-gradient(135deg, var(--eerie-black-2), var(--smoky-black));
+      border: 1px solid var(--jet);
+      border-radius: 14px;
+    }
+
+    .schedule-cta .form-title {
+      margin-bottom: 10px;
+    }
+
+    .schedule-cta-text {
+      color: var(--light-gray);
+      font-size: var(--fs-6);
+      margin-bottom: 20px;
+    }
+
+    .schedule-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      color: var(--smoky-black);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .schedule-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 183, 3, 0.4);
+    }
+
+    .schedule-cta-btn:focus {
+      outline: 2px solid var(--orange-yellow-crayola);
+      outline-offset: 2px;
+    }
   </style>
 </head>
 
@@ -3981,6 +4023,15 @@ data-category="systems programming"
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.768876235105!2d-1.5148906841666382!3d52.40863597973759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48772320d2b3ab1b%3A0x23456789abcdef!2sCoventry%2C%20UK!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </figure>
         </section>
+        <section class="schedule-cta">
+          <h3 class="h3 form-title">Prefer a conversation?</h3>
+          <p class="schedule-cta-text">Book a free 30-minute discovery call to discuss your AI or healthcare technology challenges.</p>
+          <a href="./schedule.html" class="schedule-cta-btn">
+            <ion-icon name="calendar-outline"></ion-icon>
+            Schedule a Consultation
+          </a>
+        </section>
+
         <section class="contact-form">
           <h3 class="h3 form-title">Contact Form</h3>
           <!-- Form fields matching EmailJS template placeholderrrss -->

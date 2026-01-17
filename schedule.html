@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule a Consultation | Syed Usman Bukhari</title>
+    <meta
+      name="description"
+      content="Book a 30-minute discovery call to discuss your AI, RAG, or healthcare technology challenges with Syed Usman Bukhari."
+    />
+
+    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .schedule-page {
+        padding: 30px;
+      }
+
+      .schedule-header {
+        margin-bottom: 40px;
+      }
+
+      .schedule-backlink {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--light-gray);
+        font-size: var(--fs-7);
+        margin-bottom: 20px;
+        transition: var(--transition-1);
+      }
+
+      .schedule-backlink:hover {
+        color: var(--orange-yellow-crayola);
+      }
+
+      .schedule-title {
+        font-size: var(--fs-1);
+        color: var(--white-1);
+        margin-bottom: 15px;
+      }
+
+      .schedule-subtitle {
+        font-size: var(--fs-5);
+        color: var(--light-gray);
+        max-width: 600px;
+        line-height: 1.6;
+      }
+
+      .schedule-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .schedule-detail-card {
+        background: var(--eerie-black-2);
+        border: 1px solid var(--jet);
+        border-radius: 14px;
+        padding: 20px;
+      }
+
+      .schedule-detail-title {
+        font-size: var(--fs-7);
+        color: var(--orange-yellow-crayola);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .schedule-detail-text {
+        font-size: var(--fs-6);
+        color: var(--white-2);
+        line-height: 1.5;
+      }
+
+      .schedule-who {
+        margin-bottom: 40px;
+      }
+
+      .schedule-who-title {
+        font-size: var(--fs-4);
+        color: var(--white-1);
+        margin-bottom: 15px;
+      }
+
+      .schedule-who-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .schedule-who-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        color: var(--light-gray);
+        font-size: var(--fs-6);
+      }
+
+      .schedule-who-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        background: var(--orange-yellow-crayola);
+        border-radius: 50%;
+      }
+
+      .schedule-embed {
+        background: var(--eerie-black-2);
+        border: 1px solid var(--jet);
+        border-radius: 14px;
+        padding: 20px;
+        margin-bottom: 40px;
+        min-height: 600px;
+      }
+
+      .schedule-embed cal-inline-widget {
+        min-height: 550px;
+      }
+
+      .schedule-note {
+        background: linear-gradient(135deg, rgba(255, 183, 3, 0.1), rgba(255, 183, 3, 0.05));
+        border-left: 3px solid var(--orange-yellow-crayola);
+        border-radius: 0 14px 14px 0;
+        padding: 20px 25px;
+        margin-bottom: 40px;
+      }
+
+      .schedule-note-title {
+        font-size: var(--fs-6);
+        color: var(--orange-yellow-crayola);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .schedule-note-text {
+        font-size: var(--fs-6);
+        color: var(--light-gray);
+        line-height: 1.6;
+      }
+
+      @media (min-width: 768px) {
+        .schedule-page {
+          padding: 45px;
+        }
+
+        .schedule-title {
+          font-size: 32px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .schedule-page {
+          padding: 60px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="main-content">
+        <article class="schedule-page active">
+          <header class="schedule-header">
+            <a href="./index.html" class="schedule-backlink" aria-label="Back to portfolio">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+              Back to portfolio
+            </a>
+
+            <h1 class="schedule-title">Let's Discuss Your AI Challenge</h1>
+            <p class="schedule-subtitle">
+              Book a 30-minute discovery call to explore how AI, RAG systems, or healthcare technology can solve your organisation's challenges.
+            </p>
+          </header>
+
+          <section class="schedule-details">
+            <div class="schedule-detail-card">
+              <p class="schedule-detail-title">Duration</p>
+              <p class="schedule-detail-text">30 minutes</p>
+            </div>
+            <div class="schedule-detail-card">
+              <p class="schedule-detail-title">Format</p>
+              <p class="schedule-detail-text">Video call (Google Meet)</p>
+            </div>
+            <div class="schedule-detail-card">
+              <p class="schedule-detail-title">Cost</p>
+              <p class="schedule-detail-text">Free, no obligation</p>
+            </div>
+          </section>
+
+          <section class="schedule-who">
+            <h2 class="schedule-who-title">This call is for you if:</h2>
+            <ul class="schedule-who-list">
+              <li>You're exploring AI or RAG systems for your organisation</li>
+              <li>You need to modernise healthcare technology infrastructure</li>
+              <li>You want to understand what's feasible before committing to a project</li>
+              <li>You're evaluating consultants for an upcoming AI initiative</li>
+            </ul>
+          </section>
+
+          <section class="schedule-embed">
+            <div id="cal-inline-embed" style="width:100%;height:100%;min-height:550px;" aria-label="Calendar booking widget" role="application"></div>
+          </section>
+
+          <section class="schedule-note">
+            <p class="schedule-note-title">What happens next?</p>
+            <p class="schedule-note-text">
+              After booking, you'll receive a calendar invite with a video call link. Come prepared to discuss your challenge —
+              I'll ask questions to understand your situation and share initial thoughts on potential approaches.
+            </p>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Cal.com Embed Script -->
+    <script>
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+
+      Cal("init", { origin: "https://app.cal.com" });
+
+      Cal("inline", {
+        elementOrSelector: "#cal-inline-embed",
+        calLink: "syed-usman-bukhari-tfe3rr/30min",
+        config: {
+          theme: "dark"
+        }
+      });
+
+      Cal("ui", {
+        theme: "dark",
+        styles: { branding: { brandColor: "#FFB703" } },
+        hideEventTypeDetails: false,
+      });
+    </script>
+  </body>
+</html>
