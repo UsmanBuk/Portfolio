@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_install"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/duplication-check.sh \"$TOOL_INPUT\""
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/chatbot-sync-reminder.sh \"$TOOL_INPUT\""
+          }
+        ]
+      }
+    ]
+  }
+}
