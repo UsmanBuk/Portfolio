@@ -1,0 +1,1 @@
+/home/usmanbukhari/.claude-superpowers/commands/write-plan.md
