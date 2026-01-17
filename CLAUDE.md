@@ -36,6 +36,7 @@ Then open `http://localhost:8000`.
 - **CSS variables for theming**: Dark theme (smoky-black/eerie-black) with gold accents
 - **Progressive enhancement**: Content accessible without JavaScript
 - **Monolithic HTML**: Single index.html contains all portfolio sections in vCard format
+- **Comments only on complex code**: Don't add comments to self-explanatory code
 
 ### Chatbot System
 
