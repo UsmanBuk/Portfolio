@@ -2521,14 +2521,17 @@
 </head>
 
 <body>
+  <!-- Skip Navigation -->
+  <a href="#main-content" class="skip-nav" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:10px 20px;background:var(--orange-yellow-crayola);color:var(--smoky-black);font-weight:600;text-decoration:none;border-radius:0 0 8px 0;" onfocus="this.style.position='fixed';this.style.left='0';this.style.top='0';this.style.width='auto';this.style.height='auto';this.style.overflow='visible';" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden';">Skip to main content</a>
+
   <!-- Loading Screen -->
-  <div id="loading-screen" class="loading-screen">
-    <div class="loading-spinner"></div>
+  <div id="loading-screen" class="loading-screen" role="status" aria-label="Loading portfolio">
+    <div class="loading-spinner" aria-hidden="true"></div>
     <p>Loading Portfolio...</p>
   </div>
 
   <!-- #MAIN -->
-  <main>
+  <main id="main-content">
     <!-- #SIDEBAR -->
     <aside class="sidebar" data-sidebar>
       <div class="sidebar-info">
@@ -2627,8 +2630,8 @@
     <!-- #main-content -->
     <div class="main-content">
       <!-- #NAVBAR -->
-      <nav class="navbar">
-        <ul class="navbar-list">
+      <nav class="navbar" aria-label="Main navigation">
+        <ul class="navbar-list" role="list">
           <li class="navbar-item">
             <button class="navbar-link active" data-nav-link>About</button>
           </li>
@@ -4121,7 +4124,7 @@ data-category="systems programming"
         </header>
         <section class="mapbox" data-mapbox>
           <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.768876235105!2d-1.5148906841666382!3d52.40863597973759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48772320d2b3ab1b%3A0x23456789abcdef!2sCoventry%2C%20UK!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.768876235105!2d-1.5148906841666382!3d52.40863597973759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48772320d2b3ab1b%3A0x23456789abcdef!2sCoventry%2C%20UK!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Map showing Coventry, West Midlands, UK location"></iframe>
           </figure>
         </section>
         <section class="schedule-cta">
@@ -4135,8 +4138,7 @@ data-category="systems programming"
 
         <section class="contact-form">
           <h3 class="h3 form-title">Contact Form</h3>
-          <!-- Form fields matching EmailJS template placeholderrrss -->
-          <form id="contact-form" class="form" data-form>
+          <form id="contact-form" class="form" data-form aria-label="Contact form">
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input />
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input />
