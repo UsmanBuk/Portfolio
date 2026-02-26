@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usmanbukhari.co.uk/sitemap.xml
