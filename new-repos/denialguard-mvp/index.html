@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DenialGuard MVP</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Healthcare Revenue Recovery Copilot</p>
+        <h1>DenialGuard MVP</h1>
+        <p>
+          Prioritize denied claims by recoverability, draft payer-ready appeals, and estimate monthly cash recovery in
+          minutes.
+        </p>
+      </header>
+
+      <section class="panel">
+        <h2>Recovery dashboard</h2>
+        <div class="metrics" data-metrics></div>
+      </section>
+
+      <section class="panel">
+        <h2>Claims backlog snapshot</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Claim ID</th>
+                <th>Payer</th>
+                <th>Code</th>
+                <th>Amount</th>
+                <th>Priority</th>
+                <th>Likely Recovered</th>
+              </tr>
+            </thead>
+            <tbody data-backlog></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel split">
+        <div>
+          <h2>Create triage plan</h2>
+          <form data-claim-form>
+            <label>
+              Claim ID
+              <input name="claimId" value="DG-2001" required />
+            </label>
+            <label>
+              Patient ID
+              <input name="patientId" value="PT-5502" required />
+            </label>
+            <label>
+              Payer
+              <select name="payer" required>
+                <option>United Health</option>
+                <option>Aetna</option>
+                <option>Blue Shield</option>
+                <option>Cigna</option>
+              </select>
+            </label>
+            <label>
+              Denial code
+              <select name="denialCode" required>
+                <option value="CO-16">CO-16 — Missing information</option>
+                <option value="CO-50">CO-50 — Medical necessity</option>
+                <option value="CO-197">CO-197 — Authorization missing</option>
+                <option value="CO-109">CO-109 — Provider not covered</option>
+                <option value="CO-45">CO-45 — Charge exceeds allowance</option>
+              </select>
+            </label>
+            <label>
+              Claim amount (USD)
+              <input name="claimAmount" type="number" min="1" step="0.01" value="4975" required />
+            </label>
+            <label>
+              Days outstanding
+              <input name="daysOutstanding" type="number" min="0" value="21" required />
+            </label>
+            <label>
+              Clinical summary
+              <textarea
+                name="clinicalSummary"
+                rows="6"
+                required
+              >Urgent admission due to sepsis indicators and elevated lactate; inpatient treatment delivered with serial labs and medication management.</textarea>
+            </label>
+            <button type="submit">Generate recovery plan</button>
+          </form>
+        </div>
+        <div data-result class="empty-state">
+          <p>Submit a claim to generate root-cause triage and a ready-to-send appeal draft.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

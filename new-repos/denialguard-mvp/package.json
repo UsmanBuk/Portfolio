@@ -1,0 +1,9 @@
+{
+  "name": "denialguard-mvp",
+  "version": "0.1.0",
+  "description": "Claims denial triage and appeal drafting MVP",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
