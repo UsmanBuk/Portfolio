@@ -1,0 +1,32 @@
+[pr_description]
+generate_ai_title = true
+extra_instructions = """
+This is a zero-build static HTML/CSS/JS portfolio website.
+- No frameworks, bundlers, or package managers are used.
+- Mention which pages are affected (index.html, case studies, schedule page).
+- Note any CSS variable usage or changes to the design system.
+- Flag if chatbot-context.json needs updating alongside content changes.
+"""
+
+[pr_reviewer]
+extra_instructions = """
+Review with these project-specific rules:
+- CSS must use variables from :root in style.css (no hardcoded colors like #fff or hsl values).
+- JavaScript must be vanilla — flag any framework imports or jQuery usage.
+- HTML must use semantic elements and maintain heading hierarchy.
+- All images need descriptive alt text and loading="lazy" for below-fold.
+- External links with target="_blank" must include rel="noopener".
+- No console.log statements in production code.
+- Content changes to index.html should be reflected in assets/js/chatbot-context.json.
+"""
+num_code_suggestions = 4
+
+[pr_code_suggestions]
+extra_instructions = """
+Focus suggestions on:
+- Accessibility improvements (ARIA labels, semantic HTML).
+- CSS variable usage instead of hardcoded values.
+- Performance (lazy loading, minimal DOM manipulation).
+- Security (no exposed API keys, rel="noopener" on external links).
+"""
+num_code_suggestions = 4
