@@ -1,9 +1,0 @@
-{
-  "name": "shadowspend-mvp",
-  "version": "0.1.0",
-  "description": "SaaS shadow spend and duplicate tool detection MVP",
-  "type": "module",
-  "scripts": {
-    "test": "node --test"
-  }
-}
