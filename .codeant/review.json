@@ -1,0 +1,46 @@
+{
+  "rules": [
+    {
+      "id": "css-no-hardcoded-colors",
+      "description": "CSS must use variables from :root (e.g., var(--white-1), var(--eerie-black-1)) instead of hardcoded color values like #fff, rgb(), or hsl(). The design system defines all colors as CSS custom properties in style.css.",
+      "files": ["assets/css/**/*.css"],
+      "scope": ["ide", "pr"]
+    },
+    {
+      "id": "js-vanilla-only",
+      "description": "JavaScript must be vanilla JS only. No framework imports (React, Vue, Angular, jQuery, etc.). Use document.querySelector and addEventListener for DOM manipulation.",
+      "files": ["assets/js/**/*.js"],
+      "scope": ["ide", "pr"]
+    },
+    {
+      "id": "js-no-console-log",
+      "description": "Remove console.log statements before committing. Use proper error handling with try/catch instead.",
+      "files": ["assets/js/**/*.js"],
+      "scope": ["ide", "pr"]
+    },
+    {
+      "id": "html-semantic-structure",
+      "description": "Use semantic HTML elements (header, main, section, article, nav, footer). Maintain heading hierarchy (h1 > h2 > h3, no skipping). Every page must have exactly one h1.",
+      "files": ["**/*.html"],
+      "scope": ["ide", "pr"]
+    },
+    {
+      "id": "html-image-accessibility",
+      "description": "All img elements must have descriptive alt text. Below-fold images must include loading='lazy'. External links with target='_blank' must include rel='noopener'.",
+      "files": ["**/*.html"],
+      "scope": ["ide", "pr"]
+    },
+    {
+      "id": "chatbot-content-sync",
+      "description": "When portfolio content changes (experience, skills, projects in index.html), the chatbot knowledge base at assets/js/chatbot-context.json must also be updated to stay in sync.",
+      "files": ["index.html", "assets/js/chatbot-context.json"],
+      "scope": ["pr"]
+    },
+    {
+      "id": "no-api-keys",
+      "description": "No API keys, secrets, or credentials should be committed to the repository. The chatbot uses a secure backend proxy for OpenAI API access.",
+      "files": ["**/*.html", "**/*.js", "**/*.json"],
+      "scope": ["ide", "pr"]
+    }
+  ]
+}

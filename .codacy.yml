@@ -1,0 +1,31 @@
+---
+engines:
+  duplication:
+    exclude_paths:
+      - ".claude/**"
+      - ".codeant/**"
+  metrics:
+    exclude_paths:
+      - ".claude/**"
+      - ".codeant/**"
+
+exclude_paths:
+  - ".claude/**"
+  - ".codeant/**"
+  - "assets/images/**"
+  - "**.svg"
+  - "**.png"
+  - "**.jpg"
+  - "**.webp"
+  - "**.pdf"
+  - "**.ico"
+  - "**.min.js"
+  - "**.min.css"
+
+languages:
+  css:
+    extensions:
+      - ".css"
+  javascript:
+    extensions:
+      - ".js"

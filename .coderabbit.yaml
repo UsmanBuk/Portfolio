@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "en-US"
+tone_instructions: "Be concise and direct. Focus on correctness, accessibility, and performance for a static HTML/CSS/JS site. Flag any hardcoded colors that should use CSS variables."
+early_access: true
+enable_free_tier: true
+
+reviews:
+  profile: "assertive"
+  request_changes_workflow: false
+  high_level_summary: true
+  high_level_summary_placeholder: "@coderabbitai"
+  auto_title_placeholder: "@coderabbitai"
+  review_status: true
+  commit_status: true
+  collapse_walkthrough: false
+  changed_files_summary: true
+  sequence_diagrams: false
+  assess_linked_issues: true
+  poem: false
+
+  path_instructions:
+    - path: "index.html"
+      instructions: |
+        Main portfolio page. Enforce semantic HTML, heading hierarchy (h1→h2→h3),
+        alt text on all images, and loading="lazy" on below-fold images.
+        Check that all CSS classes reference existing styles in assets/css/style.css.
+    - path: "assets/css/style.css"
+      instructions: |
+        Single stylesheet for the entire site. Enforce use of CSS variables from :root
+        (never hardcoded color values). Check property ordering: positioning → box model →
+        typography → visual → animation. Mobile-first responsive approach.
+    - path: "assets/js/**"
+      instructions: |
+        Vanilla JS only — no frameworks, no jQuery. Flag any console.log statements.
+        Ensure event listeners use addEventListener, not inline handlers.
+    - path: "assets/js/chatbot-context.json"
+      instructions: |
+        AI chatbot knowledge base. Validate JSON structure. Ensure data stays consistent
+        with content shown in index.html (roles, skills, experience).
+    - path: "case-studies/**"
+      instructions: |
+        Case study pages. Verify required sections: impact metrics, problem, solution,
+        architecture, engineering highlights, tech stack, CTA. Ensure breadcrumb
+        links back to ../index.html work correctly.
+
+  path_filters:
+    - "!**/*.svg"
+    - "!**/*.png"
+    - "!**/*.jpg"
+    - "!**/*.webp"
+    - "!**/*.pdf"
+    - "!**/*.ico"
+
+  tools:
+    htmlhint:
+      enabled: true
+    eslint:
+      enabled: true
+    gitleaks:
+      enabled: true
+
+chat:
+  auto_reply: true

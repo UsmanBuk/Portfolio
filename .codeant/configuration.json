@@ -1,0 +1,21 @@
+{
+  "review_configuration": {
+    "include": [
+      "*.html",
+      "assets/css/**",
+      "assets/js/**",
+      "case-studies/**"
+    ],
+    "exclude": [
+      ".claude/**",
+      "assets/images/**",
+      "**/*.svg",
+      "**/*.png",
+      "**/*.jpg",
+      "**/*.webp",
+      "**/*.pdf",
+      "**/*.min.js",
+      "**/*.min.css"
+    ]
+  }
+}
