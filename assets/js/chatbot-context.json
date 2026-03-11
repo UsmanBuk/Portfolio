@@ -1,14 +1,14 @@
 {
   "personalInfo": {
     "name": "Syed Usman Bukhari",
-    "title": "Full Stack & DevOps Engineer",
+    "title": "AI Systems Architect | Healthcare Technology",
     "location": "Coventry, West Midlands, UK",
     "email": "usmanbukhari541@gmail.com",
     "phone": "+44 7462 660889",
     "portfolio": "usmanbukhari.co.uk",
     "github": "https://github.com/UsmanBuk",
     "birthday": "July 13, 1998",
-    "professionalSummary": "Highly skilled and results-driven Full Stack & DevOps Engineer with extensive hands-on coding experience across multiple programming languages, frameworks, and cloud platforms. Proficient in designing, developing, and optimizing high-performance backend systems, APIs, and cloud infrastructure. Demonstrated expertise in automating deployments, architecting scalable solutions, and implementing advanced CI/CD pipelines for robust and efficient software delivery. Proven track record in enhancing system performance, leading successful migrations to modern cloud environments, and enforcing stringent security standards. Passionate about writing clean, efficient, and maintainable code to deliver scalable, reliable, and seamless user experiences."
+    "professionalSummary": "AI Systems Architect specializing in healthcare technology, enterprise RAG, and production LLM delivery for regulated organizations. Experienced in designing secure backend platforms, cloud infrastructure, and AI-enabled products across AWS, Azure, and GCP. Strong track record improving performance, resilience, and operational efficiency while translating technical architecture into measurable business outcomes."
   },
   "experience": [
     {
