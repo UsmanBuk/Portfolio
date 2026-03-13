@@ -2,7 +2,7 @@
 
 ## 🚀 Overview
 
-Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, a Full Stack & DevOps Engineer specializing in AI integration, cloud architecture, and modern web development.
+Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, an **AI Systems Architect** specializing in healthcare technology, enterprise RAG, and production LLM solutions.
 
 ## 👨‍💻 Current Roles (2025)
 
