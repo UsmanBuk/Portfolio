@@ -60,12 +60,17 @@ def extract_candidate_json(raw_text: str) -> tuple[str, list[str]]:
         text = text[start_index:]
         steps.append("trimmed non-JSON prefix")
 
-    last_object = text.rfind("}")
-    last_array = text.rfind("]")
-    end_index = max(last_object, last_array)
-    if end_index != -1 and end_index < len(text) - 1:
-        text = text[: end_index + 1]
-        steps.append("trimmed non-JSON suffix")
+    root_char = text[0] if text else ""
+    if root_char == "{":
+        end_index = text.rfind("}")
+        if end_index != -1 and end_index < len(text) - 1:
+            text = text[: end_index + 1]
+            steps.append("trimmed non-JSON suffix")
+    elif root_char == "[":
+        end_index = text.rfind("]")
+        if end_index != -1 and end_index < len(text) - 1:
+            text = text[: end_index + 1]
+            steps.append("trimmed non-JSON suffix")
 
     return text.strip(), steps
 
