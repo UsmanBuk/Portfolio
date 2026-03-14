@@ -1,0 +1,14 @@
+Here is the extracted result:
+
+```json
+{
+  name: "Ada Lovelace",
+  role: "Engineer",
+  skills: [
+    "Math",
+    "Writing",
+  ],
+  active: true,
+```
+
+Let me know if you want a CSV too.
