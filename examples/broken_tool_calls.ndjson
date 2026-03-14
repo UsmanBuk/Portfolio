@@ -1,0 +1,4 @@
+```json {'name': 'Front Door Lock', 'domain': 'lock',} ```
+tool_call arguments => {name: "Kitchen Light", domain: "light", state: "on",}
+{"action":"search","named_entity":{"title":["A"],["B"]}}
+I think the best payload is: {'city':'Leeds','priority':'high'}

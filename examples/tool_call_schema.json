@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "required": ["name", "domain"],
+  "properties": {
+    "name": { "type": "string" },
+    "domain": { "type": "string" },
+    "state": { "type": "string" }
+  }
+}
