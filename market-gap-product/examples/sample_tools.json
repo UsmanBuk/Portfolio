@@ -1,0 +1,56 @@
+{
+  "tools": [
+    {
+      "name": "get_account_plan",
+      "description": "Return the account plan, renewal date, and active seats for a workspace ID.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "workspace_id": {
+            "type": "string",
+            "description": "Workspace identifier from the internal CRM."
+          }
+        },
+        "required": ["workspace_id"]
+      }
+    },
+    {
+      "name": "list_recent_invoices",
+      "description": "List the latest invoices and payment state for a customer account.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "description": "Account ID used by the billing service."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 25,
+            "description": "Maximum number of invoices to return."
+          }
+        },
+        "required": ["account_id"]
+      }
+    },
+    {
+      "name": "get_webhook_delivery_log",
+      "description": "Fetch recent webhook delivery attempts, retries, and HTTP status codes.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "workspace_id": {
+            "type": "string"
+          },
+          "hours": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 168
+          }
+        },
+        "required": ["workspace_id"]
+      }
+    }
+  ]
+}
