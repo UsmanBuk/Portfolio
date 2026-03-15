@@ -1,0 +1,89 @@
+{
+  "global_headers": {
+    "X-Powered-By": "MockSwitch"
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "default": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/orders",
+      "default": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "orders": [
+            {
+              "id": "ord_001",
+              "status": "processing"
+            }
+          ]
+        }
+      },
+      "scenarios": {
+        "error": {
+          "status": 500,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "error": "simulated_upstream_failure"
+          }
+        },
+        "slow": {
+          "status": 200,
+          "delay_ms": 1200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "orders": [
+              {
+                "id": "ord_001",
+                "status": "processing"
+              }
+            ],
+            "note": "slow scenario"
+          }
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/webhook/stripe",
+      "default": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "received": true
+        }
+      },
+      "scenarios": {
+        "invalid_signature": {
+          "status": 401,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "error": "invalid_signature"
+          }
+        }
+      }
+    }
+  ]
+}
