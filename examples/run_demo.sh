@@ -3,7 +3,7 @@
 set -euo pipefail
 
 python3 -m envsentry examples/sample-app \
-  --env-file examples/sample-app/.env.example \
-  --env-file examples/sample-app/.env.local \
-  --env-file examples/sample-app/.env.production
+  --env-file .env.example \
+  --env-file .env.local \
+  --env-file .env.production
 

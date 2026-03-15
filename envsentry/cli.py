@@ -114,8 +114,14 @@ def discover_env_files(root: Path, explicit_files: list[str] | None) -> list[Pat
     candidates = explicit_files if explicit_files else DEFAULT_ENV_FILES
     for item in candidates:
         path = Path(item)
-        if not path.is_absolute():
-            path = root / path
+        if path.is_absolute():
+            if path.exists() and path.is_file():
+                files.append(path)
+            continue
+        root_relative = root / path
+        if root_relative.exists() and root_relative.is_file():
+            files.append(root_relative)
+            continue
         if path.exists() and path.is_file():
             files.append(path)
     seen: set[str] = set()
