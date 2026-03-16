@@ -1,3 +1,8 @@
 assets/images/github-recovery-codes.txt
 CLAUDE.local.md
 .planning
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
