@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Fix failing unit tests",
+    "update_time": 1763203200,
+    "mapping": {
+      "node-1": {
+        "id": "node-1",
+        "message": {
+          "author": { "role": "user" },
+          "create_time": 1763201000,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "My CI is failing after I upgraded pytest. What should I check first?"
+            ]
+          }
+        }
+      },
+      "node-2": {
+        "id": "node-2",
+        "message": {
+          "author": { "role": "assistant" },
+          "create_time": 1763201200,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "Start with plugin compatibility and warning-as-error settings.\n\n```bash\npytest -q -W default\n```"
+            ]
+          }
+        }
+      },
+      "node-3": {
+        "id": "node-3",
+        "message": {
+          "author": { "role": "user" },
+          "create_time": 1763201400,
+          "content": { "content_type": "text", "parts": ["That fixed it. Thanks!"] }
+        }
+      }
+    }
+  },
+  {
+    "title": "SQL query optimization ideas",
+    "update_time": 1763210000,
+    "mapping": {
+      "a": {
+        "id": "a",
+        "message": {
+          "author": { "role": "user" },
+          "create_time": 1763209000,
+          "content": {
+            "content_type": "text",
+            "parts": ["How can I speed up a JOIN on a 50M-row table?"]
+          }
+        }
+      },
+      "b": {
+        "id": "b",
+        "message": {
+          "author": { "role": "assistant" },
+          "create_time": 1763209300,
+          "content": {
+            "content_type": "text",
+            "parts": ["Check index selectivity and run EXPLAIN ANALYZE before and after."]
+          }
+        }
+      },
+      "c": {
+        "id": "c",
+        "message": {
+          "author": { "role": "assistant" },
+          "create_time": 1763209500,
+          "content": {
+            "content_type": "text",
+            "parts": ["Also confirm statistics are up to date (`ANALYZE`)."]
+          }
+        }
+      },
+      "d": {
+        "id": "d",
+        "message": {
+          "author": { "role": "user" },
+          "create_time": 1763209800,
+          "content": {
+            "content_type": "text",
+            "parts": ["Great. I will benchmark both index options."]
+          }
+        }
+      }
+    }
+  }
+]

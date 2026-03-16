@@ -1,0 +1,20 @@
+{
+  "title": "Release planning notes",
+  "updated_at": "2026-03-16T05:00:00Z",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are helping prepare release notes."
+    },
+    {
+      "role": "user",
+      "timestamp": "2026-03-16T04:55:00Z",
+      "content": "Summarize the key customer-facing changes from this sprint."
+    },
+    {
+      "role": "assistant",
+      "timestamp": "2026-03-16T04:56:00Z",
+      "content": "Added CSV export, fixed duplicate invoices bug, and improved API latency by 22%."
+    }
+  ]
+}
