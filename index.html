@@ -4699,12 +4699,8 @@ data-category="systems programming"
          return; // Exit if elements don't exist
        }
        
-       console.log('Course filters initialized:', courseFilterButtons.length, 'buttons,', courseCards.length, 'cards');
-       
        courseFilterButtons.forEach(button => {
          button.addEventListener('click', function() {
-           console.log('Filter clicked:', this.getAttribute('data-course-filter'));
-           
            // Remove active class from all buttons
            courseFilterButtons.forEach(btn => btn.classList.remove('active'));
            
@@ -4719,8 +4715,6 @@ data-category="systems programming"
            courseCards.forEach((card, index) => {
              const categories = card.getAttribute('data-course-category').split(' ');
              const shouldShow = filterCategory === 'all' || categories.includes(filterCategory);
-             
-             console.log('Card categories:', categories, 'Should show:', shouldShow);
              
              // Add exit animation
              card.style.transform = 'translateY(20px) scale(0.9)';
@@ -4822,11 +4816,9 @@ class PortfolioChatbot {
   
   async loadContext() {
     try {
-      console.log('Loading chatbot context...');
       const response = await fetch('./assets/js/chatbot-context.json');
       this.contextData = await response.json();
       this.updateContextString();
-      console.log('Context loaded successfully');
     } catch (error) {
       console.error('Failed to load context:', error);
       this.contextData = null;
