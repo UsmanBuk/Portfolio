@@ -14,7 +14,7 @@
     {
       "title": "Full Stack & DevOps Engineer",
       "company": "TSG/Dayta (Sage Partner)",
-      "period": "Feb 2024 – Present",
+      "period": "Feb 2024 – March 2025",
       "responsibilities": [
         "Designed, implemented, and optimized end-to-end CI/CD pipelines using AWS CodeBuild, CodePipeline, and API Gateway, achieving streamlined deployments and significantly enhancing software delivery efficiency",
         "Managed Infrastructure-as-Code (IaC) using Terraform for scalable, automated, and repeatable cloud resource provisioning on AWS, ensuring consistent environments and infrastructure stability",
@@ -85,7 +85,7 @@
       "title": "Full Stack Engineer",
       "company": "Mozaic Consulting",
       "client": "SBTi",
-      "period": "Nov 2025 - Present",
+      "period": "Nov 2025 – Present",
       "responsibilities": [
         "Extensively debugged and resolved complex issues across a React frontend and FastAPI backend application for SBTi, a company helping organizations achieve net zero emissions",
         "Worked with BigQuery and PostgreSQL databases to investigate and fix data-related issues",
