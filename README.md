@@ -4,7 +4,7 @@
 
 Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, a Full Stack & DevOps Engineer specializing in AI integration, cloud architecture, and modern web development.
 
-## 👨‍💻 Current Roles (2025)
+## 👨‍💻 Current Roles (2025-2026)
 
 ### **AI Developer & Data Architecture Specialist - NHS - South Yorkshire ICB** (March 2025 - Present)
 - Building healthcare data pipelines with **Azure Functions** and **Crawl4AI**
@@ -133,7 +133,7 @@ vcard-personal-portfolio/
 
 ## 🔧 Recent Updates
 
-### **Latest Changes (2025)**
+### **Latest Changes (2025-2026)**
 - ✅ **Updated Experience**: Added NHS AI Developer role
 - ✅ **New Freelance Work**: Added TIC.UK Full Stack position  
 - ✅ **Corrected Dates**: Updated TSG employment period
@@ -231,7 +231,7 @@ This portfolio is personal intellectual property. The code structure and design 
 
 ---
 
-**Last Updated**: January 2025
+**Last Updated**: April 2026
 **Version**: 2.1 (Enhanced with AI features and current roles)
 **Status**: ✅ Production Ready
 
