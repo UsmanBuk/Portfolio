@@ -2,9 +2,9 @@
 
 ## 🚀 Overview
 
-Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, a Full Stack & DevOps Engineer specializing in AI integration, cloud architecture, and modern web development.
+Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, an **AI Systems Architect** specializing in healthcare technology, enterprise RAG, cloud architecture, and modern web development.
 
-## 👨‍💻 Current Roles (2025)
+## 👨‍💻 Current Roles (2025-2026)
 
 ### **AI Developer & Data Architecture Specialist - NHS - South Yorkshire ICB** (March 2025 - Present)
 - Building healthcare data pipelines with **Azure Functions** and **Crawl4AI**
@@ -89,7 +89,7 @@ Personal portfolio website showcasing the professional experience and projects o
 1. **Clone or Download**
    ```bash
    git clone [repository-url]
-   cd vcard-personal-portfolio
+   cd [repository-directory]
    ```
 
 2. **Start Local Server**
@@ -223,7 +223,7 @@ The portfolio is ready for custom domain deployment with proper meta tags and SE
 ### **Content Management**
 - **Resume PDFs**: Replace in `/assets/documents/`
 - **Project Images**: Update in `/assets/images/`
-- **Chatbot Responses**: Modify in chatbot JavaScript section
+- **Chatbot Responses**: Modify in `/assets/js/chatbot-context.json`
 
 ## 📝 License
 
