@@ -2,9 +2,9 @@
 
 ## 🚀 Overview
 
-Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, a Full Stack & DevOps Engineer specializing in AI integration, cloud architecture, and modern web development.
+Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, an AI Systems Architect specializing in healthcare technology, enterprise RAG, and production LLM delivery.
 
-## 👨‍💻 Current Roles (2025)
+## 👨‍💻 Current Roles (2025-2026)
 
 ### **AI Developer & Data Architecture Specialist - NHS - South Yorkshire ICB** (March 2025 - Present)
 - Building healthcare data pipelines with **Azure Functions** and **Crawl4AI**
@@ -56,9 +56,9 @@ Personal portfolio website showcasing the professional experience and projects o
 
 ## 📈 Professional Experience
 
-### **Recent Experience (2024-2025)**
+### **Recent Experience (2024-2026)**
 - **NHS**: AI Developer building healthcare chatbots and data pipelines
-- **TIC.UK**: Full Stack Engineer managing travel industry applications
+- **TIC.UK**: DevOps and application delivery across travel industry systems
 - **TSG**: DevOps Engineer with 40% downtime reduction achievements
 - **Anglestack**: API Engineer building construction industry solutions
 
