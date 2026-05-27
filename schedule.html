@@ -132,7 +132,11 @@
       }
 
       .schedule-note {
-        background: linear-gradient(135deg, rgba(255, 183, 3, 0.1), rgba(255, 183, 3, 0.05));
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--orange-yellow-crayola) 10%, transparent),
+          color-mix(in srgb, var(--orange-yellow-crayola) 5%, transparent)
+        );
         border-left: 3px solid var(--orange-yellow-crayola);
         border-radius: 0 14px 14px 0;
         padding: 20px 25px;
@@ -260,6 +264,10 @@
 
       Cal("init", { origin: "https://app.cal.com" });
 
+      const accentColor = getComputedStyle(document.documentElement)
+        .getPropertyValue("--orange-yellow-crayola")
+        .trim();
+
       Cal("inline", {
         elementOrSelector: "#cal-inline-embed",
         calLink: "syed-usman-bukhari-tfe3rr/30min",
@@ -270,7 +278,7 @@
 
       Cal("ui", {
         theme: "dark",
-        styles: { branding: { brandColor: "#FFB703" } },
+        styles: { branding: { brandColor: accentColor } },
         hideEventTypeDetails: false,
       });
     </script>
