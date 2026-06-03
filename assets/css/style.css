@@ -380,10 +380,14 @@ main {
   border-radius: 20px;
 }
 
-.sidebar-info > .avatar-box,
-.sidebar-info > .info-content {
-  /* Align avatar + headline slightly left (per design feedback) */
+.sidebar-info > .avatar-box {
+  /* Align avatar slightly left without clipping the adjacent headline copy */
   margin-left: -26px;
+}
+
+.sidebar-info > .info-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .info-content .name {
@@ -399,9 +403,12 @@ main {
   background: var(--onyx);
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
-  width: max-content;
+  width: fit-content;
+  max-width: 100%;
   padding: 3px 12px;
   border-radius: 8px;
+  text-align: center;
+  white-space: normal;
 }
 
 .info_more-btn {
