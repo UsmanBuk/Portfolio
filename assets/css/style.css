@@ -2801,6 +2801,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 @media (max-width: 580px) {
+  .info-content .title { width: 100%; }
+
   .case-study-header { padding: 22px; }
   .case-study-section { padding: 0 22px 24px 22px; }
   .case-study-metric-value { font-size: 20px; }
