@@ -2075,14 +2075,30 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { flex-direction: column; }
 
+  .sidebar-info > .avatar-box,
+  .sidebar-info > .info-content {
+    margin-left: 0;
+  }
+
+  .info-content {
+    width: 100%;
+    min-width: 0;
+  }
+
   .avatar-box img { width: 150px; }
 
   .info-content .name {
-    white-space: nowrap;
+    white-space: normal;
     text-align: center;
   }
 
-  .info-content .title { margin: auto; }
+  .info-content .title {
+    width: fit-content;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    white-space: normal;
+  }
 
   .info_more-btn { display: none; }
 
