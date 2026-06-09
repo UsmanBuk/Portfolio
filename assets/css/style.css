@@ -399,9 +399,12 @@ main {
   background: var(--onyx);
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
-  width: max-content;
+  display: inline-block;
+  max-width: 100%;
   padding: 3px 12px;
   border-radius: 8px;
+  line-height: 1.4;
+  white-space: normal;
 }
 
 .info_more-btn {
