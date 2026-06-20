@@ -2517,6 +2517,23 @@
       outline: 2px solid var(--orange-yellow-crayola);
       outline-offset: 2px;
     }
+
+    .schedule-cta-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .schedule-cta-pill {
+      padding: 8px 12px;
+      background: var(--eerie-black-2);
+      border: 1px solid var(--jet);
+      border-radius: 999px;
+      color: var(--light-gray);
+      font-size: var(--fs-6);
+      line-height: 1.4;
+    }
   </style>
 </head>
 
@@ -4131,6 +4148,10 @@ data-category="systems programming"
             <ion-icon name="calendar-outline"></ion-icon>
             Schedule a Consultation
           </a>
+          <div class="schedule-cta-meta" aria-label="Consultation availability highlights">
+            <span class="schedule-cta-pill">Typical response within 1 business day</span>
+            <span class="schedule-cta-pill">Remote or onsite engagements across the UK</span>
+          </div>
         </section>
 
         <section class="contact-form">
