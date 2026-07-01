@@ -223,7 +223,7 @@ The portfolio is ready for custom domain deployment with proper meta tags and SE
 ### **Content Management**
 - **Resume PDFs**: Replace in `/assets/documents/`
 - **Project Images**: Update in `/assets/images/`
-- **Chatbot Responses**: Modify in chatbot JavaScript section
+- **Chatbot Responses**: Modify in `assets/js/chatbot-context.json`
 
 ## 📝 License
 
@@ -231,7 +231,7 @@ This portfolio is personal intellectual property. The code structure and design 
 
 ---
 
-**Last Updated**: May 2026
+**Last Updated**: July 2026
 **Version**: 2.1 (Enhanced with AI features and current roles)
 **Status**: ✅ Production Ready
 
