@@ -2,9 +2,9 @@
 
 ## 🚀 Overview
 
-Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, a Full Stack & DevOps Engineer specializing in AI integration, cloud architecture, and modern web development.
+Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, an AI Systems Architect specializing in healthcare technology, enterprise RAG, cloud architecture, and modern web delivery.
 
-## 👨‍💻 Current Roles (2025)
+## 👨‍💻 Current Roles (2025-2026)
 
 ### **AI Developer & Data Architecture Specialist - NHS - South Yorkshire ICB** (March 2025 - Present)
 - Building healthcare data pipelines with **Azure Functions** and **Crawl4AI**
@@ -12,7 +12,7 @@ Personal portfolio website showcasing the professional experience and projects o
 - Developing AI chatbots for healthcare service discovery using **LangChain**
 - Working with vector embeddings and semantic search technologies
 
-### **Full Stack & DevOps Engineer - TIC.UK** (July 2024 - Present)
+### **Platform & Delivery Engineer - TIC.UK** (July 2024 - Present)
 - Managing **PHP/Laravel** ATOL applications and custom CRM systems
 - **Cloud Migration**: Successfully migrated infrastructure from AWS to **Digital Ocean**
 - Built **CI/CD pipelines** using **GitHub Actions**
@@ -56,9 +56,9 @@ Personal portfolio website showcasing the professional experience and projects o
 
 ## 📈 Professional Experience
 
-### **Recent Experience (2024-2025)**
+### **Recent Experience (2024-2026)**
 - **NHS**: AI Developer building healthcare chatbots and data pipelines
-- **TIC.UK**: Full Stack Engineer managing travel industry applications
+- **TIC.UK**: Platform engineer managing travel industry applications
 - **TSG**: DevOps Engineer with 40% downtime reduction achievements
 - **Anglestack**: API Engineer building construction industry solutions
 
@@ -95,7 +95,7 @@ Personal portfolio website showcasing the professional experience and projects o
 2. **Start Local Server**
    ```bash
    # Using Python
-   python -m http.server 8000
+   python3 -m http.server 8000
    
    # Using Node.js
    npx http-server -p 8000
@@ -133,7 +133,7 @@ vcard-personal-portfolio/
 
 ## 🔧 Recent Updates
 
-### **Latest Changes (2025)**
+### **Latest Changes (2025-2026)**
 - ✅ **Updated Experience**: Added NHS AI Developer role
 - ✅ **New Freelance Work**: Added TIC.UK Full Stack position  
 - ✅ **Corrected Dates**: Updated TSG employment period
@@ -218,12 +218,12 @@ The portfolio is ready for custom domain deployment with proper meta tags and SE
 - **Experience**: Update roles and achievements
 - **Projects**: Add new portfolio pieces
 - **Skills**: Keep technology stack current
-- **Chatbot**: Update knowledge base with new information
+- **Chatbot**: Update `assets/js/chatbot-context.json` alongside portfolio content changes
 
 ### **Content Management**
 - **Resume PDFs**: Replace in `/assets/documents/`
 - **Project Images**: Update in `/assets/images/`
-- **Chatbot Responses**: Modify in chatbot JavaScript section
+- **Chatbot Responses**: Modify in `assets/js/chatbot-context.json`
 
 ## 📝 License
 
@@ -231,7 +231,7 @@ This portfolio is personal intellectual property. The code structure and design 
 
 ---
 
-**Last Updated**: May 2026
+**Last Updated**: July 2026
 **Version**: 2.1 (Enhanced with AI features and current roles)
 **Status**: ✅ Production Ready
 
