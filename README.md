@@ -2,7 +2,7 @@
 
 ## 🚀 Overview
 
-Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, a Full Stack & DevOps Engineer specializing in AI integration, cloud architecture, and modern web development.
+Personal portfolio website showcasing the professional experience and projects of **Syed Usman Bukhari**, an AI Systems Architect specializing in healthcare AI, cloud architecture, and modern web delivery.
 
 ## 👨‍💻 Current Roles (2025)
 
@@ -95,7 +95,7 @@ Personal portfolio website showcasing the professional experience and projects o
 2. **Start Local Server**
    ```bash
    # Using Python
-   python -m http.server 8000
+  python3 -m http.server 8000
    
    # Using Node.js
    npx http-server -p 8000
@@ -223,7 +223,7 @@ The portfolio is ready for custom domain deployment with proper meta tags and SE
 ### **Content Management**
 - **Resume PDFs**: Replace in `/assets/documents/`
 - **Project Images**: Update in `/assets/images/`
-- **Chatbot Responses**: Modify in chatbot JavaScript section
+- **Chatbot Responses**: Modify in `assets/js/chatbot-context.json`
 
 ## 📝 License
 
@@ -231,7 +231,7 @@ This portfolio is personal intellectual property. The code structure and design 
 
 ---
 
-**Last Updated**: May 2026
+**Last Updated**: July 2026
 **Version**: 2.1 (Enhanced with AI features and current roles)
 **Status**: ✅ Production Ready
 
