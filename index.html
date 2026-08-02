@@ -72,10 +72,9 @@
       position: relative;
       margin-bottom: 40px;
       font-size: 2.5rem;
-      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--white-2);
+      -webkit-text-fill-color: var(--white-2);
+      background: none;
       text-align: center;
     }
 
@@ -207,18 +206,19 @@
     .timeline .title-wrapper .icon-box {
       width: 45px;
       height: 45px;
-      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
+      background: var(--eerie-black-1);
+      border: 1px solid var(--jet);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 15px rgba(255, 183, 3, 0.3);
+      box-shadow: var(--shadow-1);
     }
 
     .timeline .title-wrapper .icon-box ion-icon {
-      color: var(--smoky-black);
+      color: hsl(45, 100%, 71%);
       font-size: 24px;
-      font-weight: bold;
+      --ionicon-stroke-width: 35px;
     }
 
     .timeline .title-wrapper h3 {
@@ -932,10 +932,9 @@
       text-align: center;
       margin-bottom: 50px;
       font-size: 2.5rem;
-      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--white-2);
+      -webkit-text-fill-color: var(--white-2);
+      background: none;
     }
 
     .portfolio .article-title::after {
@@ -1331,10 +1330,9 @@
       text-align: center;
       margin-bottom: 50px;
       font-size: 2.5rem;
-      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--white-2);
+      -webkit-text-fill-color: var(--white-2);
+      background: none;
     }
 
     .courses .article-title::after {
@@ -1762,10 +1760,9 @@
       text-align: center;
       margin-bottom: 50px;
       font-size: 2.5rem;
-      background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--white-2);
+      -webkit-text-fill-color: var(--white-2);
+      background: none;
     }
 
     .github .article-title::after {
@@ -2527,6 +2524,58 @@
     <p>Loading Portfolio...</p>
   </div>
 
+  <!-- #TOP CONTACT BAR -->
+  <aside class="top-contact-bar" aria-label="Contact information">
+    <div class="top-contact-bar-inner">
+      <ul class="contacts-list top-contacts-list">
+        <li class="contact-item">
+          <div class="icon-box">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+          <div class="contact-info">
+            <p class="contact-title">Email</p>
+            <a href="mailto:usmanbukhari541@gmail.com" class="contact-link">usmanbukhari541@gmail.com</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box">
+            <ion-icon name="phone-portrait-outline"></ion-icon>
+          </div>
+          <div class="contact-info">
+            <p class="contact-title">Phone</p>
+            <a href="tel:+447462660889" class="contact-link">+44 7462 660889</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box">
+            <ion-icon name="location-outline"></ion-icon>
+          </div>
+          <div class="contact-info">
+            <p class="contact-title">Location</p>
+            <address>Coventry, West Midlands, UK</address>
+          </div>
+        </li>
+      </ul>
+      <ul class="social-list top-social-list">
+        <li class="social-item">
+          <a href="https://leetcode.com/UsmanBuk/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit LeetCode profile">
+            <ion-icon name="code-slash-outline"></ion-icon>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://github.com/UsmanBuk" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit GitHub profile">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://linkedin.com/in/usman-bukhari" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit LinkedIn profile">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
   <!-- #MAIN -->
   <main>
     <!-- #SIDEBAR -->
@@ -2536,7 +2585,7 @@
           <img src="./assets/images/my-avatar.png" alt="Syed Usman Bukhari portrait" width="80" />
         </figure>
         <div class="info-content">
-          <h1 class="name" title="Syed Usman Bukhari">Syed Usman Bukhari</h1>
+          <h2 class="name" title="Syed Usman Bukhari">Syed Usman Bukhari</h2>
           <p class="title">Senior AI Engineer | RAG & LLM Systems</p>
         </div>
 
@@ -2568,59 +2617,9 @@
         </section>
 
         <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+          <span>Show More</span>
           <ion-icon name="chevron-down"></ion-icon>
         </button>
-      </div>
-      <div class="sidebar-info_more">
-        <div class="separator"></div>
-        <ul class="contacts-list">
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="mailto:usmanbukhari541@gmail.com" class="contact-link">usmanbukhari541@gmail.com</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a href="tel:+447462660889" class="contact-link">+44 7462 660889</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>Coventry, West Midlands, UK</address>
-            </div>
-          </li>
-        </ul>
-        <div class="separator"></div>
-        <ul class="social-list">
-          <li class="social-item">
-            <a href="https://leetcode.com/UsmanBuk/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit LeetCode profile">
-              <ion-icon name="code-slash-outline"></ion-icon>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="https://github.com/UsmanBuk" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit GitHub profile">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="https://linkedin.com/in/usman-bukhari" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit LinkedIn profile">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-        </ul>
       </div>
     </aside>
 
@@ -2689,7 +2688,7 @@
               <span class="highlight-icon">⚡</span>
               <span class="highlight-text">Performance Optimization</span>
             </div>
-            <div class="highlight-item">
+            <div class="highlight-item" data-nav-target="portfolio" role="button" tabindex="0">
               <span class="highlight-icon">🔧</span>
               <span class="highlight-text">DevOps & Automation</span>
             </div>
@@ -3215,8 +3214,27 @@
           </div>
           <ol class="timeline-list">
             <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">AI Engineer – Hudson and Hayes</h4>
+              <span>April 2026 – Present</span>
+              <ul class="timeline-text">
+                <li>Architecting production voice agents on Azure AI Foundry, using the GPT-4o Realtime API for low-latency speech-to-speech conversations with function calling that executes tools and actions during live calls.</li>
+                <li>Wiring Azure Communication Services for telephony and Azure Speech Services for speech-to-text and text-to-speech, combined with custom knowledge grounding to deliver domain-specific responses across inbound and outbound call flows.</li>
+                <li>Building evaluation and observability pipelines that track call quality, latency, and tool-call accuracy in production — feeding live conversation data back into iterative prompt and agent refinement.</li>
+              </ul>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">AI Developer – Ardonagh Specialty</h4>
+              <span>February 2026 – April 2026</span>
+              <ul class="timeline-text">
+                <li>Designed and shipped a KYC onboarding platform end-to-end for Ardonagh Specialty — React/TypeScript frontend, Python FastAPI backend, Azure-hosted — replacing a manual analyst workflow and cutting time-to-onboard from multiple days/weeks to hours.</li>
+                <li>Built a multi-agent system on Azure AI Foundry (GPT-4o) that autonomously gathers and reconciles client data across Companies House, LexisNexis WorldCompliance, and internal PAS, producing structured risk summaries that analysts review rather than assemble.</li>
+                <li>Engineered resilient API integrations with Companies House (PSC/UBO lookups), LexisNexis (sanctions, PEP, adverse media screening), and internal databases — including caching, retry, and rate-limit handling — keeping end-to-end agent runs under 30 seconds per case.</li>
+                <li>Productionised the end-to-end workflow with Azure Logic Apps as the orchestration backbone — monitoring inboxes, triggering on inbound client emails, routing attachments through Azure Document Intelligence to extract PDF and structured data, and automatically creating cases in MongoDB ready for agent enrichment — alongside the full-stack foundations (auth, audit logging, role-based access) needed to run agents safely in a regulated compliance environment.</li>
+              </ul>
+            </li>
+            <li class="timeline-item">
               <h4 class="h4 timeline-item-title">AI Developer & Data Architecture Specialist - NHS - South Yorkshire ICB</h4>
-              <span>March 2025 – Present</span>
+              <span>March 2025 - February 2026</span>
               <ul class="timeline-text">
                 <li>Built a generic web scraper using Crawl4AI to extract healthcare service data from 30+ regional websites, supporting unemployment and healthcare access initiatives in South Yorkshire.</li>
                 <li>Engineered a daily data pipeline running on Azure Functions with queue and timer triggers, automating ingestion, transformation, and enrichment of scraped data.</li>
@@ -4752,23 +4770,41 @@ data-category="systems programming"
   <script>
     const navLinks = document.querySelectorAll("[data-nav-link]");
     const pages = document.querySelectorAll("[data-page]");
+
+    function navigateToPage(pageName) {
+      navLinks.forEach(l => l.classList.remove("active"));
+      pages.forEach(p => p.classList.remove("active"));
+
+      const page = document.querySelector(`[data-page="${pageName}"]`);
+      if (page) {
+        page.classList.add("active");
+      }
+
+      navLinks.forEach(link => {
+        if (link.textContent.trim().toLowerCase() === pageName) {
+          link.classList.add("active");
+        }
+      });
+
+      window.scrollTo(0, 0);
+    }
     
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
-        // Remove active class from all nav links and pages
-        navLinks.forEach(l => l.classList.remove("active"));
-        pages.forEach(p => p.classList.remove("active"));
-        
-        // Add active class to clicked nav link
-        link.classList.add("active");
-        
-        // Get the page name from the button text (converted to lowercase)
-        const pageName = link.textContent.trim().toLowerCase();
-        const page = document.querySelector(`[data-page="${pageName}"]`);
-        if (page) {
-          page.classList.add("active");
+        navigateToPage(link.textContent.trim().toLowerCase());
+      });
+    });
+
+    document.querySelectorAll("[data-nav-target]").forEach(item => {
+      item.addEventListener("click", () => {
+        navigateToPage(item.dataset.navTarget);
+      });
+
+      item.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          navigateToPage(item.dataset.navTarget);
         }
-        window.scrollTo(0, 0);
       });
     });
   </script>
