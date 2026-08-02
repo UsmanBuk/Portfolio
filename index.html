@@ -2676,15 +2676,15 @@
           </div>
 
           <div class="highlights-grid">
-            <div class="highlight-item">
+            <div class="highlight-item" data-nav-target="resume" data-scroll-target="#experience-citadel-health" role="button" tabindex="0">
               <span class="highlight-icon">🚀</span>
               <span class="highlight-text">Cloud-Native Solutions</span>
             </div>
-            <div class="highlight-item">
+            <div class="highlight-item" data-nav-target="resume" data-scroll-target="#experience-nhs" role="button" tabindex="0">
               <span class="highlight-icon">🤖</span>
               <span class="highlight-text">AI Integration Expert</span>
             </div>
-            <div class="highlight-item">
+            <div class="highlight-item" data-nav-target="resume" data-scroll-target="#experience-tsg" role="button" tabindex="0">
               <span class="highlight-icon">⚡</span>
               <span class="highlight-text">Performance Optimization</span>
             </div>
@@ -3232,7 +3232,7 @@
                 <li>Productionised the end-to-end workflow with Azure Logic Apps as the orchestration backbone — monitoring inboxes, triggering on inbound client emails, routing attachments through Azure Document Intelligence to extract PDF and structured data, and automatically creating cases in MongoDB ready for agent enrichment — alongside the full-stack foundations (auth, audit logging, role-based access) needed to run agents safely in a regulated compliance environment.</li>
               </ul>
             </li>
-            <li class="timeline-item">
+            <li class="timeline-item" id="experience-nhs">
               <h4 class="h4 timeline-item-title">AI Developer & Data Architecture Specialist - NHS - South Yorkshire ICB</h4>
               <span>March 2025 - February 2026</span>
               <ul class="timeline-text">
@@ -3247,7 +3247,7 @@
                 <li>Collaborated with NHS stakeholders to ensure the solution aligned with regional healthcare accessibility and unemployment support goals.</li>
               </ul>
             </li>
-            <li class="timeline-item">
+            <li class="timeline-item" id="experience-tsg">
               <h4 class="h4 timeline-item-title">Full Stack & DevOps Engineer – TSG</h4>
               <span>Feb 2024 – March 2025</span>
               <ul class="timeline-text">
@@ -3259,7 +3259,7 @@
                 <li>Led the transition to a microservices architecture, reducing downtime by 40% and doubling system capacity.</li>
               </ul>
             </li>
-            <li class="timeline-item">
+            <li class="timeline-item" id="experience-citadel-health">
               <h4 class="h4 timeline-item-title">Full Stack Engineer – Citadel Health</h4>
               <span>Jan 2022 – Feb 2024</span>
               <ul class="timeline-text">
@@ -4771,7 +4771,7 @@ data-category="systems programming"
     const navLinks = document.querySelectorAll("[data-nav-link]");
     const pages = document.querySelectorAll("[data-page]");
 
-    function navigateToPage(pageName) {
+    function navigateToPage(pageName, scrollTarget = null) {
       navLinks.forEach(l => l.classList.remove("active"));
       pages.forEach(p => p.classList.remove("active"));
 
@@ -4786,6 +4786,20 @@ data-category="systems programming"
         }
       });
 
+      if (scrollTarget) {
+        requestAnimationFrame(() => {
+          const target = document.querySelector(scrollTarget);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            target.classList.add("timeline-item--highlighted");
+            setTimeout(() => target.classList.remove("timeline-item--highlighted"), 2000);
+          } else {
+            window.scrollTo(0, 0);
+          }
+        });
+        return;
+      }
+
       window.scrollTo(0, 0);
     }
     
@@ -4797,13 +4811,13 @@ data-category="systems programming"
 
     document.querySelectorAll("[data-nav-target]").forEach(item => {
       item.addEventListener("click", () => {
-        navigateToPage(item.dataset.navTarget);
+        navigateToPage(item.dataset.navTarget, item.dataset.scrollTarget || null);
       });
 
       item.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          navigateToPage(item.dataset.navTarget);
+          navigateToPage(item.dataset.navTarget, item.dataset.scrollTarget || null);
         }
       });
     });
