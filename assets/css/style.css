@@ -792,11 +792,6 @@ main {
   cursor: pointer;
 }
 
-.timeline-item--highlighted {
-  border-color: var(--orange-yellow-crayola);
-  box-shadow: 0 10px 30px rgba(255, 183, 3, 0.15);
-}
-
 .highlight-icon {
   font-size: 20px;
   margin-right: 10px;

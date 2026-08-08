@@ -240,10 +240,22 @@
       margin-bottom: 25px;
       position: relative;
       transition: all 0.3s ease;
+      /* Clears the sticky .top-contact-bar when scrolled to via a highlight link */
+      scroll-margin-top: 250px;
+    }
+
+    @media (min-width: 580px) {
+      .timeline-item { scroll-margin-top: 110px; }
     }
 
     .timeline-item:hover {
       transform: translateX(10px);
+      border-color: var(--orange-yellow-crayola);
+      box-shadow: 0 10px 30px rgba(255, 183, 3, 0.15);
+    }
+
+    /* Defined here, not in style.css, so it outranks the .timeline-item border above */
+    .timeline-item.timeline-item--highlighted {
       border-color: var(--orange-yellow-crayola);
       box-shadow: 0 10px 30px rgba(255, 183, 3, 0.15);
     }
@@ -2585,7 +2597,7 @@
           <img src="./assets/images/my-avatar.png" alt="Syed Usman Bukhari portrait" width="80" />
         </figure>
         <div class="info-content">
-          <h2 class="name" title="Syed Usman Bukhari">Syed Usman Bukhari</h2>
+          <h1 class="name" title="Syed Usman Bukhari">Syed Usman Bukhari</h1>
           <p class="title">Senior AI Engineer | RAG & LLM Systems</p>
         </div>
 
