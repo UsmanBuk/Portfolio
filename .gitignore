@@ -2,3 +2,5 @@ assets/images/github-recovery-codes.txt
 CLAUDE.local.md
 .planning
 *.code-workspace
+node_modules
+dist
