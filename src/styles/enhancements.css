@@ -2345,6 +2345,11 @@
       color: var(--white-2);
       align-self: flex-start;
     }
+
+    .bot-message.chatbot-error {
+      border: 1px solid var(--bittersweet-shimmer);
+      color: var(--white-2);
+    }
     
     .chatbot-input-container {
       padding: 15px;
@@ -2382,9 +2387,26 @@
     .chatbot-send:hover {
       background: var(--bg-gradient-yellow-1);
     }
-    
+
+    .chatbot-send:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .chatbot-char-count {
+      margin: 0;
+      padding: 0 15px 12px;
+      color: var(--light-gray-70);
+      font-size: var(--fs-8);
+    }
+
+    .chatbot-char-count-warn {
+      color: var(--vegas-gold);
+    }
+
     .typing-indicator {
-      display: none;
+      display: block;
       color: var(--light-gray);
       font-style: italic;
       font-size: 12px;

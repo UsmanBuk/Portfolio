@@ -85,7 +85,10 @@ export default defineConfig({
   plugins: [react(), serveAndCopyStatic()],
   publicDir: false,
   server: {
-    port: 5175
+    port: 5175,
+    proxy: {
+      '/api': 'http://127.0.0.1:8000'
+    }
   },
   build: {
     rollupOptions: {
