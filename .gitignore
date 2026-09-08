@@ -4,3 +4,5 @@ CLAUDE.local.md
 *.code-workspace
 node_modules
 dist
+.env
+.venv
