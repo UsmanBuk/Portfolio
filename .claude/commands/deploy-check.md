@@ -4,6 +4,13 @@ Validate the portfolio is ready for deployment to production.
 
 ## Checks to Perform
 
+### 0. Build & Backend (blocking)
+- `npm ci && npm run build` succeeds (this is exactly what Amplify runs from `amplify.yml`)
+- If `backend/` changed: `cd backend && python -m pytest -q tests` passes
+- If `assets/js/chatbot-context.json` changed: note that `backend/deploy.sh` must be run, because merging alone won't update the live chatbot
+- Remember that merging to `main` deploys to production. See `CLAUDE.md` → Deployment for the preview-branch and release steps
+- Run the HTML checks below against `dist/` and `src/components/`, not just the root `index.html` (which is now a Vite shell)
+
 ### 1. HTML Validation
 - Check all HTML files for proper structure
 - Verify all tags are closed

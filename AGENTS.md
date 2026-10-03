@@ -4,32 +4,29 @@ Instructions for AI agents working with this portfolio codebase.
 
 ## Project Overview
 
-Static HTML/CSS/JavaScript vCard-style portfolio website for Syed Usman Bukhari — AI Systems Architect specializing in Healthcare Technology. No build system, frameworks, or package managers. Zero dependencies.
+React + Vite vCard-style portfolio website for Syed Usman Bukhari, an AI Systems Architect specialising in Healthcare Technology. It includes an AI chatbot backed by a small FastAPI service on AWS Lambda.
+
+**Build, deployment and AWS details are in `CLAUDE.md`, which is the source of truth.** Merging to `main` deploys to production through AWS Amplify.
 
 ## Development Environment
 
 ### Running Locally
 
 ```bash
-python -m http.server 8000
-# or
-npx http-server -p 8000
-# or
-php -S localhost:8000
+npm ci
+npm run dev        # http://localhost:5175, proxies /api to 127.0.0.1:8000
+npm run build      # production build into dist/
 ```
 
-Open `http://localhost:8000` in a browser.
+To run the chatbot API locally, see `backend/README.md`. Backend tests: `cd backend && python -m pytest -q tests`.
 
 ### Cursor Cloud specific instructions
 
-Since this is a zero-build static site, there is no install or build step. To test changes:
-
-1. Start a local server: `python -m http.server 8000 &`
-2. Use the `computerUse` subagent to open `http://localhost:8000` in Chrome and verify changes visually.
+1. Start the dev server: `npm ci && npm run dev &`
+2. Use the `computerUse` subagent to open `http://localhost:5175` in Chrome and verify changes visually.
 3. For CSS/HTML changes, always take screenshots to confirm rendering.
-4. For case study pages, navigate to `http://localhost:8000/case-studies/<filename>.html`.
-
-No CI/CD pipeline exists — validation is done visually and via manual review.
+4. For case study pages, navigate to `http://localhost:5175/case-studies/<filename>.html`.
+5. Run `npm run build` before committing to catch build errors.
 
 ## Architecture
 
@@ -37,36 +34,41 @@ No CI/CD pipeline exists — validation is done visually and via manual review.
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Main portfolio page — all sections in one monolithic vCard layout |
-| `schedule.html` | Consultation booking page |
-| `assets/css/style.css` | Single stylesheet (~2785 lines) — CSS variables, animations, responsive breakpoints |
-| `assets/js/script.js` | DOM interactions (~144 lines) — sidebar toggle, modals, filtering, form validation |
+| `index.html`, `schedule.html` | Vite entry points (meta tags, `<div id="root">`) |
+| `src/App.jsx` | Tab switching and `/schedule.html` routing |
+| `src/components/*.jsx` | One component per section. Content lives here (e.g. `Resume.jsx`, `Portfolio.jsx`) |
+| `src/legacy/pages.html` | GitHub tab, still raw HTML |
+| `src/styles/style.css` | Main stylesheet. Edit this one, not `assets/css/style.css` (the build overwrites that) |
 | `assets/js/chatbot-context.json` | AI chatbot knowledge base (structured JSON) |
-| `case-studies/*.html` | Individual project deep-dive pages |
+| `case-studies/*.html` | Standalone static case study pages |
+| `backend/` | FastAPI chatbot API, CloudFormation template, deploy script |
+| `amplify.yml` | Amplify build spec |
 
 ### Directory Structure
 
 ```
 /
-├── index.html
-├── schedule.html
-├── assets/
-│   ├── css/style.css
-│   ├── js/script.js
-│   ├── js/chatbot-context.json
-│   └── images/              # SVG icons, diagrams
+├── index.html / schedule.html   # Vite entry points
+├── src/
+│   ├── App.jsx, main.jsx
+│   ├── components/              # Section components
+│   ├── hooks/                   # useFocusTrap
+│   ├── legacy/                  # GitHub tab HTML
+│   └── styles/                  # style.css, enhancements.css, schedule.css
+├── assets/                      # Images, CV PDFs, chatbot-context.json (copied to dist/)
 ├── case-studies/
 │   └── nhs-south-yorkshire-rag.html
-└── .claude/                  # Claude Code configuration (rules, skills, hooks)
+├── backend/                     # FastAPI + Lambda (template.yaml, deploy.sh, tests/)
+├── amplify.yml
+└── .claude/                     # Claude Code configuration (rules, skills, hooks)
 ```
 
 ### Design Decisions
 
-- **Zero-build**: No bundlers, transpilers, or package managers. Deploy as-is to any static host.
-- **Vanilla JS only**: No frameworks, no jQuery. Use `document.querySelector` and `addEventListener`.
-- **CSS variables for theming**: Dark theme with gold accents — never hardcode color values.
-- **Progressive enhancement**: All content accessible without JavaScript.
-- **Single stylesheet**: All CSS lives in `assets/css/style.css`.
+- **React 18 + Vite**: function components and hooks, no state library or router (`App.jsx` switches tabs).
+- **CSS variables for theming**: dark theme with gold accents. Never hardcode color values.
+- **Plain CSS**: no CSS-in-JS or Tailwind. Styles live in `src/styles/`.
+- **No secrets in the frontend**: the LLM key lives only in the Lambda environment, and the browser calls `/api/chat` on the same origin.
 
 ## Code Conventions
 
@@ -114,14 +116,12 @@ No CI/CD pipeline exists — validation is done visually and via manual review.
 --fs-6: 14px;   /* Small text */
 ```
 
-### JavaScript
+### JavaScript / React
 
-- Vanilla JS only — no frameworks, no jQuery
-- Use `document.querySelector` / `addEventListener` (not `.onclick`)
-- Event delegation for dynamic content
-- Wrap initialization in `DOMContentLoaded`
-- Remove `console.log` before committing
-- Only add comments to explain *why*, not *what*
+- Function components with hooks. Keep content arrays at the top of the component file (see `Resume.jsx`).
+- Accessibility: keep the existing `inert`, `aria-*` and focus handling (`useFocusTrap`) patterns.
+- Remove `console.log` before committing.
+- Only add comments to explain *why*, not *what*.
 
 ### Git
 
@@ -131,9 +131,9 @@ No CI/CD pipeline exists — validation is done visually and via manual review.
 
 ## Chatbot System
 
-The AI chatbot uses `assets/js/chatbot-context.json` as its knowledge base. This JSON contains structured data about professional experience, skills, education, certifications, and projects.
+The chatbot (`src/components/Chatbot.jsx`) posts to `/api/chat`. The FastAPI backend (`backend/main.py`) answers **only** from `assets/js/chatbot-context.json`, using an OpenRouter model.
 
-**When updating portfolio content (experience, skills, projects), also update `chatbot-context.json`** to keep the chatbot responses in sync.
+**When updating portfolio content (experience, skills, projects), also update `chatbot-context.json` and then redeploy the backend with `backend/deploy.sh`.** The JSON is bundled into the Lambda package, so committing it does not update the live chatbot. See `CLAUDE.md` → Deployment.
 
 ## Content & Positioning Guidelines
 
@@ -165,7 +165,7 @@ Case study pages live in `case-studies/` and follow a consistent structure:
 6. **Tech stack** — grouped by category
 7. **CTA** — contact link + CV download
 
-File naming: kebab-case, e.g., `client-name-project.html`. After creating a new case study, add a link in `index.html`'s project section.
+File naming: kebab-case, e.g., `client-name-project.html`. After creating a new case study, link it from the relevant tab (search `src/` and `src/legacy/pages.html` for `case-studies/` to find existing links; the featured card is in `Sidebar.jsx`).
 
 ### Case Study HTML Pattern
 
@@ -195,13 +195,14 @@ File naming: kebab-case, e.g., `client-name-project.html`. After creating a new 
 
 - **HTML**: Correct semantic structure, no broken links, images have `alt` text
 - **CSS**: Uses CSS variables (no hardcoded colors), responsive at 320px/768px/1024px/1200px
-- **JS**: No `console.log` left in, event listeners work, no framework imports
+- **Build**: `npm run build` succeeds, and backend tests pass if `backend/` changed
+- **JS**: No `console.log` left in, no React warnings in the console
 - **Content**: Chatbot JSON stays in sync with portfolio content
 - **Visual**: Dark theme renders correctly, gold accent colors consistent, no layout breaks
 
 ### How to Test
 
-1. Start a local server (`python -m http.server 8000`)
+1. Start the dev server (`npm run dev`) or build and preview (`npm run build && npm run preview`)
 2. Open in browser and check all pages render correctly
 3. Test responsive breakpoints by resizing
 4. Click through all interactive elements (sidebar toggle, modals, project filters, contact form)
@@ -209,18 +210,15 @@ File naming: kebab-case, e.g., `client-name-project.html`. After creating a new 
 
 ### Automated Checks
 
-No test framework is configured. Validation is manual. Consider checking:
-
 ```bash
-# Validate HTML (if html-validate is available)
-npx html-validate index.html
-
-# Check for broken links
-rg 'href="[^"]*"' index.html --only-matching
+npm run build                                   # frontend must build
+cd backend && python -m pytest -q tests         # backend tests (mocked LLM)
 ```
 
 ## External Resources
 
 - **Google Fonts**: Poppins (loaded via CDN in HTML head)
 - **Ionicons**: Icon library (loaded via CDN script tags at end of body)
-- **OpenAI API**: Powers the chatbot (no keys stored in repo)
+- **OpenRouter** (OpenAI-compatible API): powers the chatbot from the Lambda backend; the key is never stored in the repo
+- **EmailJS**: contact form
+- **Cal.com**: consultation booking embed

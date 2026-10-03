@@ -34,6 +34,9 @@ python -m pytest -q tests
 
 ## Deploy
 
+See also `CLAUDE.md` → Deployment at the repo root for the full release runbook (Amplify, preview branches, rollback, AWS/GitHub access).
+
+
 The API runs on AWS Lambda (arm64, Python 3.12) behind an API Gateway HTTP API in `eu-west-2`, defined in `template.yaml` (stack `portfolio-chatbot`). The Amplify app proxies `/api/<*>` to it with a rewrite rule, so the browser calls the API on the site's own domain and no CORS setup is needed.
 
 ```bash

@@ -4,9 +4,9 @@ Standards for HTML, CSS, and JavaScript in this portfolio.
 
 ## General Principles
 
-- Zero-build static site: no bundlers, no transpilers
-- Vanilla JS only: no frameworks, no jQuery
-- Progressive enhancement: content accessible without JS
+- React 18 + Vite: `npm run build` must pass before committing. Deployment details are in `CLAUDE.md`.
+- No extra frameworks or libraries without asking (no router, state library, CSS-in-JS or Tailwind)
+- Progressive enhancement where practical; case-study pages stay static HTML
 - Performance first: minimize requests, optimize assets
 
 ## HTML Standards
@@ -99,73 +99,47 @@ background: hsl(240, 2%, 13%);
 - Use existing breakpoints from style.css
 - Test at: 320px, 768px, 1024px, 1200px
 
-## JavaScript Standards
+## JavaScript / React Standards
 
-### No Frameworks
-```javascript
-// Good
-document.querySelector('.element');
-element.addEventListener('click', handler);
-
-// Bad
-$('.element');
-element.onclick = handler;
-```
-
-### Event Handling
-```javascript
-// Use event delegation for dynamic content
-document.querySelector('.parent').addEventListener('click', (e) => {
-  if (e.target.matches('.child')) {
-    // Handle
-  }
-});
-
-// Use named functions for complex handlers
-function handleSubmit(event) {
-  event.preventDefault();
-  // ...
-}
-form.addEventListener('submit', handleSubmit);
-```
-
-### DOM Ready
-```javascript
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize
-});
-```
+### Components
+- Function components with hooks, one section per file in `src/components/`
+- Keep content (experience, projects, courses) as arrays at the top of the component file
+- Use React state and handlers (`onClick`, `onChange`), not `document.querySelector` or manual DOM mutation
+- Keep the existing accessibility patterns: `inert` on hidden pages, `aria-*`, `useFocusTrap` for dialogs
 
 ### Error Handling
 ```javascript
-// Only catch errors you can handle
+// Only catch errors you can handle, and show the user a fallback
 try {
-  const data = JSON.parse(input);
-} catch (e) {
-  console.error('Invalid JSON:', e.message);
-  // Provide fallback or show error
+  const response = await fetch('/api/chat', { ... })
+} catch {
+  setMessages((current) => [...current, { isError: true, text: "I can't reach the chatbot server right now." }])
 }
 ```
 
 ### No Console in Production
 Remove `console.log` before committing. Use proper error handling instead.
 
+### Backend (`backend/`)
+- FastAPI + Pydantic; config from environment variables, never hardcoded
+- Never commit `.env` or keys; the OpenRouter key lives only in the Lambda environment
+- Add or update tests in `backend/tests/` (mock the OpenAI client) when changing `main.py`
+
 ## File Organization
 
 ```
 /
-├── index.html              # Main portfolio page
-├── case-studies/           # Individual case study pages
-│   └── *.html
+├── index.html, schedule.html   # Vite entry points
+├── src/
+│   ├── components/*.jsx        # Section components (content lives here)
+│   ├── hooks/, legacy/
+│   └── styles/style.css        # Main stylesheet (edit this, not assets/css/style.css)
+├── case-studies/*.html         # Static case study pages
 ├── assets/
-│   ├── css/
-│   │   └── style.css       # Single stylesheet
-│   ├── js/
-│   │   ├── script.js       # Main interactions
-│   │   └── chatbot-context.json
-│   ├── images/             # All images
-│   └── documents/          # PDFs, etc.
-└── .claude/                # Claude Code configuration
+│   ├── images/, documents/     # Copied to dist/ at build
+│   └── js/chatbot-context.json # Chatbot knowledge base (redeploy backend after edits)
+├── backend/                    # FastAPI chatbot API + AWS deploy
+└── amplify.yml                 # Amplify build spec
 ```
 
 ## Git Workflow
@@ -184,7 +158,7 @@ Remove `console.log` before committing. Use proper error handling instead.
 
 ### What to Commit
 - Source files only
-- No generated or cached files
+- No generated or cached files (`dist/`, `node_modules/`, `backend/build/`, `__pycache__`)
 - No secrets or API keys
 
 ## Comments

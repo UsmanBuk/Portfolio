@@ -1,13 +1,17 @@
 #!/bin/bash
-# Remind to update chatbot-context.json after editing portfolio content
+# Remind to keep the chatbot knowledge base in sync and live after content edits
 
 TOOL_INPUT="$1"
 
-# Check if editing index.html or case studies (where experience/skills/projects live)
-if echo "$TOOL_INPUT" | grep -qE 'index\.html|case-studies/'; then
+if echo "$TOOL_INPUT" | grep -q 'chatbot-context\.json'; then
+  echo ""
+  echo "🚀 REMINDER: chatbot-context.json is bundled into the Lambda."
+  echo "   Run AWS_PROFILE=portfolio backend/deploy.sh to update the live chatbot."
+  echo ""
+elif echo "$TOOL_INPUT" | grep -qE 'src/components/|src/legacy/|case-studies/'; then
   echo ""
   echo "📝 REMINDER: If you updated experience, skills, or projects,"
-  echo "   also update assets/js/chatbot-context.json to keep the chatbot in sync."
+  echo "   also update assets/js/chatbot-context.json and redeploy the backend."
   echo ""
 fi
 

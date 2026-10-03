@@ -45,7 +45,7 @@ Personal portfolio website showcasing the professional experience and projects o
 ### **AI-Powered Chatbot**
 - **Intelligent Assistant**: Answers questions about experience and skills
 - **Context-Aware**: Trained on comprehensive professional background
-- **Secure Implementation**: No exposed API keys or credentials
+- **Secure Implementation**: Key held only by the Lambda backend; rate-limited and throttled
 - **Natural Language**: Conversational interface for visitors
 
 ### **Performance Optimizations**
@@ -80,55 +80,39 @@ Personal portfolio website showcasing the professional experience and projects o
 ## 🚀 Getting Started
 
 ### **Prerequisites**
-- Python 3.x, Node.js, or PHP for local server
-- Modern web browser
-- Git (optional, for cloning)
+- Node.js 20+ and npm
+- Python 3.12 (only for running the chatbot API locally)
 
 ### **Local Development**
 
-1. **Clone or Download**
-   ```bash
-   git clone [repository-url]
-   cd vcard-personal-portfolio
-   ```
+```bash
+git clone https://github.com/UsmanBuk/Portfolio.git
+cd Portfolio
+npm ci
+npm run dev        # http://localhost:5175
+```
 
-2. **Start Local Server**
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx http-server -p 8000
-   
-   # Using PHP  
-   php -S localhost:8000
-   ```
+The chat window needs the API running locally (`/api` is proxied to port 8000). See [`backend/README.md`](backend/README.md).
 
-3. **Open in Browser**
-   ```
-   http://localhost:8000
-   ```
-
-### **What You'll See**
-- ✨ **Loading Animation**: Professional loading screen
-- 🎨 **Smooth Interactions**: Hover effects and animations
-- 🤖 **AI Chatbot**: Click the chat bubble to interact
-- 📱 **Mobile Optimized**: Responsive design for all devices
+```bash
+npm run build      # production build into dist/
+npm run preview    # serve the build locally
+```
 
 ## 📁 Project Structure
 
 ```
-vcard-personal-portfolio/
-├── assets/
-│   ├── css/
-│   │   └── style.css              # Enhanced styles with loading screen
-│   ├── js/
-│   │   ├── script.js              # Main functionality
-│   │   └── chatbot-context.json   # AI chatbot knowledge base
-│   ├── images/                    # Project and profile images
-│   └── documents/                 # Resume PDFs
-├── index.html                     # Main portfolio page
-└── README.md                      # This documentation
+Portfolio/
+├── index.html, schedule.html   # Vite entry points
+├── src/
+│   ├── App.jsx                 # Tab switching and routing
+│   ├── components/             # One component per section (content lives here)
+│   ├── legacy/                 # GitHub tab (raw HTML)
+│   └── styles/                 # style.css, enhancements.css, schedule.css
+├── assets/                     # Images, CV PDFs, chatbot-context.json
+├── case-studies/               # Static case study pages
+├── backend/                    # FastAPI chatbot API, AWS template, deploy script
+└── amplify.yml                 # AWS Amplify build spec
 ```
 
 ## 🔧 Recent Updates
@@ -188,16 +172,13 @@ Try asking about:
 - **Location**: Coventry, West Midlands, UK
 - **GitHub**: https://github.com/UsmanBuk
 
-## 🚀 Deployment Options
+## 🚀 Deployment
 
-### **Free Hosting Platforms**
-- **GitHub Pages**: Push to GitHub and enable Pages
-- **Netlify**: Drag and drop deployment
-- **Vercel**: Git-based deployment
-- **Digital Ocean**: Static site hosting
+- **Website**: AWS Amplify Hosting (eu-west-2) builds and deploys `main` automatically using `amplify.yml`. Merging to `main` means a production release at https://www.usmanbukhari.co.uk.
+- **Chatbot API**: FastAPI on AWS Lambda behind API Gateway, deployed with `backend/deploy.sh`. Amplify proxies `/api/*` to it.
+- **Chatbot knowledge**: `assets/js/chatbot-context.json` is bundled into the Lambda, so redeploy the backend after editing it.
 
-### **Custom Domain**
-The portfolio is ready for custom domain deployment with proper meta tags and SEO optimization.
+Full runbook (preview branches, rollback, access): see `CLAUDE.md` → Deployment.
 
 ## 📊 Performance & SEO
 
@@ -223,7 +204,8 @@ The portfolio is ready for custom domain deployment with proper meta tags and SE
 ### **Content Management**
 - **Resume PDFs**: Replace in `/assets/documents/`
 - **Project Images**: Update in `/assets/images/`
-- **Chatbot Responses**: Modify in chatbot JavaScript section
+- **Section Content**: Edit the component in `src/components/` (e.g. `Resume.jsx`)
+- **Chatbot Knowledge**: Edit `assets/js/chatbot-context.json`, then run `backend/deploy.sh`
 
 ## 📝 License
 
