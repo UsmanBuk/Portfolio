@@ -35,6 +35,6 @@
 - [ ] Deploy the React frontend and Python backend together with the owner.
 - [ ] Add required environment variables to `.env.example` without real values.
 - [ ] Update the README with setup, testing, and deployment instructions.
-- [ ] Confirm no API keys are exposed in browser code or Git.
+- [x] Confirm no API keys are exposed in browser code or Git.
 
 The three-week schedule is a guide. Prioritise a working, tested migration over rushing unfinished work.

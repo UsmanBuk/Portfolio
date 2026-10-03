@@ -2040,8 +2040,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .navbar-list {
-    gap: 30px;
-    padding: 0 20px;
+    gap: 20px;
+    padding: 0 10px;
   }
 
   .navbar-link { font-weight: var(--fw-500); }

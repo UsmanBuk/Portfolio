@@ -2,3 +2,10 @@ assets/images/github-recovery-codes.txt
 CLAUDE.local.md
 .planning
 *.code-workspace
+node_modules
+dist
+.env
+.venv
+__pycache__
+.aws-sam
+backend/build
