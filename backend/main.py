@@ -7,13 +7,20 @@ from time import time
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 from openai import OpenAI
 from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parent
 load_dotenv(ROOT / ".env")
 
-CONTEXT_PATH = ROOT.parent / "assets" / "js" / "chatbot-context.json"
+CONTEXT_PATH = Path(
+    os.getenv("CONTEXT_PATH", ROOT.parent / "assets" / "js" / "chatbot-context.json")
+)
+SITE_URL = os.getenv("SITE_URL", "http://localhost:5175")
+ALLOWED_ORIGINS = os.getenv(
+    "ALLOWED_ORIGINS", "http://localhost:5175,http://127.0.0.1:5175"
+).split(",")
 
 with CONTEXT_PATH.open(encoding="utf-8") as context_file:
     PORTFOLIO_CONTEXT = json.load(context_file)
@@ -36,7 +43,7 @@ Knowledge base:
 app = FastAPI(title="Portfolio Chatbot API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5175", "http://127.0.0.1:5175"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
@@ -105,7 +112,7 @@ def chat(payload: ChatRequest, request: Request):
     if base_url:
         client_options["base_url"] = base_url
         client_options["default_headers"] = {
-            "HTTP-Referer": "http://localhost:5175",
+            "HTTP-Referer": SITE_URL,
             "X-Title": "Usman Bukhari Portfolio",
         }
 
@@ -139,3 +146,6 @@ def chat(payload: ChatRequest, request: Request):
         reply = reply[: MAX_REPLY_CHARS - 1].rsplit(" ", 1)[0] + "…"
 
     return ChatResponse(reply=reply)
+
+
+handler = Mangum(app, lifespan="off")

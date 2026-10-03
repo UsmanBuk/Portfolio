@@ -1,0 +1,59 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Portfolio chatbot API (FastAPI on Lambda behind an HTTP API)
+
+Parameters:
+  OpenAIApiKey:
+    Type: String
+    NoEcho: true
+    Default: ""
+  OpenAIBaseUrl:
+    Type: String
+    Default: https://openrouter.ai/api/v1
+  OpenAIModel:
+    Type: String
+    Default: google/gemini-2.5-flash-lite
+  SiteUrl:
+    Type: String
+    Default: https://www.usmanbukhari.co.uk
+
+Resources:
+  ChatFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: build/
+      Handler: main.handler
+      Runtime: python3.12
+      Architectures: [arm64]
+      MemorySize: 512
+      Timeout: 25
+      Environment:
+        Variables:
+          OPENAI_API_KEY: !Ref OpenAIApiKey
+          OPENAI_BASE_URL: !Ref OpenAIBaseUrl
+          OPENAI_MODEL: !Ref OpenAIModel
+          SITE_URL: !Ref SiteUrl
+          ALLOWED_ORIGINS: !Ref SiteUrl
+          CONTEXT_PATH: chatbot-context.json
+      Events:
+        Api:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ChatApi
+
+  ChatApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      DefaultRouteSettings:
+        ThrottlingRateLimit: 2
+        ThrottlingBurstLimit: 5
+
+  ChatFunctionLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${ChatFunction}
+      RetentionInDays: 30
+
+Outputs:
+  ApiUrl:
+    Value: !Sub https://${ChatApi}.execute-api.${AWS::Region}.amazonaws.com
