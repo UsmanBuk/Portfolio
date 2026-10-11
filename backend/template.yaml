@@ -57,3 +57,9 @@ Resources:
 Outputs:
   ApiUrl:
     Value: !Sub https://${ChatApi}.execute-api.${AWS::Region}.amazonaws.com
+
+
+
+cache-dependency-path: |
+  backend/requirements.txt
+  backend/requirements-dev.txt

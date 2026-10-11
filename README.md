@@ -99,6 +99,28 @@ npm run build      # production build into dist/
 npm run preview    # serve the build locally
 ```
 
+## Running tests
+
+[`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs on every pull request and on every push to `main`.
+
+### Frontend
+
+From the repo root, on Node 20:
+
+```bash
+npm ci
+npm run build
+```
+
+### Backend
+
+From `backend/`, on Python 3.12:
+
+```bash
+pip install -r requirements.txt -r requirements-dev.txt
+python -m pytest -q tests
+```
+
 ## 📁 Project Structure
 
 ```
