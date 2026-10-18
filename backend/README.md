@@ -28,9 +28,11 @@ uvicorn main:app --reload --port 8000
 ## Test
 
 ```bash
-pip install -r requirements.txt pytest
+pip install -r requirements.txt -r requirements-dev.txt
 python -m pytest -q tests
 ```
+
+`pytest.ini` adds `backend/` to the import path, so `pytest` from this folder also finds `main`.
 
 ## Deploy
 

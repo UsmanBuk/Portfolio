@@ -27,10 +27,9 @@ export default function Contact({ isActive, onNavigate }) {
         setEmail('')
         setMessage('')
       },
-      (error) => {
+      () => {
         setStatus('Failed to send message. Please try again.')
         alert('Failed to send message. Please try again.')
-        console.error('EmailJS Error:', error)
       }
     )
   }
