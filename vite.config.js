@@ -84,6 +84,12 @@ function serveAndCopyStatic() {
 export default defineConfig({
   plugins: [react(), serveAndCopyStatic()],
   publicDir: false,
+  test: {
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.js',
+    css: false,
+    exclude: ['e2e/**', 'node_modules/**']
+  },
   server: {
     port: 5175,
     proxy: {

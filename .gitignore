@@ -9,3 +9,7 @@ dist
 __pycache__
 .aws-sam
 backend/build
+playwright-report
+test-results
+blob-report
+playwright/.cache

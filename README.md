@@ -109,8 +109,12 @@ From the repo root, on Node 20:
 
 ```bash
 npm ci
+npm test
 npm run build
+npm run test:e2e
 ```
+
+`npm test` is the Vitest component suite. `npm run test:e2e` is Playwright against `npm run preview` (it builds first unless `CI` is set).
 
 ### Backend
 
