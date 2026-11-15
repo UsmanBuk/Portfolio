@@ -11,19 +11,33 @@ const EDUCATION = [
 
 const EXPERIENCE = [
   {
-    title: 'AI Engineer – Hudson and Hayes',
-    period: 'April 2026 – Present',
+    id: 'experience-rolls-royce',
+    title: 'AI Engineer – Rolls-Royce (Rolls-Royce & Partners Finance)',
+    period: 'July 2026 – September 2026',
     bullets: [
-      'Architecting production voice agents on Azure AI Foundry, using the GPT-4o Realtime API for low-latency speech-to-speech conversations with function calling that executes tools and actions during live calls.',
-      'Wiring Azure Communication Services for telephony and Azure Speech Services for speech-to-text and text-to-speech, combined with custom knowledge grounding to deliver domain-specific responses across inbound and outbound call flows.',
-      'Building evaluation and observability pipelines that track call quality, latency, and tool-call accuracy in production — feeding live conversation data back into iterative prompt and agent refinement.'
+      'Architected an AI-assisted airworthiness compliance proof of concept that traces every applicable EASA and FAA Airworthiness Directive and service bulletin through engine records.',
+      'Targeted a cut from 8–24 hours of manual review per engine to about 3 hours, with the final safety judgement remaining with human engineers.',
+      'Delivered the proof of concept as sole engineer, end to end.',
+      'Designed a bounded multi-stage LLM pipeline — OCR, classification, identifier extraction, an evidence graph, rule extraction, and per-requirement reasoning — with deterministic guardrails and evaluation against an SME golden set.',
+      'Built the system with Python, FastAPI, Postgres, Azure OpenAI, Document Intelligence, and React/TypeScript.'
     ]
   },
   {
-    title: 'AI & Full Stack Engineer – Coex (Client: Ardonagh Specialty)',
+    id: 'experience-hudson',
+    title: 'AI Engineer – Hudson & Hayes',
+    period: 'January 2026 – Present',
+    bullets: [
+      'Sole engineer on the Serco DWP Restart outbound AI voice agent: Azure Communication Services with Azure OpenAI Realtime speech-to-speech, barge-in, Dynamics 365 integration, safeguards, and A/B testing.',
+      'Shipped the AKG Employment Coach Companion to production. Load tests cut median latency from about 980ms to about 33ms, and the companion publishes action plans to the government PICS system.',
+      'Provide production support for the Network Rail Contract Agent, an AI contract-redaction pipeline using Document Intelligence, Presidio/spaCy, and GPT-5.1.'
+    ]
+  },
+  {
+    id: 'experience-ardonagh',
+    title: 'Lead Agentic AI Engineer – Ardonagh Specialty',
     period: 'February 2026 – April 2026',
     bullets: [
-      'Designed and shipped a KYC onboarding platform end-to-end for Ardonagh Specialty — React/TypeScript frontend, Python FastAPI backend, Azure-hosted — replacing a manual analyst workflow and cutting time-to-onboard from multiple days/weeks to hours.',
+      'Designed and shipped a KYC onboarding platform end-to-end for Ardonagh Specialty (insurance) — React/TypeScript frontend, Python FastAPI backend, Azure-hosted — replacing a manual analyst workflow and cutting time-to-onboard from multiple days/weeks to hours.',
       'Built a multi-agent system on Azure AI Foundry (GPT-4o) that autonomously gathers and reconciles client data across Companies House, LexisNexis WorldCompliance, and internal PAS, producing structured risk summaries that analysts review rather than assemble.',
       'Engineered resilient API integrations with Companies House (PSC/UBO lookups), LexisNexis (sanctions, PEP, adverse media screening), and internal databases — including caching, retry, and rate-limit handling — keeping end-to-end agent runs under 30 seconds per case.',
       'Productionised the end-to-end workflow with Azure Logic Apps as the orchestration backbone — monitoring inboxes, triggering on inbound client emails, routing attachments through Azure Document Intelligence to extract PDF and structured data, and automatically creating cases in MongoDB ready for agent enrichment — alongside the full-stack foundations (auth, audit logging, role-based access) needed to run agents safely in a regulated compliance environment.'
@@ -31,18 +45,12 @@ const EXPERIENCE = [
   },
   {
     id: 'experience-nhs',
-    title: 'Gen AI Engineer & Data Architecture Specialist - NHS - South Yorkshire ICB',
-    period: 'May 2025 - February 2026',
+    title: 'Gen AI Engineer – NHS South Yorkshire ICB',
+    period: 'May 2025 – February 2026',
     bullets: [
-      'Built a generic web scraper using Crawl4AI to extract healthcare service data from 50+ regional websites, supporting unemployment and healthcare access initiatives in South Yorkshire.',
-      'Engineered a daily data pipeline running on Azure Functions with queue and timer triggers, automating ingestion, transformation, and enrichment of scraped data.',
-      'Standardised outputs into AI-ready JSON schemas, enabling seamless integration with NHS systems and downstream applications.',
-      'Integrated the pipeline with Azure AI Search using vector embeddings for semantic retrieval, improving discoverability and relevance of healthcare services across diverse datasets.',
-      'Deployed a Microsoft open-source chatbot framework, connected to the indexed data, allowing citizens to query healthcare/unemployment services via natural-language search.',
-      'Applied LLM-oriented enrichment techniques (auto-tagging, summarisation, service clustering, and missing metadata generation) to improve data quality and categorisation.',
-      'Leveraged LangChain orchestration to combine retrieval-augmented generation (RAG) with Azure AI Search, ensuring consistent, context-aware chatbot responses aligned to NHS data sources.',
-      'Experimented with generative AI for synthetic data generation to test pipeline robustness and fill gaps in underrepresented service categories.',
-      'Collaborated with NHS stakeholders to ensure the solution aligned with regional healthcare accessibility and unemployment support goals.'
+      'Delivered a production RAG platform serving 1.4 million residents, with 3,000+ monthly active users.',
+      'Reached 90% accuracy against clinical guidelines and recorded zero hallucination incidents in production.',
+      'Cut query resolution from 12 minutes to under 30 seconds at a 94% success rate, using Azure AI Search, LangGraph, and LangChain.'
     ]
   },
   {
@@ -84,28 +92,6 @@ const EXPERIENCE = [
 ]
 
 const FREELANCE = [
-  {
-    title: 'Full Stack Engineer – Mozaic Consulting (Client: SBTi)',
-    period: 'Nov 2025 – Present',
-    bullets: [
-      'Extensively debugged and resolved complex issues across a React frontend and FastAPI backend application for SBTi, a company helping organizations achieve net zero emissions.',
-      'Worked with BigQuery and PostgreSQL databases to investigate and fix data-related issues.',
-      'Deployed and managed infrastructure on Google Cloud Platform (GCP).'
-    ]
-  },
-  {
-    title: 'Full Stack & DevOps Engineer – TIC.UK',
-    period: 'July 2024 – Present',
-    bullets: [
-      'Manage PHP/Laravel based ATOL application and a custom CRM application for travel industry operations.',
-      'Built a FastAPI-based API from scratch for Myatol, serving 20+ clients with real-time travel booking functionality.',
-      'Built out automation workflows to streamline business processes and improve operational efficiency.',
-      'Migrated infrastructure from AWS to Digital Ocean, optimizing costs and performance.',
-      'Built a comprehensive CI/CD pipeline using GitHub Actions for automated testing and deployment.',
-      'Managed and enhanced company WordPress website, improving user experience and functionality.',
-      'Used low-code tools like Lovable to build out custom applications for travel agencies, accelerating development timelines.'
-    ]
-  },
   {
     title: 'API Engineer – Anglestack',
     period: 'Jan 2024 – July 2024',
@@ -259,27 +245,6 @@ export default function Resume({ isActive }) {
           >
             <IonIcon name="download-outline" />
             Download CV
-            <span className="visually-hidden"> (opens in a new tab)</span>
-          </a>
-        </div>
-        <div className="cv-download-card">
-          <div className="cv-card-content">
-            <p className="cv-card-title">
-              <IonIcon name="code-download-outline" />
-              Detailed Technical Resume
-            </p>
-            <p className="cv-card-description">
-              In-depth technical documentation with project details, code samples, and comprehensive skill breakdowns
-            </p>
-          </div>
-          <a
-            href="./assets/documents/DetailedCV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cv-download-btn"
-          >
-            <IonIcon name="download-outline" />
-            Download Detailed CV
             <span className="visually-hidden"> (opens in a new tab)</span>
           </a>
         </div>

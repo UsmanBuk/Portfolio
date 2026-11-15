@@ -7,9 +7,9 @@ Auto-apply these rules when creating or editing portfolio content.
 ## 1. Specialist Positioning
 
 ### Identity Hierarchy
-- **Primary**: "AI Systems Architect | Healthcare Technology"
-- **Secondary**: "Enterprise RAG & LLM Specialist"
-- **Tertiary**: "Cloud Architecture & MLOps"
+- **Primary**: "Founder / AI Engineer"
+- **Secondary**: "VacancyBot and Bukhari Consulting"
+- **Tertiary**: "AI engineering contracts and team training"
 
 ### Avoid
 - "Full Stack Engineer" or "Full Stack Developer"

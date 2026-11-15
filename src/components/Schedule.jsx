@@ -101,8 +101,8 @@ export default function Schedule({ isActive, onNavigate }) {
         </button>
         <h2 className="schedule-title">Let's Discuss Your AI Challenge</h2>
         <p className="schedule-subtitle">
-          Book a 30-minute discovery call to scope your AI, RAG, or healthcare technology challenge and leave with a
-          clearer next-step recommendation.
+          Book a 30-minute discovery call to scope an AI engineering contract or a team training engagement, and leave
+          with a clearer next step.
         </p>
       </header>
 
@@ -124,10 +124,10 @@ export default function Schedule({ isActive, onNavigate }) {
       <section className="schedule-who">
         <h3 className="schedule-who-title">This call is for you if:</h3>
         <ul className="schedule-who-list">
-          <li>You're exploring AI or RAG systems for your organisation</li>
-          <li>You need to modernise healthcare technology infrastructure</li>
+          <li>You want an AI engineer for a production system</li>
+          <li>Your team needs practical AI training</li>
           <li>You want to understand what's feasible before committing to a project</li>
-          <li>You're evaluating consultants for an upcoming AI initiative</li>
+          <li>You're evaluating someone for an upcoming AI initiative</li>
         </ul>
       </section>
 

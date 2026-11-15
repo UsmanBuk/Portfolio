@@ -8,9 +8,9 @@ user-invocable: false
 
 ## Identity
 
-- **Primary**: AI Systems Architect | Healthcare Technology
-- **Secondary**: Enterprise RAG & LLM Specialist
-- **Avoid**: "Full Stack Engineer", "Web Developer"
+- **Primary**: Founder / AI Engineer
+- **Secondary**: VacancyBot and Bukhari Consulting
+- **Avoid**: "Full Stack Engineer", "Web Developer", and present-tense NHS contracting language
 
 ## Differentiation
 

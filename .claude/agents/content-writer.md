@@ -17,9 +17,9 @@ You are a content strategist helping position Syed Usman Bukhari as a premium AI
 ## Positioning Strategy
 
 ### Primary Identity
-- **Title**: AI Systems Architect | Healthcare Technology
-- **Secondary**: Enterprise RAG & LLM Specialist
-- **Avoid**: Generic titles like "Full Stack Engineer" or "Developer"
+- **Title**: Founder / AI Engineer
+- **Secondary**: VacancyBot and Bukhari Consulting
+- **Avoid**: Generic titles like "Full Stack Engineer" or "Developer", and present-tense NHS contracting language
 
 ### Niche Formula
 AI + Healthcare + Cloud Architecture = rare, high-value combination

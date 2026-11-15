@@ -4,7 +4,7 @@ Instructions for AI agents working with this portfolio codebase.
 
 ## Project Overview
 
-React + Vite vCard-style portfolio website for Syed Usman Bukhari, an AI Systems Architect specialising in Healthcare Technology. It includes an AI chatbot backed by a small FastAPI service on AWS Lambda.
+React + Vite vCard-style portfolio website for Syed Usman Bukhari, Founder / AI Engineer. He builds VacancyBot and runs Bukhari Consulting. It includes an AI chatbot backed by a small FastAPI service on AWS Lambda.
 
 **Build, deployment and AWS details are in `CLAUDE.md`, which is the source of truth.** Merging to `main` deploys to production through AWS Amplify.
 
@@ -141,9 +141,9 @@ This portfolio targets premium positioning at £1,600–£2,000/day.
 
 ### Identity
 
-- **Primary**: AI Systems Architect | Healthcare Technology
-- **Secondary**: Enterprise RAG & LLM Specialist
-- **Avoid**: "Full Stack Engineer", "Web Developer"
+- **Primary**: Founder / AI Engineer
+- **Secondary**: VacancyBot and Bukhari Consulting (AI training for companies)
+- **Avoid**: "Full Stack Engineer", "Web Developer", and present-tense NHS contracting language
 
 ### Writing Style
 
