@@ -10,8 +10,7 @@ describe('Portfolio', () => {
 
     expect(screen.getByRole('heading', { name: 'VacancyBot' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Chalkys' })).toBeInTheDocument()
-    const vacancyBot = screen.getByRole('link', { name: /vacancybot \(opens in a new tab\)/i })
-    expect(vacancyBot).toHaveAttribute('href', 'https://vacancybot.co.uk')
+    expect(screen.getByRole('link', { name: /vacancybot \(opens in a new tab\)/i }).getAttribute('href')).toBe('https://vacancybot.co.uk')
     expect(screen.queryByRole('link', { name: /trading 212/i })).not.toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Trading 212 AI Platform' })).toBeInTheDocument()
     expect(screen.queryByRole('link', { name: /umrah taxi/i })).not.toBeInTheDocument()
