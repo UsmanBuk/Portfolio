@@ -1,3 +1,4 @@
+import React from 'react'
 import IonIcon from './IonIcon'
 
 export default function Sidebar({ isOpen, onToggle }) {
