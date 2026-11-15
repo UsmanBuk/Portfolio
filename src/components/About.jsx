@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import IonIcon from './IonIcon'
 import useFocusTrap from '../hooks/useFocusTrap'
 
@@ -80,7 +80,7 @@ export default function About({ isActive, onNavigate }) {
       <section className="about-text">
         <div className="intro-section">
           <p className="intro-paragraph">
-            I'm a <strong>Founder / AI Engineer</strong> in Coventry, UK. I build{' '}
+            I&apos;m a <strong>Founder / AI Engineer</strong> in Coventry, UK. I build{' '}
             <strong>VacancyBot</strong>, an AI assistant that prepares and submits job applications — starting with Reed — and you review every application before it goes out. I also run{' '}
             <strong>Bukhari Consulting</strong>, training company teams to use AI in their own work.
           </p>
@@ -88,13 +88,13 @@ export default function About({ isActive, onNavigate }) {
 
         <div className="specialization-section">
           <p>
-            I'm open to AI engineering contracts and team training. Recent contracts include a Rolls-Royce &amp; Partners Finance airworthiness proof of concept, delivered as sole engineer end to end, production voice and employment agents at Hudson &amp; Hayes, and a multi-agent KYC platform for Ardonagh Specialty that took insurance onboarding from days or weeks to hours.
+            I&apos;m open to AI engineering contracts and team training. Recent contracts include a Rolls-Royce &amp; Partners Finance airworthiness proof of concept, delivered as sole engineer end to end, production voice and employment agents at Hudson &amp; Hayes, and a multi-agent KYC platform for Ardonagh Specialty that took insurance onboarding from days or weeks to hours.
           </p>
         </div>
 
         <div className="passion-section">
           <p className="passion-statement">
-            Before that, at NHS South Yorkshire ICB, I delivered a production RAG platform for <strong>1.4 million residents</strong>: <strong>3,000+ monthly active users</strong>, 90% accuracy against clinical guidelines, and <strong>zero hallucination incidents</strong>. I'm BPSS screened and DBS checked.{' '}
+            Before that, at NHS South Yorkshire ICB, I delivered a production RAG platform for <strong>1.4 million residents</strong>: <strong>3,000+ monthly active users</strong>, 90% accuracy against clinical guidelines, and <strong>zero hallucination incidents</strong>. I&apos;m BPSS screened and DBS checked.{' '}
             <a href="./case-studies/nhs-south-yorkshire-rag.html">Read the NHS case study</a>.
           </p>
         </div>

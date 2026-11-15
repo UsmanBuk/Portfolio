@@ -79,13 +79,13 @@ The CV download points at `assets/documents/UsmanCV.pdf`.
 - **Email**: usmanbukhari541@gmail.com
 - **Phone**: +44 7462 660889
 - **Location**: Coventry, UK
-- **GitHub**: https://github.com/UsmanBuk
-- **LinkedIn**: https://www.linkedin.com/in/syed-usman-bukhari-aideveloper
-- **VacancyBot**: https://vacancybot.co.uk
+- **GitHub**: [github.com/UsmanBuk](https://github.com/UsmanBuk)
+- **LinkedIn**: [linkedin.com/in/syed-usman-bukhari-aideveloper](https://www.linkedin.com/in/syed-usman-bukhari-aideveloper)
+- **VacancyBot**: [vacancybot.co.uk](https://vacancybot.co.uk)
 
 ## Deployment
 
-- **Website**: AWS Amplify Hosting (eu-west-2) builds `main` with `amplify.yml`. Merging to `main` is a production release at https://www.usmanbukhari.co.uk.
+- **Website**: AWS Amplify Hosting (eu-west-2) builds `main` with `amplify.yml`. Merging to `main` is a production release at [www.usmanbukhari.co.uk](https://www.usmanbukhari.co.uk).
 - **Chatbot API**: FastAPI on AWS Lambda behind API Gateway, deployed with `backend/deploy.sh`. Amplify proxies `/api/*` to it.
 
 Full runbook (preview branches, rollback, access): see `CLAUDE.md` → Deployment.
