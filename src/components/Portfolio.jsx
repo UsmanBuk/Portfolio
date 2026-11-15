@@ -2,18 +2,17 @@ import { useEffect, useMemo, useState } from 'react'
 import IonIcon from './IonIcon'
 
 const PORTFOLIO_STATS = [
-  { number: '50+', label: 'Debug Exercises' },
-  { number: '2', label: 'AI Products' },
-  { number: '5+', label: 'Years Experience' },
-  { number: 'NHS', label: 'Current Role' }
+  { number: 'VB', label: 'VacancyBot' },
+  { number: 'AI', label: 'Team Training' },
+  { number: 'BPSS', label: 'Screened' },
+  { number: 'DBS', label: 'Checked' }
 ]
 
 const PORTFOLIO_FILTERS = [
   { id: 'all', label: 'All', icon: '🌟' },
   { id: 'web development', label: 'Web Development', icon: '🌐' },
   { id: 'cloud & devops', label: 'Cloud & DevOps', icon: '☁️' },
-  { id: 'ai & machine learning', label: 'AI & Machine Learning', icon: '🤖' },
-  { id: 'systems programming', label: 'Systems Programming', icon: '⚙️' }
+  { id: 'ai & machine learning', label: 'AI & Machine Learning', icon: '🤖' }
 ]
 
 const PORTFOLIO_SELECT_OPTIONS = [
@@ -21,29 +20,60 @@ const PORTFOLIO_SELECT_OPTIONS = [
   'Applications',
   'Web Development',
   'Cloud & Devops',
-  'Ai and Machine Learning',
-  'Systems Programming'
+  'Ai and Machine Learning'
 ]
 
 const PROJECTS = [
   {
-    href: 'https://github.com/UsmanBuk/PyDebug',
+    href: 'https://vacancybot.co.uk',
     category: 'ai & machine learning',
-    image: './assets/images/project-1.jpg',
-    alt: 'PyDebug - Python Debugging Academy',
+    image: './assets/images/project-7.png',
+    alt: 'VacancyBot',
     tooltip:
-      '🚀 PyDebug - Revolutionary debugging education platform. The only dedicated debugging skills trainer for Python developers. SaaS potential: £10M+ market opportunity.',
-    title: 'PyDebug - Debugging Academy',
-    tech: ['React', 'TypeScript', 'Supabase', 'Python', 'SaaS'],
+      'VacancyBot prepares and submits job applications, starting with Reed. You review every application before it is sent. The code is private.',
+    title: 'VacancyBot',
+    tech: ['AI assistant', 'Reed', 'Human review'],
     categoryLabel: 'AI & Machine Learning'
   },
   {
-    href: 'https://github.com/UsmanBuk/Trading',
+    href: 'https://github.com/UsmanBuk/Headroom',
     category: 'ai & machine learning',
-    image: './assets/images/project-2.jpg',
+    image: './assets/images/project-6.png',
+    alt: 'Headroom',
+    tooltip:
+      'Usage-limits dashboard for Claude Code and Codex. When one account runs out, it moves the chat to the next account.',
+    title: 'Headroom',
+    tech: ['Python', 'Claude Code', 'Codex'],
+    categoryLabel: 'AI & Machine Learning'
+  },
+  {
+    href: 'https://github.com/UsmanBuk/Hindsight',
+    category: 'ai & machine learning',
+    image: './assets/images/project-9.png',
+    alt: 'Hindsight',
+    tooltip:
+      'Offline Linux meeting recorder. Local Parakeet transcription and local LLM notes via Ollama. Nothing leaves the machine.',
+    title: 'Hindsight',
+    tech: ['Python', 'Parakeet', 'Ollama'],
+    categoryLabel: 'AI & Machine Learning'
+  },
+  {
+    href: 'https://github.com/UsmanBuk/Skills',
+    category: 'ai & machine learning',
+    image: './assets/images/project-5.png',
+    alt: 'Skills',
+    tooltip:
+      'Agent skills for Claude Code and Codex CLI, including gauntlet and bugfix.',
+    title: 'Skills',
+    tech: ['Claude Code', 'Codex CLI', 'Agents'],
+    categoryLabel: 'AI & Machine Learning'
+  },
+  {
+    category: 'ai & machine learning',
+    image: './assets/images/project-2.png',
     alt: 'Trading 212 AI Investment Platform',
     tooltip:
-      '💰 AI-powered autonomous trading system. Uses DeepSeek AI, news analysis, and market research to make daily investment decisions automatically via Trading 212 API.',
+      'AI-powered trading system. Uses DeepSeek AI, news analysis, and market research to make daily investment decisions via the Trading 212 API. The repository is private.',
     title: 'Trading 212 AI Platform',
     tech: ['FastAPI', 'DeepSeek AI', 'Trading 212', 'Python', 'Automation'],
     categoryLabel: 'AI & Machine Learning'
@@ -71,7 +101,6 @@ const PROJECTS = [
     categoryLabel: 'Web Development'
   },
   {
-    href: 'https://umrahtaxi.app',
     category: 'web development',
     image: './assets/images/umrahtaxi.png',
     alt: 'Umrah Taxi Booking',
@@ -91,7 +120,6 @@ const PROJECTS = [
     categoryLabel: 'Web Development'
   },
   {
-    href: 'http://www.dayta.co.uk',
     category: 'web development',
     image: './assets/images/Dayta.png',
     alt: 'Dayta/TSG',
@@ -108,37 +136,42 @@ const PROJECTS = [
     tooltip: 'A custom CRM platform built using PHP, Laravel, and MySQL.',
     title: 'Ticsys CRM',
     categoryLabel: 'Web Development'
-  },
-  {
-    href: 'https://github.com/UsmanBuk/ai-sentiment-analyze',
-    category: 'ai & machine learning',
-    image: './assets/images/ai.png',
-    alt: 'AI Sentiment Analysis',
-    tooltip:
-      "AI-powered sentiment analysis tool using IBM Watson's BERT-based NLP service to analyze emotional tone and sentiment from text input.",
-    title: 'AI Sentiment Analysis',
-    tech: ['Python', 'IBM Watson', 'BERT', 'NLP'],
-    categoryLabel: 'AI and Machine Learning'
-  },
-  {
-    href: 'https://github.com/UsmanBukari/UsmanBukari-codecrafters-http-server-python',
-    category: 'systems programming',
-    image: './assets/images/http-server.png',
-    alt: 'CodeCrafters HTTP Server',
-    tooltip: 'A hand-crafted HTTP/1.1 server in Python, built from the ground up for CodeCrafters.',
-    title: 'Custom HTTP Server',
-    categoryLabel: 'Systems Programming'
-  },
-  {
-    href: 'https://github.com/UsmanBuk/RamOptimise',
-    category: 'systems programming',
-    image: './assets/images/RamImage.png',
-    alt: 'RAM Optimiser',
-    tooltip: 'A tool to optimize RAM usage by identifying and cleaning up unused memory segments.',
-    title: 'RAM Optimiser',
-    categoryLabel: 'Systems Programming'
   }
 ]
+
+function ProjectBody({ project }) {
+  return (
+    <>
+      <figure className="project-img">
+        {project.href ? (
+          <div className="project-item-icon-box">
+            <IonIcon name="eye-outline" />
+          </div>
+        ) : null}
+        <img src={project.image} alt={project.alt} loading="lazy" />
+        <div className="project-tooltip">{project.tooltip}</div>
+      </figure>
+      {project.tech ? (
+        <div className="project-content">
+          <h3 className="project-title">{project.title}</h3>
+          <div className="project-tech-stack">
+            {project.tech.map((tech) => (
+              <span className="tech-badge" key={tech}>
+                {tech}
+              </span>
+            ))}
+          </div>
+          <p className="project-category">{project.categoryLabel}</p>
+        </div>
+      ) : (
+        <>
+          <h3 className="project-title">{project.title}</h3>
+          <p className="project-category">{project.categoryLabel}</p>
+        </>
+      )}
+    </>
+  )
+}
 
 function normalizeFilter(value) {
   return value.trim().toLowerCase().replace(/and/g, '&').replace(/\s+/g, ' ')
@@ -308,38 +341,20 @@ export default function Portfolio({ isActive }) {
                 data-category={project.category}
                 key={project.title}
               >
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${project.title} (opens in a new tab)`}
-                >
-                  <figure className="project-img">
-                    <div className="project-item-icon-box">
-                      <IonIcon name="eye-outline" />
-                    </div>
-                    <img src={project.image} alt={project.alt} loading="lazy" />
-                    <div className="project-tooltip">{project.tooltip}</div>
-                  </figure>
-                  {project.tech ? (
-                    <div className="project-content">
-                      <h3 className="project-title">{project.title}</h3>
-                      <div className="project-tech-stack">
-                        {project.tech.map((tech) => (
-                          <span className="tech-badge" key={tech}>
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="project-category">{project.categoryLabel}</p>
-                    </div>
-                  ) : (
-                    <>
-                      <h3 className="project-title">{project.title}</h3>
-                      <p className="project-category">{project.categoryLabel}</p>
-                    </>
-                  )}
-                </a>
+                {project.href ? (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} (opens in a new tab)`}
+                  >
+                    <ProjectBody project={project} />
+                  </a>
+                ) : (
+                  <div className="project-card">
+                    <ProjectBody project={project} />
+                  </div>
+                )}
               </li>
             ))
           )}

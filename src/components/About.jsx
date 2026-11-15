@@ -3,10 +3,10 @@ import IonIcon from './IonIcon'
 import useFocusTrap from '../hooks/useFocusTrap'
 
 const HIGHLIGHTS = [
-  { icon: '🚀', text: 'Cloud-Native Solutions', page: 'resume', scrollTarget: '#experience-citadel-health' },
-  { icon: '🤖', text: 'AI Integration Expert', page: 'resume', scrollTarget: '#experience-nhs' },
-  { icon: '⚡', text: 'Performance Optimization', page: 'resume', scrollTarget: '#experience-tsg' },
-  { icon: '🔧', text: 'DevOps & Automation', page: 'portfolio' }
+  { icon: '🤖', text: 'VacancyBot', page: 'portfolio' },
+  { icon: '🎓', text: 'Bukhari Consulting', page: 'contact' },
+  { icon: '⚙️', text: 'AI Engineering Contracts', page: 'resume', scrollTarget: '#experience-hudson' },
+  { icon: '🛡️', text: 'BPSS Screened, DBS Checked', page: 'resume', scrollTarget: '#experience-rolls-royce' }
 ]
 
 const CERTIFICATIONS = [
@@ -35,21 +35,21 @@ const CERTIFICATIONS = [
 const SERVICES = [
   {
     icon: './assets/images/icon-design.svg',
-    alt: 'design icon',
-    title: 'Full Stack Web Development',
-    text: 'Crafting responsive, scalable, and secure web applications using modern technologies.'
+    alt: 'VacancyBot icon',
+    title: 'VacancyBot',
+    text: 'An AI assistant that prepares and submits job applications, starting with Reed. You review every application before it is sent.'
   },
   {
     icon: './assets/images/icon-dev.svg',
-    alt: 'Web development icon',
-    title: 'API Design and Integration',
-    text: 'Building robust APIs and integrating them seamlessly for efficient data exchange.'
+    alt: 'Bukhari Consulting icon',
+    title: 'Bukhari Consulting',
+    text: 'AI training for company teams, built around the tools and workflows they already use.'
   },
   {
     icon: './assets/images/icon-photo.svg',
-    alt: 'camera icon',
-    title: 'AI Integration',
-    text: 'Leveraging advanced AI solutions to automate processes and enhance user experiences.'
+    alt: 'AI engineering icon',
+    title: 'AI Engineering Contracts',
+    text: 'Production LLM systems for regulated work: voice agents, document pipelines, and multi-agent workflows.'
   }
 ]
 
@@ -80,19 +80,22 @@ export default function About({ isActive, onNavigate }) {
       <section className="about-text">
         <div className="intro-section">
           <p className="intro-paragraph">
-            I'm a <strong>Senior AI Engineer</strong> contracting into the NHS and regulated financial services. I build enterprise RAG systems, LLM orchestration pipelines, and the cloud infrastructure that runs them &mdash; currently production voice agents on Azure AI Foundry for Hudson and Hayes, following a multi-agent KYC platform for Ardonagh Specialty that took client onboarding from weeks to hours.
+            I'm a <strong>Founder / AI Engineer</strong> in Coventry, UK. I build{' '}
+            <strong>VacancyBot</strong>, an AI assistant that prepares and submits job applications — starting with Reed — and you review every application before it goes out. I also run{' '}
+            <strong>Bukhari Consulting</strong>, training company teams to use AI in their own work.
           </p>
         </div>
 
         <div className="specialization-section">
           <p>
-            At NHS South Yorkshire ICB I delivered a production RAG platform serving <strong>1.4 million residents</strong> with <strong>zero hallucination incidents</strong>, 90% accuracy validated against NHS clinical guidelines, and query resolution cut from 12 minutes to under 30 seconds &mdash; 3,000+ monthly active users at a 94% success rate. That work runs on Azure AI Agent SDK, LangGraph, LangChain, and Azure AI Search, on Full Stack and DevOps foundations of CI/CD, Kubernetes, and Terraform.
+            I'm open to AI engineering contracts and team training. Recent contracts include a Rolls-Royce &amp; Partners Finance airworthiness proof of concept, delivered as sole engineer end to end, production voice and employment agents at Hudson &amp; Hayes, and a multi-agent KYC platform for Ardonagh Specialty that took insurance onboarding from days or weeks to hours.
           </p>
         </div>
 
         <div className="passion-section">
           <p className="passion-statement">
-            I've contracted since 2022 &mdash; Citadel Health, TSG, NHS South Yorkshire, Ardonagh &mdash; and I take <em>one or two engagements at a time</em>, full-time, fractional, or advisory. I stay through production handover, not just the build. If you have an AI system that has to survive real users, real data, and a real audit, that's the work I do.
+            Before that, at NHS South Yorkshire ICB, I delivered a production RAG platform for <strong>1.4 million residents</strong>: <strong>3,000+ monthly active users</strong>, 90% accuracy against clinical guidelines, and <strong>zero hallucination incidents</strong>. I'm BPSS screened and DBS checked.{' '}
+            <a href="./case-studies/nhs-south-yorkshire-rag.html">Read the NHS case study</a>.
           </p>
         </div>
 

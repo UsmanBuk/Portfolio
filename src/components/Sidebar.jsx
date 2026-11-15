@@ -9,32 +9,37 @@ export default function Sidebar({ isOpen, onToggle }) {
         </figure>
         <div className="info-content">
           <h1 className="name" title="Syed Usman Bukhari">Syed Usman Bukhari</h1>
-          <p className="title">Senior AI Engineer | RAG &amp; LLM Systems</p>
+          <p className="title">Founder / AI Engineer</p>
         </div>
 
-        <section className="featured-case-study" aria-label="Featured case study">
+        <section className="featured-case-study" aria-label="VacancyBot">
           <div className="featured-case-study-top">
-            <p className="featured-case-study-kicker">Featured case study</p>
-            <p className="featured-case-study-title">NHS South Yorkshire ICB</p>
+            <p className="featured-case-study-kicker">VacancyBot · Bukhari Consulting</p>
+            <p className="featured-case-study-title">VacancyBot</p>
           </div>
 
           <div className="featured-case-study-body">
             <img
               className="featured-case-study-thumb"
-              src="./assets/images/nhs-rag-architecture.svg"
-              alt="NHS RAG architecture diagram thumbnail"
+              src="./assets/images/project-7.png"
+              alt="VacancyBot"
               loading="lazy"
             />
 
-            <div className="featured-case-study-metrics" aria-label="Key outcomes">
-              <span className="featured-case-study-chip">3,000+ MAU</span>
-              <span className="featured-case-study-chip">94% success</span>
-              <span className="featured-case-study-chip">4.8/5</span>
+            <div className="featured-case-study-metrics" aria-label="Product facts">
+              <span className="featured-case-study-chip">Reed</span>
+              <span className="featured-case-study-chip">You review</span>
+              <span className="featured-case-study-chip">Coventry</span>
             </div>
 
-            <a className="featured-case-study-cta" href="./case-studies/nhs-south-yorkshire-rag.html">
-              <IonIcon name="newspaper-outline" />
-              <span>View case study</span>
+            <a
+              className="featured-case-study-cta"
+              href="https://vacancybot.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IonIcon name="open-outline" />
+              <span>Visit VacancyBot</span>
             </a>
           </div>
         </section>

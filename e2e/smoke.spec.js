@@ -31,7 +31,7 @@ test('case study page loads with styles applied', async ({ page }) => {
 })
 
 test('CV PDF links return 200', async ({ request }) => {
-  for (const path of ['/assets/documents/UsmanCV.pdf', '/assets/documents/DetailedCV.pdf']) {
+  for (const path of ['/assets/documents/UsmanCV.pdf']) {
     const response = await request.get(path)
     expect(response.status(), path).toBe(200)
     expect(response.headers()['content-type']).toMatch(/pdf/i)

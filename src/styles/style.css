@@ -721,6 +721,8 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
+.about-text a { color: var(--orange-yellow-crayola); }
+
 /* Enhanced About Me styling */
 .intro-section {
   margin-bottom: 25px;
@@ -1249,7 +1251,8 @@ main {
   100% { transform: scale(1); }
 }
 
-.project-item > a { width: 100%; }
+.project-item > a,
+.project-item > .project-card { width: 100%; }
 
 .project-img {
   position: relative;
@@ -2403,7 +2406,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-.project-item > a {
+.project-item > a,
+.project-item > .project-card {
   display: block;
   position: relative;
 }

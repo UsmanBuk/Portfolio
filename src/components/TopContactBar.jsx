@@ -62,7 +62,7 @@ export default function TopContactBar() {
           </li>
           <li className="social-item">
             <a
-              href="https://www.linkedin.com/in/syed-usman-bukhari-aideveloper?skipRedirect=true"
+              href="https://www.linkedin.com/in/syed-usman-bukhari-aideveloper"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"

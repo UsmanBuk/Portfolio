@@ -59,7 +59,7 @@ export default function Contact({ isActive, onNavigate }) {
       <section className="schedule-cta">
         <h3 className="h3 form-title">Prefer a conversation?</h3>
         <p className="schedule-cta-text">
-          Book a free 30-minute discovery call to discuss your AI or healthcare technology challenges.
+          Book a free 30-minute discovery call to discuss an AI engineering contract or team training.
         </p>
         <button type="button" className="schedule-cta-btn" onClick={() => onNavigate('schedule')}>
           <IonIcon name="calendar-outline" />
